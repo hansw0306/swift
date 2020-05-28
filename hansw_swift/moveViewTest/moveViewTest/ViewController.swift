@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        
+        //chevron.down.square
         //버튼 관련 작업
         //테두리 그리기
         //addClothesButton.layer.borderColor = UIColor.white.cgColor
