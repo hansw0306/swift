@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,6 +30,16 @@ class ViewController: UIViewController {
     }
     
 
-
+    @IBAction func LoginButtonAction(_ sender: Any) {
+        
+        
+        print("로그인 버튼 눌림")
+        if let mainViewCon = storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController
+               {
+                   //vc는 DetailViewController 객체로 객체의 selectedImage에
+                   navigationController?.pushViewController(mainViewCon, animated: true)
+               }
+    }
+    
 }
 

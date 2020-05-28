@@ -31,6 +31,9 @@
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="LoginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fgF-Fe-yNB"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일 주소" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jrb-kp-O4J">
                                 <rect key="frame" x="52" y="350" width="340" height="39.5"/>
@@ -134,10 +137,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="k2S-QZ-jXC"/>
+                    <connections>
+                        <outlet property="loginButton" destination="m6n-PA-6nE" id="5WP-1O-Sad"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+            <point key="canvasLocation" x="967" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kew-kZ-DgO">
@@ -156,6 +162,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cen-eb-Mjw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="pLi-MJ-Oh0">
+            <objects>
+                <viewController storyboardIdentifier="MainView" id="sp7-z7-9Rn" customClass="MainViewController" customModule="moveViewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lcw-nb-zMP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mZf-Fy-rGa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fqu-UJ-yXm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OKo-vM-RYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1922" y="139"/>
         </scene>
     </scenes>
     <resources>
