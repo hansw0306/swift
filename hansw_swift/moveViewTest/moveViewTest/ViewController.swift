@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     //계정생성 버튼
     @IBOutlet var accountCreationButton: UIButton!
 
+    //--------------------------------------------
+    
     
     
     override func viewDidLoad() {
@@ -33,7 +35,7 @@ class ViewController: UIViewController {
 
 //1. 입력창 설정
         //비밀번호는 안보이도록 가려주도록 하자.
-        passWordLable.isSecureTextEntry = true;
+        passWordLable.isSecureTextEntry = true
         
 //2. 버튼 설정
         //테두리 그리기
@@ -69,18 +71,40 @@ class ViewController: UIViewController {
 // MARK: -
 // MARK: 이벤트
     @IBAction func LoginButtonAction(_ sender: Any) {
-        
-        
         print("로그인 버튼 눌림")
-        if let mainViewCon = storyboard?.instantiateViewController(withIdentifier: "MainView") as? MainViewController
-               {
-                   //vc는 DetailViewController 객체로 객체의 selectedImage에
-                   navigationController?.pushViewController(mainViewCon, animated: true)
-               }
+        
+        //메인 화면 이동
+        self.XibViewMove("MainView")
     }
     
     @IBAction func passWordLookButtonActopm(_ sender: Any) {
 
+        let backImage = passWordLookButton.backgroundImage(for: UIControl.State(rawValue: 0))
+        
+        if #available(iOS 13.0, *) {
+            //버튼 백그라운드 이미지 이름을 확인하여 변경하는 로직
+            if let imageName = (backImage?.imageAsset?.value(forKey: "assetName"))as? String {
+                print(imageName)
+                if imageName == "eye"{
+                    passWordLookButton.setBackgroundImage(
+                        UIImage.init(systemName: "eye.slash"),
+                        for: UIControl.State(rawValue: 0))
+                    passWordLable.isSecureTextEntry = true
+                }
+                else{
+                    passWordLookButton.setBackgroundImage(
+                        UIImage.init(systemName: "eye"),
+                        for: UIControl.State(rawValue: 0))
+                    passWordLable.isSecureTextEntry = false
+                }
+            }
+        }
+        else{
+            
+        }
+        
+        
+        
     }
     
     
@@ -146,9 +170,10 @@ class ViewController: UIViewController {
     func XibViewMove (_ viewName: String)
     {
         //객채를 생성
-        let controller = UIViewController(nibName: viewName, bundle: nil)
-        //화면 이동
-        navigationController?.pushViewController(controller, animated: true)
+        if let controller = storyboard?.instantiateViewController(withIdentifier: viewName){
+            //화면 이동
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     
