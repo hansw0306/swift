@@ -29,7 +29,18 @@ class ViewController: UIViewController {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+        //화면이 눌렸을때 키보드를 내려주도록 한다.
+          self.view.endEditing(true)
+    }
 
+
+    
+    
+    
+// MARK: -
+// MARK: 이벤트
     @IBAction func LoginButtonAction(_ sender: Any) {
         
         
@@ -40,6 +51,24 @@ class ViewController: UIViewController {
                    navigationController?.pushViewController(mainViewCon, animated: true)
                }
     }
+    
+    
+    //chevron.down.square.fill
+    
+    
+    
+// MARK: -
+// MARK: 함수
+    // Xib를 이동 함수
+    func XibViewMove (_ viewName: String)
+    {
+        //객채를 생성
+        let controller = UIViewController(nibName: viewName, bundle: nil)
+        //화면 이동
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
     
 }
 
