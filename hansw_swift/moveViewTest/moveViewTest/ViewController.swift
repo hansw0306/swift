@@ -81,14 +81,61 @@ class ViewController: UIViewController {
     
     @IBAction func passWordLookButtonActopm(_ sender: Any) {
 
-        
-        //chevron.down.square.fill
     }
     
     
     
     @IBAction func autoLoginButtonAction(_ sender: Any) {
+        let backImage = autoLoginButton.backgroundImage(for: UIControl.State(rawValue: 0))
         
+        if #available(iOS 13.0, *) {
+            
+            //버튼 백그라운드 이미지 이름을 확인하여 변경하는 로직
+            if let imageName = (backImage?.imageAsset?.value(forKey: "assetName"))as? String {
+                print(imageName)
+
+                if imageName == "chevron.down.square"
+                {
+                    autoLoginButton.setBackgroundImage(
+                        UIImage.init(systemName: "chevron.down.square.fill"),
+                        for: UIControl.State(rawValue: 0))
+                }
+                else
+                {
+                    autoLoginButton.setBackgroundImage(
+                        UIImage.init(systemName: "chevron.down.square"),
+                        for: UIControl.State(rawValue: 0))
+                }
+            }
+
+        }
+        else
+        {
+            
+            //var uiImageView = UIImageView()
+            let chevron_up: UIImage = UIImage(named: "chevron.down.square")!
+            let chevron_down: UIImage = UIImage(named: "chevron.down.square.fill")!
+            
+            //uiImageView = UIImageView(image: image)
+            
+            if let imageName = (backImage?.imageAsset?.value(forKey: "assetName"))as? String {
+                print(imageName)
+                
+                if imageName == "chevron.down.square"{
+                    autoLoginButton.setBackgroundImage(
+                        chevron_down,
+                        for: UIControl.State(rawValue: 0))
+                }
+                else{
+                    autoLoginButton.setBackgroundImage(
+                        chevron_up,
+                        for: UIControl.State(rawValue: 0))
+                }
+            }
+            
+        }
+            
+            
         
     }
     
