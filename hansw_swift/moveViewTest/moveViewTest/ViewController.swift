@@ -51,6 +51,14 @@ class ViewController: UIViewController {
         
 //-------------------------------------------
         
+#if DEBUG
+        
+        let viewCon = SwCalender.init()
+        self.ExXibViewMove(viewCont: viewCon, modalPresentationStyle: 5)
+        //self.XibViewMove("CollectionView")
+#endif
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -67,12 +75,8 @@ class ViewController: UIViewController {
 // MARK: 이벤트
     @IBAction func LoginButtonAction(_ sender: Any) {
         print("로그인 버튼 눌림")
-        
         //메인 화면 이동
-        //self.XibViewMove("MainView")
-        
-        let viewCon = CollectionViewController.init()
-        self.ExXibViewMove(viewCont: viewCon, modalPresentationStyle: 5)
+        self.XibViewMove("MainView")
     }
     
     @IBAction func passWordLookButtonActopm(_ sender: Any) {

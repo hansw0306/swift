@@ -14,6 +14,11 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         title = "메인"
+        
+        //아래 링크의 이미지를 사용하여 화면을 꾸며주는 작업을 하도록 하지.
+        //https://www.youtube.com/watch?v=k90V115zqRk
+        
+        
         // Do any additional setup after loading the view.
     }
     
