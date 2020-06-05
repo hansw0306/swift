@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SwCalender" customModule="SangWon_s" customModuleProvider="target">
             <connections>
+                <outlet property="calenderBar" destination="U2R-6A-N0v" id="ufC-vg-RDL"/>
                 <outlet property="swCalenderView" destination="8On-eE-b6v" id="xi5-ZD-E0V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,14 +24,25 @@
                     <rect key="frame" x="10" y="131" width="394" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <items>
-                        <navigationItem title="Title" id="5kX-Kz-Ylf"/>
+                        <navigationItem title="달력" id="5kX-Kz-Ylf">
+                            <barButtonItem key="leftBarButtonItem" title="Prev" id="Jjh-Af-6Z2">
+                                <connections>
+                                    <action selector="PrevItemAction:" destination="-1" id="3A3-oY-Nfq"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="Next" id="ebC-pT-6vk">
+                                <connections>
+                                    <action selector="NextItemAction:" destination="-1" id="NU2-lt-3r8"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
                     </items>
                 </navigationBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8On-eE-b6v">
                     <rect key="frame" x="10" y="175" width="394" height="295"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bwg-Kt-fQh">
+                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="5" id="Bwg-Kt-fQh">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
