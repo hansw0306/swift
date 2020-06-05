@@ -51,11 +51,6 @@ class ViewController: UIViewController {
         
 //-------------------------------------------
         
-        //chevron.down.square
-        //버튼 관련 작업
-
-
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -74,7 +69,10 @@ class ViewController: UIViewController {
         print("로그인 버튼 눌림")
         
         //메인 화면 이동
-        self.XibViewMove("MainView")
+        //self.XibViewMove("MainView")
+        
+        let viewCon = CollectionViewController.init()
+        self.ExXibViewMove(viewCont: viewCon, modalPresentationStyle: 5)
     }
     
     @IBAction func passWordLookButtonActopm(_ sender: Any) {
@@ -166,7 +164,7 @@ class ViewController: UIViewController {
     
 // MARK: -
 // MARK: 함수
-    // Xib를 이동 함수
+    // 스토리 보드내의 Viwe 이동함수
     func XibViewMove (_ viewName: String)
     {
         //객채를 생성
@@ -175,7 +173,21 @@ class ViewController: UIViewController {
             navigationController?.pushViewController(controller, animated: true)
         }
     }
+    // 스토리 보드 밖에 있는 View 이동함수
+    func ExXibViewMove(viewCont : UIViewController, modalPresentationStyle: Int) {
+        
+        viewCont.modalPresentationStyle = UIModalPresentationStyle(rawValue: modalPresentationStyle)!;
+        present(viewCont, animated:true, completion: nil)
+    }
     
+    
+    func back() {
+        if presentingViewController != nil {
+            dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
     
     
 }
