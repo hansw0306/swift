@@ -36,6 +36,14 @@ class NativeFuc: NSObject {
         
     }
     
+    // 이전화면으로 가기
+    func back( mViewCon : UIViewController) {
+        if mViewCon.presentingViewController != nil {
+            mViewCon.dismiss(animated: true, completion: nil)
+        } else {
+            mViewCon.navigationController?.popViewController(animated: true)
+        }
+    }
     
     
     
