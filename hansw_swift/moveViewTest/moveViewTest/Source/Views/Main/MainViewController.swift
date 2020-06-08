@@ -16,8 +16,15 @@ class MainViewController: UIViewController {
         title = "메인"
         
         if #available(iOS 13.0, *) {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "person.fill"), style: .plain, target: self, action: #selector(NavigationItemButton))
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right", style: .plain, target: self, action: #selector(NavigationItemButton))
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "person.fill"),
+                                                               style: .plain,
+                                                               target: self,
+                                                               action: #selector(LeftNavigationItemButtonAction))
+            
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right",
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(RightNavigationItemButtonAction))
             
             
         } else {
@@ -50,11 +57,12 @@ class MainViewController: UIViewController {
 //    }
     
     
-    @objc func NavigationItemButton() {
-        
+    @objc func RightNavigationItemButtonAction() {
         print("네비게이션 버튼 클릭됨")
-        
     }
     
+    @objc func LeftNavigationItemButtonAction() {
+        print("네비게이션 버튼 클릭됨")
+    }
     
 }
