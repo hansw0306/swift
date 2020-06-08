@@ -15,6 +15,31 @@ import LocalAuthentication
 class NativeFuc: NSObject {
     
     //MARK:-
+    //화면이동 함수
+    //MARK:
+    // 스토리 보드내의 Viwe 이동함수
+    func XibViewMove (storyboard:UIStoryboard ,viewName: String)
+    {
+        let viewController = UIApplication.shared.windows.first!.rootViewController as! ViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: viewName)
+        viewController.navigationController?.pushViewController(controller, animated: true)
+
+    }
+    // 스토리 보드 밖에 있는 View 이동함수
+    func ExXibViewMove(viewCont : UIViewController, modalPresentationStyle: Int) {
+        
+        //let appDelegate  = UIApplication.shared.delegate as! AppDelegate
+        
+        let viewController = UIApplication.shared.windows.first!.rootViewController as! ViewController
+        viewCont.modalPresentationStyle = UIModalPresentationStyle(rawValue: modalPresentationStyle)!;
+        viewController.present(viewCont, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
+    
     //MARK:생체 인식 (리턴 부분 테스트 해야함)
     func BioAuth()->String {
         // LAContext Instance creation
