@@ -19,8 +19,8 @@ import UIKit
 
 class FuncList: UITableViewController {
 
-    let functionList = ["사진","앨범","설정","공유","생체인식"]
-    let customViewList = ["그림판","웹","알림"]
+    var functionList = ["사진","앨범","설정","공유","생체인식"]
+    var customViewList = ["그림판","웹","알림"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +107,27 @@ class FuncList: UITableViewController {
         
     }
     
+    
+    //리스트 삭제 스타일 추가
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            // remove the item from the data model
+            
+            if indexPath.section == 0{
+            functionList.remove(at: indexPath.row)
+            }
+            else if indexPath.section == 1{
+                customViewList.remove(at: indexPath.row)
+            }
+
+            // delete the table view row
+            tableView.deleteRows(at: [indexPath], with: .fade)
+
+        } else if editingStyle == .insert {
+            // Not used in our example, but if you were adding a new row, this is where you would do it.
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
