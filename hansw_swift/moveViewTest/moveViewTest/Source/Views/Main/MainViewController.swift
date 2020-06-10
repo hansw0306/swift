@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         title = "메인"
+        navigationController?.navigationBar.isHidden = false
         
         if #available(iOS 13.0, *) {
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "person.fill"),

@@ -60,6 +60,18 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //뷰가 나오기 전에 미리 작업을 해줘야 한다 viewDidAppear에서는 순가적으로 보인다.
+        if #available(iOS 11.0, *) {
+            //네비게이션 바형테를 변경
+            //title = "SangWon.H"
+            //navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.isHidden = true
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
         //화면이 눌렸을때 키보드를 내려주도록 한다.
