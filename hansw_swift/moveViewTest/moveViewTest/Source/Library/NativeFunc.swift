@@ -15,8 +15,7 @@ import LocalAuthentication
 class NativeFuc: NSObject {
     
     //MARK:-
-    //화면이동 함수
-    //MARK:
+    //MARK: 화면이동 함수
     // 스토리 보드내의 Viwe 이동함수
     func XibViewMove (storyboard:UIStoryboard ,viewName: String)
     {
@@ -47,8 +46,9 @@ class NativeFuc: NSObject {
     
     
     
-    
-    //MARK:생체 인식 (리턴 부분 테스트 해야함)
+    //MARK:-
+    //MARK:네이티브 기능 호출 부분
+    //MARK:1. 생체 인식 (리턴 부분 테스트 해야함)
     func BioAuth()->String {
         // LAContext Instance creation
         let authContext = LAContext()
@@ -81,7 +81,26 @@ class NativeFuc: NSObject {
         return ""
     }
     
-//MARK:비동기 처리
+    //MARK:-
+    //MARK:그 외
+    //MARK:saveValue loadValue removeValue
+    let myUserDefaults = UserDefaults.standard
+
+    func saveValue(value:String,key:String) {
+        myUserDefaults.set(value, forKey: key)
+    }
+    
+    func loadValue(key:String)->String {
+        
+        return myUserDefaults.string(forKey: key)!
+    }
+    
+    func removeValue(key:String) {
+        myUserDefaults.removeObject(forKey: key)
+    }
+    
+    
+    //MARK:10. 비동기 처리
     func Asynchronous()  {
         
         //비동기 처리1 GCD
