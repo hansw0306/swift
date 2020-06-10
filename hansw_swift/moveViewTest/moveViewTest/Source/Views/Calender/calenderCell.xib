@@ -31,7 +31,7 @@
             <connections>
                 <outlet property="cellLable" destination="PpR-OL-021" id="6h8-oI-hiW"/>
             </connections>
-            <point key="canvasLocation" x="133" y="113"/>
+            <point key="canvasLocation" x="119" y="91"/>
         </collectionViewCell>
     </objects>
 </document>

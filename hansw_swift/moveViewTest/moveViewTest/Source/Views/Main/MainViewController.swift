@@ -58,11 +58,18 @@ class MainViewController: UIViewController {
     
     
     @objc func RightNavigationItemButtonAction() {
-        print("네비게이션 버튼 클릭됨")
+        
+        if let controller = storyboard?.instantiateViewController(withIdentifier: "FuncList"){
+            print("리스트 화면 이동")
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     @objc func LeftNavigationItemButtonAction() {
-        print("네비게이션 버튼 클릭됨")
+        print("메인에서 로그인으로")
+        
+        NativeFuc().back(mViewCon: self)
+
     }
     
 }

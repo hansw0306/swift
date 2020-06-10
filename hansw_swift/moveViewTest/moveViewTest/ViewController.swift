@@ -52,9 +52,8 @@ class ViewController: UIViewController {
 //-------------------------------------------
         
 #if DEBUG
-        
-        let viewCon = SwCalender.init()
-        self.ExXibViewMove(viewCont: viewCon, modalPresentationStyle: 5)
+        //let viewCon = SwCalender.init()
+        //self.ExXibViewMove(viewCont: viewCon, modalPresentationStyle: 5)
         //self.XibViewMove("CollectionView")
 #endif
         
