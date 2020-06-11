@@ -34,10 +34,8 @@ class MainViewController: UIViewController {
         
         //아래 링크의 이미지를 사용하여 화면을 꾸며주는 작업을 하도록 하지.
         //https://www.youtube.com/watch?v=k90V115zqRk
-        
         //이부분도 나중에 추가 작업 진행해 보자
         //https://eastroot1590.tistory.com/entry/UICollectionView-3-실습-CardNews1?category=848449
-        
         //요기 좋다
         //https://unclean.tistory.com/60?category=834416
         

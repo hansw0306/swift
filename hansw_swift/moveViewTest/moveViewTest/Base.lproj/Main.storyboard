@@ -86,6 +86,9 @@
                                 <state key="normal" title="계정 생성">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="AccountCreationButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YpN-Oj-PV5"/>
+                                </connections>
                             </button>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="aii-Dw-4r8">
                                 <rect key="frame" x="72" y="692" width="189" height="31"/>

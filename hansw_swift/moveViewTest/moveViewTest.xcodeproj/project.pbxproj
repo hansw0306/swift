@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8220F1E32491C0F900754790 /* CreatAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8220F1E12491C0F900754790 /* CreatAccountViewController.swift */; };
+		8220F1E42491C0F900754790 /* CreatAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8220F1E22491C0F900754790 /* CreatAccountViewController.xib */; };
 		822BC92E247F50BE00B95FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822BC92D247F50BE00B95FB4 /* AppDelegate.swift */; };
 		822BC930247F50BE00B95FB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822BC92F247F50BE00B95FB4 /* SceneDelegate.swift */; };
 		822BC932247F50BE00B95FB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822BC931247F50BE00B95FB4 /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8220F1E12491C0F900754790 /* CreatAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatAccountViewController.swift; sourceTree = "<group>"; };
+		8220F1E22491C0F900754790 /* CreatAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatAccountViewController.xib; sourceTree = "<group>"; };
 		822BC92A247F50BE00B95FB4 /* SangWon's.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SangWon's.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		822BC92D247F50BE00B95FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		822BC92F247F50BE00B95FB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,15 @@
 			path = image;
 			sourceTree = "<group>";
 		};
+		8220F1E02491C07F00754790 /* CreatAccount */ = {
+			isa = PBXGroup;
+			children = (
+				8220F1E12491C0F900754790 /* CreatAccountViewController.swift */,
+				8220F1E22491C0F900754790 /* CreatAccountViewController.xib */,
+			);
+			path = CreatAccount;
+			sourceTree = "<group>";
+		};
 		822BC921247F50BE00B95FB4 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,7 @@
 		82A8EE082489DD2E000B9896 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8220F1E02491C07F00754790 /* CreatAccount */,
 				8265518C248E15FB002CD193 /* List */,
 				82A8EE122489FB99000B9896 /* Calender */,
 				82A8EE092489DD4D000B9896 /* Main */,
@@ -213,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8220F1E42491C0F900754790 /* CreatAccountViewController.xib in Resources */,
 				822BC93A247F50BF00B95FB4 /* LaunchScreen.storyboard in Resources */,
 				822BC937247F50BF00B95FB4 /* Assets.xcassets in Resources */,
 				822BC935247F50BE00B95FB4 /* Main.storyboard in Resources */,
@@ -233,6 +248,7 @@
 				822BC92E247F50BE00B95FB4 /* AppDelegate.swift in Sources */,
 				82A8EE2F248A2174000B9896 /* SwCalender.swift in Sources */,
 				822BC930247F50BE00B95FB4 /* SceneDelegate.swift in Sources */,
+				8220F1E32491C0F900754790 /* CreatAccountViewController.swift in Sources */,
 				82A8EE112489DEB1000B9896 /* NativeFunc.swift in Sources */,
 				82A8EE39248A2835000B9896 /* calenderCell.swift in Sources */,
 				822BC944247F831E00B95FB4 /* MainViewController.swift in Sources */,
