@@ -15,7 +15,7 @@ import UIKit
  3. cellForRowAtIndexPath 메소드는 각 행을 설정합니다.
  5. didSelectRowAtIndexPath 메서드는 행을 두 드릴 때마다 호출됩니다.
  */
-
+//https://pilgwon.github.io/blog/2017/08/30/Dealing-with-Complex-Table-Views-in-iOS.html
 
 class FuncList: UITableViewController {
 
@@ -29,23 +29,12 @@ class FuncList: UITableViewController {
         
     }
 
-    // MARK: - Table view data source
+// MARK: - Table view data source
+    // MARK: 1. Section
     //섹션을 몇개로 할지 설정한다.
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
-    }
-
-    //세션에 맞게 Cell의 count를 넣어준다.
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
-        if section == 0{
-            return functionList.count
-        }
-        else{
-            return customViewList.count
-        }
     }
     
     //Cell의 헤더를 붙여주는 함수
@@ -59,8 +48,21 @@ class FuncList: UITableViewController {
             return ""
         }
     }
-
     
+    // MARK: 2. Cell
+    //세션에 맞게 Cell의 count를 넣어준다.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        
+        if section == 0{
+            return functionList.count
+        }
+        else{
+            return customViewList.count
+        }
+    }
+    
+    // Cell in Data
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -78,6 +80,7 @@ class FuncList: UITableViewController {
         return cell
     }
     
+    //Cell 버튼 클릭
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
         //0부터 시작한다.
@@ -107,10 +110,11 @@ class FuncList: UITableViewController {
         
     }
     
-    
+    // MARK: 3. TableList remove style
     //리스트 삭제 스타일 추가
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
+        //https://stackoverflow.com/questions/3309484/uitableviewcell-show-delete-button-on-swipe/37719543#37719543
         if editingStyle == .delete {
             // remove the item from the data model
             
