@@ -90,6 +90,12 @@ class ViewController: UIViewController {
         self.XibViewMove("MainView")
     }
     
+    @IBAction func AccountCreationButtonAction(_ sender: Any) {
+        
+        
+    }
+    
+    
     @IBAction func passWordLookButtonActopm(_ sender: Any) {
 
         let backImage = passWordLookButton.backgroundImage(for: UIControl.State(rawValue: 0))
@@ -185,6 +191,7 @@ class ViewController: UIViewController {
         //객채를 생성
         if let controller = storyboard?.instantiateViewController(withIdentifier: viewName){
             //화면 이동
+            //navigationController?.customPopView(controller)
             navigationController?.pushViewController(controller, animated: true)
         }
     }
@@ -207,3 +214,14 @@ class ViewController: UIViewController {
     
 }
 
+//네비게이션 custiomPopView
+extension UINavigationController {
+    func customPopView(_ viewController: UIViewController) {
+        let transition: CATransition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        view.layer.add(transition, forKey: nil)
+        pushViewController(viewController, animated: false)
+    }
+}
