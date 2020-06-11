@@ -25,6 +25,7 @@ class ViewController: UIViewController {
 
     //--------------------------------------------
     
+    let mCreatAccountViewController = CreatAccountViewController.init()
     
     
     override func viewDidLoad() {
@@ -93,6 +94,7 @@ class ViewController: UIViewController {
     @IBAction func AccountCreationButtonAction(_ sender: Any) {
         
         
+        self.ExXibViewMove(viewCont: mCreatAccountViewController, modalPresentationStyle: 5)
     }
     
     
