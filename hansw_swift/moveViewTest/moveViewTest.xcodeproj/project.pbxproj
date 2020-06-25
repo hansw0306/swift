@@ -60,16 +60,8 @@
 		8208E3542488FC0000E0DF99 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				8208E3552488FC4400E0DF99 /* image */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		8208E3552488FC4400E0DF99 /* image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = image;
 			sourceTree = "<group>";
 		};
 		8220F1E02491C07F00754790 /* CreatAccount */ = {
@@ -113,6 +105,13 @@
 			path = moveViewTest;
 			sourceTree = "<group>";
 		};
+		82358946249AEB890049E4E6 /* objective_c */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = objective_c;
+			sourceTree = "<group>";
+		};
 		8265518C248E15FB002CD193 /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +123,7 @@
 		82A8EE082489DD2E000B9896 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				82358946249AEB890049E4E6 /* objective_c */,
 				8220F1E02491C07F00754790 /* CreatAccount */,
 				8265518C248E15FB002CD193 /* List */,
 				82A8EE122489FB99000B9896 /* Calender */,

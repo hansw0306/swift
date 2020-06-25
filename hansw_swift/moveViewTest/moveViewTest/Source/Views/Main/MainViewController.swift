@@ -19,14 +19,31 @@
 
 import UIKit
 
+struct CustomData {
+    var title : String
+    var image : UIImage
+    var url : String
+}
+
 class MainViewController: UIViewController {
 
+    let data = [
+        CustomData(title: "1", image: UIImage(named: "IMG_0001")!, url: "test.io/image1"),
+        CustomData(title: "2", image: UIImage(named: "IMG_0002")!, url: "test.io/image2"),
+        CustomData(title: "3", image: UIImage(named: "IMG_0003")!, url: "test.io/image3"),
+        CustomData(title: "4", image: UIImage(named: "IMG_0004")!, url: "test.io/image4"),
+    ]
+    
+    
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        
        //컬랙션 뷰 생성 + 컬렉션 뷰 셀 설정
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        //cell클레스를 넣어준다
+        cv.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
         return cv
     }()
     
@@ -56,10 +73,11 @@ class MainViewController: UIViewController {
         //collectionView를 add해 준다.
         view.addSubview(collectionView)
         collectionView.backgroundColor = .white
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 140).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 230).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 140).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -140).isActive = true
+        //collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
+        collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor, multiplier: 0.5).isActive = true
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -97,20 +115,58 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.height/2.5    )
+        return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.height/2.5)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
+        
+        cell.data = self.data[indexPath.row]
+        
         return cell
         
     }
     
     
 
+}
+
+
+class CustomCell: UICollectionViewCell {
+    
+    
+    var data: CustomData?{
+        didSet{
+            guard let data = data else{return}
+            bg.image = data.image
+        }
+    }
+    
+    fileprivate let bg: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        return iv
+    }()
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        contentView.addSubview(bg)
+        bg.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        bg.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        bg.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        bg.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemonted")
+    }
 }
