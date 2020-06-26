@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
                                                                target: self,
                                                                action: #selector(LeftNavigationItemButtonAction))
             
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right",
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "func List",
                                                                 style: .plain,
                                                                 target: self,
                                                                 action: #selector(RightNavigationItemButtonAction))

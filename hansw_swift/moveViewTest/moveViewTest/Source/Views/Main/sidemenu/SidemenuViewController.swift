@@ -37,6 +37,8 @@ internal class SidemenuViewController: UIViewController{
     
     let whiteColor = UIColor.white
     let grayColor = UIColor.darkGray
+    //RGB color
+    let sideMenuBarColer = UIColor(red: 67.0/255, green: 122.0/255, blue: 255.0/255, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,7 @@ internal class SidemenuViewController: UIViewController{
         
         let view = SidemenuAlarmViewController.instanceFromNib()
         ContentsView.addSubview(view)
+        
         
     }
     override func didReceiveMemoryWarning() {
@@ -94,24 +97,24 @@ internal class SidemenuViewController: UIViewController{
         alarmText.textColor = grayColor
         alarmImage.image = UIImage(named: "snb_menu_alarm_black.png")
         
-        noticeView.backgroundColor = grayColor
+        noticeView.backgroundColor = sideMenuBarColer
         noticeText.textColor = whiteColor
         noticeText1.textColor = whiteColor
         noticeImage.image = UIImage(named: "snb_menu_notice.png")
         
-        couponView.backgroundColor = grayColor
+        couponView.backgroundColor = sideMenuBarColer
         couponText.textColor = whiteColor
         couponImage.image = UIImage(named: "snb_menu_coupon.png")
         
-        cancelView.backgroundColor = grayColor
+        cancelView.backgroundColor = sideMenuBarColer
         cancelText.textColor = whiteColor
         cancelImage.image = UIImage(named: "snb_menu_cancel.png")
         
-        csView.backgroundColor = grayColor
+        csView.backgroundColor = sideMenuBarColer
         csText.textColor = whiteColor
         csImage.image = UIImage(named: "snb_menu_cs.png")
         
-        coopbrandView.backgroundColor = grayColor
+        coopbrandView.backgroundColor = sideMenuBarColer
         coopbrandText.textColor = whiteColor
         coopbrandImage.image = UIImage(named: "snb_menu_coopbrand.png")
     }
@@ -120,7 +123,7 @@ internal class SidemenuViewController: UIViewController{
         let view = SidemenuNoticeViewController.instanceFromNib()
         ContentsView.addSubview(view)
         
-        alarmView.backgroundColor = grayColor
+        alarmView.backgroundColor = sideMenuBarColer
         alarmText.textColor = whiteColor
         alarmImage.image = UIImage(named: "snb_menu_alarm.png")
         
@@ -129,19 +132,19 @@ internal class SidemenuViewController: UIViewController{
         noticeText1.textColor = grayColor
         noticeImage.image = UIImage(named: "snb_menu_notice_black.png")
         
-        couponView.backgroundColor = grayColor
+        couponView.backgroundColor = sideMenuBarColer
         couponText.textColor = whiteColor
         couponImage.image = UIImage(named: "snb_menu_coupon.png")
         
-        cancelView.backgroundColor = grayColor
+        cancelView.backgroundColor = sideMenuBarColer
         cancelText.textColor = whiteColor
         cancelImage.image = UIImage(named: "snb_menu_cancel.png")
         
-        csView.backgroundColor = grayColor
+        csView.backgroundColor = sideMenuBarColer
         csText.textColor = whiteColor
         csImage.image = UIImage(named: "snb_menu_cs.png")
         
-        coopbrandView.backgroundColor = grayColor
+        coopbrandView.backgroundColor = sideMenuBarColer
         coopbrandText.textColor = whiteColor
         coopbrandImage.image = UIImage(named: "snb_menu_coopbrand.png")
     }
@@ -150,11 +153,11 @@ internal class SidemenuViewController: UIViewController{
         let view = SidemenuCouponViewController.instanceFromNib()
         ContentsView.addSubview(view)
         
-        alarmView.backgroundColor = grayColor
+        alarmView.backgroundColor = sideMenuBarColer
         alarmText.textColor = whiteColor
         alarmImage.image = UIImage(named: "snb_menu_alarm.png")
         
-        noticeView.backgroundColor = grayColor
+        noticeView.backgroundColor = sideMenuBarColer
         noticeText.textColor = whiteColor
         noticeText1.textColor = whiteColor
         noticeImage.image = UIImage(named: "snb_menu_notice.png")
@@ -163,15 +166,15 @@ internal class SidemenuViewController: UIViewController{
         couponText.textColor = grayColor
         couponImage.image = UIImage(named: "snb_menu_coupon_black.png")
         
-        cancelView.backgroundColor = grayColor
+        cancelView.backgroundColor = sideMenuBarColer
         cancelText.textColor = whiteColor
         cancelImage.image = UIImage(named: "snb_menu_cancel.png")
         
-        csView.backgroundColor = grayColor
+        csView.backgroundColor = sideMenuBarColer
         csText.textColor = whiteColor
         csImage.image = UIImage(named: "snb_menu_cs.png")
         
-        coopbrandView.backgroundColor = grayColor
+        coopbrandView.backgroundColor = sideMenuBarColer
         coopbrandText.textColor = whiteColor
         coopbrandImage.image = UIImage(named: "snb_menu_coopbrand.png")
     }
@@ -180,16 +183,16 @@ internal class SidemenuViewController: UIViewController{
         let view = SidemenuCancelViewController.instanceFromNib()
         ContentsView.addSubview(view)
         
-        alarmView.backgroundColor = grayColor
+        alarmView.backgroundColor = sideMenuBarColer
         alarmText.textColor = whiteColor
         alarmImage.image = UIImage(named: "snb_menu_alarm.png")
         
-        noticeView.backgroundColor = grayColor
+        noticeView.backgroundColor = sideMenuBarColer
         noticeText.textColor = whiteColor
         noticeText1.textColor = whiteColor
         noticeImage.image = UIImage(named: "snb_menu_notice.png")
         
-        couponView.backgroundColor = grayColor
+        couponView.backgroundColor = sideMenuBarColer
         couponText.textColor = whiteColor
         couponImage.image = UIImage(named: "snb_menu_coupon.png")
         
@@ -197,11 +200,11 @@ internal class SidemenuViewController: UIViewController{
         cancelText.textColor = grayColor
         cancelImage.image = UIImage(named: "snb_menu_cancel_black.png")
         
-        csView.backgroundColor = grayColor
+        csView.backgroundColor = sideMenuBarColer
         csText.textColor = whiteColor
         csImage.image = UIImage(named: "snb_menu_cs.png")
         
-        coopbrandView.backgroundColor = grayColor
+        coopbrandView.backgroundColor = sideMenuBarColer
         coopbrandText.textColor = whiteColor
         coopbrandImage.image = UIImage(named: "snb_menu_coopbrand.png")
     }
@@ -210,20 +213,20 @@ internal class SidemenuViewController: UIViewController{
         let view = SidemenuCsViewController.instanceFromNib()
         ContentsView.addSubview(view)
         
-        alarmView.backgroundColor = grayColor
+        alarmView.backgroundColor = sideMenuBarColer
         alarmText.textColor = whiteColor
         alarmImage.image = UIImage(named: "snb_menu_alarm.png")
         
-        noticeView.backgroundColor = grayColor
+        noticeView.backgroundColor = sideMenuBarColer
         noticeText.textColor = whiteColor
         noticeText1.textColor = whiteColor
         noticeImage.image = UIImage(named: "snb_menu_notice.png")
         
-        couponView.backgroundColor = grayColor
+        couponView.backgroundColor = sideMenuBarColer
         couponText.textColor = whiteColor
         couponImage.image = UIImage(named: "snb_menu_coupon.png")
         
-        cancelView.backgroundColor = grayColor
+        cancelView.backgroundColor = sideMenuBarColer
         cancelText.textColor = whiteColor
         cancelImage.image = UIImage(named: "snb_menu_cancel.png")
         
@@ -231,7 +234,7 @@ internal class SidemenuViewController: UIViewController{
         csText.textColor = grayColor
         csImage.image = UIImage(named: "snb_menu_cs_black.png")
         
-        coopbrandView.backgroundColor = grayColor
+        coopbrandView.backgroundColor = sideMenuBarColer
         coopbrandText.textColor = whiteColor
         coopbrandImage.image = UIImage(named: "snb_menu_coopbrand.png")
     }
@@ -243,24 +246,24 @@ internal class SidemenuViewController: UIViewController{
         ContentsView.addSubview(coop)
         coop.delegate = coopDelegate
         
-        alarmView.backgroundColor = grayColor
+        alarmView.backgroundColor = sideMenuBarColer
         alarmText.textColor = whiteColor
         alarmImage.image = UIImage(named: "snb_menu_alarm.png")
         
-        noticeView.backgroundColor = grayColor
+        noticeView.backgroundColor = sideMenuBarColer
         noticeText.textColor = whiteColor
         noticeText1.textColor = whiteColor
         noticeImage.image = UIImage(named: "snb_menu_notice.png")
         
-        couponView.backgroundColor = grayColor
+        couponView.backgroundColor = sideMenuBarColer
         couponText.textColor = whiteColor
         couponImage.image = UIImage(named: "snb_menu_coupon.png")
         
-        cancelView.backgroundColor = grayColor
+        cancelView.backgroundColor = sideMenuBarColer
         cancelText.textColor = whiteColor
         cancelImage.image = UIImage(named: "snb_menu_cancel.png")
         
-        csView.backgroundColor = grayColor
+        csView.backgroundColor = sideMenuBarColer
         csText.textColor = whiteColor
         csImage.image = UIImage(named: "snb_menu_cs.png")
         

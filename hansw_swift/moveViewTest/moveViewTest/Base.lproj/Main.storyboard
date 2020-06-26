@@ -222,6 +222,9 @@ To understand the swift language, it is an app created for the purpose of implem
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="MainButtonAction:" destination="sp7-z7-9Rn" eventType="touchUpInside" id="1CX-mI-Fge"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ufx-gr-o7V">
                                 <rect key="frame" x="192" y="318" width="32" height="32"/>

@@ -19,9 +19,9 @@ import UIKit
 
 class FuncList: UITableViewController {
 
-    var functionList = ["사진","앨범","설정","공유","생체인식"]
+    var nativeFunctionList = ["사진","앨범","설정","공유","생체인식"]
     var customViewList = ["그림판","웹","알림"]
-    
+    var functionList = ["데이터 베이스","info","암호화"]
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "함수 호출"
@@ -34,16 +34,18 @@ class FuncList: UITableViewController {
     //섹션을 몇개로 할지 설정한다.
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 3
     }
     
     //Cell의 헤더를 붙여주는 함수
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Func"
+            return "NativeFunc"
         case 1:
             return "CustomView"
+        case 2:
+                return "Func"
         default:
             return ""
         }
@@ -55,10 +57,14 @@ class FuncList: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         
         if section == 0{
-            return functionList.count
+            return nativeFunctionList.count
+        }
+            
+        else if section == 1{
+            return customViewList.count
         }
         else{
-            return customViewList.count
+            return functionList.count
         }
     }
     
@@ -71,11 +77,14 @@ class FuncList: UITableViewController {
             
             if indexPath.section == 0{
                 //tableView.section
-                cell.textLabel?.text = functionList[indexPath.row]
+                cell.textLabel?.text = nativeFunctionList[indexPath.row]
             }
             else if indexPath.section == 1{
                 cell.textLabel?.text = customViewList[indexPath.row]
             }
+            else if indexPath.section == 2{
+                cell.textLabel?.text = functionList[indexPath.row]
+        }
         
         return cell
     }
@@ -119,10 +128,13 @@ class FuncList: UITableViewController {
             // remove the item from the data model
             
             if indexPath.section == 0{
-            functionList.remove(at: indexPath.row)
+            nativeFunctionList.remove(at: indexPath.row)
             }
             else if indexPath.section == 1{
                 customViewList.remove(at: indexPath.row)
+            }
+            else if indexPath.section == 2{
+                functionList.remove(at: indexPath.row)
             }
 
             // delete the table view row
