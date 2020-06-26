@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import MessageUI
 
 //생체 인식에 필요
 import LocalAuthentication
@@ -42,6 +43,17 @@ class NativeFuc: NSObject {
         } else {
             mViewCon.navigationController?.popViewController(animated: true)
         }
+    }
+    
+    
+    // 현제의 화면에서 사이드메뉴 화면 띄우기
+    func leftShowView(storyboard:UIStoryboard, presentVC:UIViewController ) {
+            // 사이드 메뉴 띄우기
+            let sidemenuVC = storyboard.instantiateViewController(withIdentifier: "SidemenuVC") as! SidemenuViewController
+            presentVC.addChild(sidemenuVC)
+            sidemenuVC.view.frame = presentVC.view.frame
+            presentVC.view.addSubview(sidemenuVC.view)
+            sidemenuVC.didMove(toParent: presentVC)
     }
     
     
