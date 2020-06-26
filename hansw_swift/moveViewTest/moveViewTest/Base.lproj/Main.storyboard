@@ -254,7 +254,7 @@ To understand the swift language, it is an app created for the purpose of implem
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKo-vM-RYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634.7826086956522" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1738" y="139"/>
         </scene>
         <!--Func List-->
         <scene sceneID="fNf-ga-z57">
@@ -282,7 +282,7 @@ To understand the swift language, it is an app created for the purpose of implem
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ttu-Ij-Kme" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2507" y="646"/>
+            <point key="canvasLocation" x="2530" y="631"/>
         </scene>
         <!--Sidemenu View Controller-->
         <scene sceneID="EJJ-ak-OKN">
@@ -651,7 +651,7 @@ To understand the swift language, it is an app created for the purpose of implem
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQ7-zt-02f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1635" y="-549"/>
+            <point key="canvasLocation" x="1716" y="-545"/>
         </scene>
     </scenes>
     <resources>

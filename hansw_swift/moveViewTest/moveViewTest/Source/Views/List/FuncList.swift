@@ -22,10 +22,15 @@ class FuncList: UITableViewController {
     var nativeFunctionList = ["사진","앨범","설정","공유","생체인식"]
     var customViewList = ["그림판","웹","알림"]
     var functionList = ["데이터 베이스","info","암호화"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "함수 호출"
-        
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
         
     }
 
