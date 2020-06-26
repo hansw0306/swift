@@ -180,8 +180,44 @@ func download(){
     
     
 }
+//MARK:- Another Class
 
-//MARK:-
+//MARK: 메일 보내기
+class MyPageViewController: UIViewController , MFMailComposeViewControllerDelegate{
+    
+    func sentMail(viewCon:UIViewController) {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            viewCon.present(mailComposeViewController, animated: true, completion: nil)
+            print("can send mail")
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients(["hansw0306@gmail.com"])
+        mailComposerVC.setSubject("한상원 IOS 문의 메일")
+        mailComposerVC.setMessageBody("여러분의 소중한 의견 감사드립니다. \n - 한상원 -", isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "메일을 전송 실패", message: "아이폰 이메일 설정을 확인하고 다시 시도해주세요.", delegate: self, cancelButtonTitle: "확인")
+        sendMailErrorAlert.show()
+    }
+    
+    // MARK: MFMailComposeViewControllerDelegate Method
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+
+
 //MARK: objetive_c class
 
 //0. Objetive c 클래스를 확장하는 방법
