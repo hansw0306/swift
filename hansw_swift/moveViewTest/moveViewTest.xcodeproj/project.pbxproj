@@ -22,6 +22,7 @@
 		82A8EE30248A2174000B9896 /* SwCalender.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A8EE2E248A2174000B9896 /* SwCalender.xib */; };
 		82A8EE39248A2835000B9896 /* calenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8EE37248A2835000B9896 /* calenderCell.swift */; };
 		82A8EE3A248A2835000B9896 /* calenderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A8EE38248A2835000B9896 /* calenderCell.xib */; };
+		82D99BDA24A57CEA001E0197 /* SidemenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D99BD924A57CEA001E0197 /* SidemenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		82A8EE2E248A2174000B9896 /* SwCalender.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwCalender.xib; sourceTree = "<group>"; };
 		82A8EE37248A2835000B9896 /* calenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calenderCell.swift; sourceTree = "<group>"; };
 		82A8EE38248A2835000B9896 /* calenderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = calenderCell.xib; sourceTree = "<group>"; };
+		82D99BD924A57CEA001E0197 /* SidemenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidemenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				822BC943247F831E00B95FB4 /* MainViewController.swift */,
+				82D99BD924A57CEA001E0197 /* SidemenuViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82D99BDA24A57CEA001E0197 /* SidemenuViewController.swift in Sources */,
 				822BC932247F50BE00B95FB4 /* ViewController.swift in Sources */,
 				8265518E248E1639002CD193 /* FuncList.swift in Sources */,
 				822BC92E247F50BE00B95FB4 /* AppDelegate.swift in Sources */,

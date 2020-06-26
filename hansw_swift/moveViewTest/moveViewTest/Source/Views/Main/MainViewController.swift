@@ -73,7 +73,7 @@ class MainViewController: UIViewController {
         //collectionView를 add해 준다.
         view.addSubview(collectionView)
         collectionView.backgroundColor = .white
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 230).isActive = true
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 330).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 140).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -140).isActive = true
         //collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
@@ -83,14 +83,6 @@ class MainViewController: UIViewController {
         collectionView.dataSource = self
         
     }
-    
-    // 사이드 메뉴 띄우기
-//    let sidemenuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SidemenuVC") as! SidemenuViewController
-//    self.addChildViewController(sidemenuVC)
-//    sidemenuVC.view.frame = self.view.frame
-//    self.view.addSubview(sidemenuVC.view)
-//    sidemenuVC.didMove(toParentViewController: self)
-    
     
     
     // MARK: -
@@ -111,7 +103,8 @@ class MainViewController: UIViewController {
     }
     
 }
-
+// MARK: -
+// MARK: extension
 extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -134,8 +127,10 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
 
 }
+// MARK: -
+// MARK: Custom class
 
-
+//컬렉션 뷰에 들어갈 Cell을 커스텀 하자.
 class CustomCell: UICollectionViewCell {
     
     
