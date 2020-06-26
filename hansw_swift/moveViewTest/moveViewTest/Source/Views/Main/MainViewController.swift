@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         
         if #available(iOS 13.0, *) {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "person.fill"),
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "rectangle.3.offgrid.fill"),
                                                                style: .plain,
                                                                target: self,
                                                                action: #selector(LeftNavigationItemButtonAction))
@@ -73,7 +73,7 @@ class MainViewController: UIViewController {
         //collectionView를 add해 준다.
         view.addSubview(collectionView)
         collectionView.backgroundColor = .white
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 530).isActive = true
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 730).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 140).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -140).isActive = true
         //collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
@@ -90,7 +90,8 @@ class MainViewController: UIViewController {
     
     
     @IBAction func MainButtonAction(_ sender: Any) {
-        
+        print("메인에서 로그인으로")
+        NativeFuc().back(mViewCon: self)
     }
     
     @objc func RightNavigationItemButtonAction() {
@@ -102,10 +103,16 @@ class MainViewController: UIViewController {
     }
     
     @objc func LeftNavigationItemButtonAction() {
-        print("메인에서 로그인으로")
+            NativeFuc().leftShowView(storyboard: (navigationController?.storyboard!)!, presentVC: self)
         
-        NativeFuc().back(mViewCon: self)
-
+        
+            // 사이드 메뉴 띄우기
+//            let sidemenuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SidemenuVC") as! SidemenuViewController
+//            self.addChild(sidemenuVC)
+//            sidemenuVC.view.frame = self.view.frame
+//            self.view.addSubview(sidemenuVC.view)
+//            sidemenuVC.didMove(toParent: self)
+        
     }
     
 }

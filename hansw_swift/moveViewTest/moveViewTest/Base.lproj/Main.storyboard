@@ -222,9 +222,6 @@ To understand the swift language, it is an app created for the purpose of implem
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="MainButtonAction:" destination="sp7-z7-9Rn" eventType="touchUpInside" id="aRe-He-w8k"/>
-                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ufx-gr-o7V">
                                 <rect key="frame" x="192" y="318" width="32" height="32"/>
@@ -301,8 +298,8 @@ To understand the swift language, it is an app created for the purpose of implem
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QT-q3-acF">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle.3.offgrid" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dyN-D0-rol">
-                                                        <rect key="frame" x="17.5" y="21" width="25" height="17.5"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dyN-D0-rol">
+                                                        <rect key="frame" x="17.5" y="20" width="25" height="20"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="25" id="0eW-2t-UbL"/>
@@ -658,13 +655,12 @@ To understand the swift language, it is an app created for the purpose of implem
         <image name="SangWon" width="1008" height="1344"/>
         <image name="chevron.down.square" catalog="system" width="128" height="114"/>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
-        <image name="rectangle.3.offgrid" catalog="system" width="128" height="80"/>
-        <image name="snb_menu_alarm_black" width="128" height="128"/>
-        <image name="snb_menu_cancel" width="128" height="128"/>
-        <image name="snb_menu_coopbrand" width="128" height="128"/>
-        <image name="snb_menu_coupon" width="128" height="128"/>
-        <image name="snb_menu_cs" width="128" height="128"/>
-        <image name="snb_menu_notice" width="128" height="128"/>
+        <image name="snb_menu_alarm_black" width="64" height="64"/>
+        <image name="snb_menu_cancel" width="70" height="65"/>
+        <image name="snb_menu_coopbrand" width="64" height="52"/>
+        <image name="snb_menu_coupon" width="80" height="61"/>
+        <image name="snb_menu_cs" width="78" height="62"/>
+        <image name="snb_menu_notice" width="63" height="63"/>
         <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>
