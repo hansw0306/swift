@@ -173,10 +173,34 @@ func download(){
     
     let image: UIImage = UIImage(data: imageData)!
     print(image)
+    
+    
     }
     
     
     
+}
+
+//MARK:-
+//MARK: objetive_c class
+
+//0. Objetive c 클래스를 확장하는 방법
+//@objc class MobileLibrary:NSObject
+//{
+//    func MobilePrint() {
+//
+//        print("hansw Test")
+//
+//    }
+//
+//}
+
+//1. Bridg header를 이용하여 Objetive c 소스를 그대로 사용한다.
+class objClass: NSObject {
+    let objLib = MobileLibrary()
+    func objeFucn()  {
+        objLib.nsLogPrint()
+    }
 }
 
 
