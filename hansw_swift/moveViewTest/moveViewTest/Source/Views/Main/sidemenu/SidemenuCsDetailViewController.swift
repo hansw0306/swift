@@ -2,8 +2,8 @@
 //  SidemenuCsDetailViewController.swift
 //  puts
 //
-//  Created by 최다영 on 2018. 8. 29..
-//  Copyright © 2018년 컴퓨터. All rights reserved.
+//  Created by SANGWON HAN on 2020/06/26.
+//  Copyright © 2020 SANGWON HAN. All rights reserved.
 //
 
 import Foundation
