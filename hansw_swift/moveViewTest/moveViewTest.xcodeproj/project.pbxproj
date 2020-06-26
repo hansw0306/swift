@@ -137,8 +137,8 @@
 		82A8EE092489DD4D000B9896 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				822BC943247F831E00B95FB4 /* MainViewController.swift */,
 				82D99BD924A57CEA001E0197 /* SidemenuViewController.swift */,
+				822BC943247F831E00B95FB4 /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";

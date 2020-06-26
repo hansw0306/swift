@@ -179,18 +179,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SangWon Han" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hi-tY-llA">
+                                <rect key="frame" x="192" y="219" width="150" height="61"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ios App Developer" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gK-Zq-vul">
+                                <rect key="frame" x="192" y="269" width="150" height="41"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x3Z-Bd-zVL">
                                 <rect key="frame" x="36" y="189" width="342" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_0004" translatesAutoresizingMaskIntoConstraints="NO" id="Fkz-uo-IFP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SangWon" translatesAutoresizingMaskIntoConstraints="NO" id="Fkz-uo-IFP">
                                 <rect key="frame" x="20" y="219" width="164" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Iyb-jQ-MYJ">
-                                <rect key="frame" x="192" y="219" width="221" height="299"/>
+                                <rect key="frame" x="20" y="432" width="374" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Hello? I am Han Sang-won, an iOS app developer.
@@ -200,6 +214,38 @@ To understand the swift language, it is an app created for the purpose of implem
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iw-ig-yrZ">
+                                <rect key="frame" x="192" y="369" width="103" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="MainButtonAction:" destination="sp7-z7-9Rn" eventType="touchUpInside" id="aRe-He-w8k"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ufx-gr-o7V">
+                                <rect key="frame" x="192" y="318" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="krd-1Y-h9D">
+                                <rect key="frame" x="227" y="318" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6wa-fl-xwQ">
+                                <rect key="frame" x="262" y="318" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BLK-bl-BgL">
+                                <rect key="frame" x="297" y="318" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wjK-zg-yf3">
+                                <rect key="frame" x="332" y="318" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mZf-Fy-rGa"/>
@@ -255,8 +301,9 @@ To understand the swift language, it is an app created for the purpose of implem
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QT-q3-acF">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_menu_list" translatesAutoresizingMaskIntoConstraints="NO" id="dyN-D0-rol">
-                                                        <rect key="frame" x="17.5" y="20" width="25" height="20"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle.3.offgrid" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dyN-D0-rol">
+                                                        <rect key="frame" x="17.5" y="21" width="25" height="17.5"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="25" id="0eW-2t-UbL"/>
                                                             <constraint firstAttribute="height" constant="20" id="Y70-o1-ivD"/>
@@ -608,15 +655,16 @@ To understand the swift language, it is an app created for the purpose of implem
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_0004" width="3024" height="4032"/>
+        <image name="SangWon" width="1008" height="1344"/>
         <image name="chevron.down.square" catalog="system" width="128" height="114"/>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
+        <image name="rectangle.3.offgrid" catalog="system" width="128" height="80"/>
         <image name="snb_menu_alarm_black" width="128" height="128"/>
         <image name="snb_menu_cancel" width="128" height="128"/>
         <image name="snb_menu_coopbrand" width="128" height="128"/>
         <image name="snb_menu_coupon" width="128" height="128"/>
         <image name="snb_menu_cs" width="128" height="128"/>
         <image name="snb_menu_notice" width="128" height="128"/>
-        <image name="top_menu_list" width="128" height="128"/>
+        <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>

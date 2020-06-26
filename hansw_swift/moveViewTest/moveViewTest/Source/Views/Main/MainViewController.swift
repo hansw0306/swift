@@ -27,12 +27,12 @@ struct CustomData {
 
 class MainViewController: UIViewController {
 
-    let data = [
-        CustomData(title: "1", image: UIImage(named: "IMG_0001")!, url: "test.io/image1"),
-        CustomData(title: "2", image: UIImage(named: "IMG_0002")!, url: "test.io/image2"),
-        CustomData(title: "3", image: UIImage(named: "IMG_0003")!, url: "test.io/image3"),
-        CustomData(title: "4", image: UIImage(named: "IMG_0004")!, url: "test.io/image4"),
-    ]
+//    let data = [
+//        CustomData(title: "1", image: UIImage(named: "IMG_0001")!, url: "test.io/image1"),
+//        CustomData(title: "2", image: UIImage(named: "IMG_0002")!, url: "test.io/image2"),
+//        CustomData(title: "3", image: UIImage(named: "IMG_0003")!, url: "test.io/image3"),
+//        //CustomData(title: "4", image: UIImage(named: "IMG_0004")!, url: "test.io/image4"),
+//    ]
     
     
     fileprivate let collectionView: UICollectionView = {
@@ -73,7 +73,7 @@ class MainViewController: UIViewController {
         //collectionView를 add해 준다.
         view.addSubview(collectionView)
         collectionView.backgroundColor = .white
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 330).isActive = true
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 530).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 140).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -140).isActive = true
         //collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
@@ -87,6 +87,12 @@ class MainViewController: UIViewController {
     
     // MARK: -
     // MARK: 이벤트
+    
+    
+    @IBAction func MainButtonAction(_ sender: Any) {
+        
+    }
+    
     @objc func RightNavigationItemButtonAction() {
         
         if let controller = storyboard?.instantiateViewController(withIdentifier: "FuncList"){
@@ -112,14 +118,14 @@ extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        return 4 //data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
         
-        cell.data = self.data[indexPath.row]
-        
+        //cell.data = self.data[indexPath.row]
+        cell.backgroundColor = .red
         return cell
         
     }
