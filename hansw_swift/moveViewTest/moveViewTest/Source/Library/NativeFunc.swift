@@ -13,7 +13,7 @@ import MessageUI
 //생체 인식에 필요
 import LocalAuthentication
 
-class NativeFuc: NSObject {
+class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     //MARK:-
     //MARK: 화면이동 함수
@@ -92,12 +92,51 @@ class NativeFuc: NSObject {
         })
         return ""
     }
+
+//MARK:2. 카메라
+    func OpenCamera() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.allowsEditing = true
+        vc.delegate = self
+        self.topViewCon()?.present(vc, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+
+        // print out the image size as a test
+        print(image.size)
+    }
     
     //MARK:-
     //MARK:그 외
-    //MARK:saveValue loadValue removeValue
+    
+    //MARK:1. 최상위 viewController
+    
+    func topViewCon() -> UIViewController? {
+        
+        if let keyWindow = UIApplication.shared.keyWindow{
+            if var viewController = keyWindow.rootViewController{
+                while viewController.presentedViewController != nil {
+                    viewController = viewController.presentedViewController!
+                }
+                print("[topViewCon] : \(String(describing:viewController))")
+                return viewController
+            }
+        }
+        return nil
+    }
+    
+    
+    
+    //MARK:2. saveValue loadValue removeValue
     let myUserDefaults = UserDefaults.standard
-
     func saveValue(value:String,key:String) {
         myUserDefaults.set(value, forKey: key)
     }
