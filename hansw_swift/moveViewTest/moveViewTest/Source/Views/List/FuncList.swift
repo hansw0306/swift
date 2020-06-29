@@ -19,9 +19,11 @@ import UIKit
 
 class FuncList: UITableViewController {
 
-    var nativeFunctionList = ["사진","앨범","설정","공유","생체인식"]
+    var nativeFunctionList = ["카메라","앨범","설정","공유","생체인식"]
     var customViewList = ["그림판","웹","알림"]
     var functionList = ["데이터 베이스","info","암호화"]
+    let mNativeFuc = NativeFuc.init()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,10 +104,17 @@ class FuncList: UITableViewController {
     if let cellName :String = tableView.cellForRow(at: indexPath)?.textLabel?.text
         {
             switch cellName {
-            case "사진":
-                print("")
+            case "카메라":
+                do {
+                    mNativeFuc.OpenCamera()
+                    print("OpenCamera")
+                    
+                }
             case "앨범":
-                print("")
+                do{
+                    mNativeFuc.OpenAlbum()
+                    print("OpenAlbum")
+                }
             case "설정":
                 print("")
             case "공유":

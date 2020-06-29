@@ -15,9 +15,29 @@ import LocalAuthentication
 
 class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    //MARK:-
-    //MARK: 화면이동 함수
-    // 스토리 보드내의 Viwe 이동함수
+    //MARK:- 화면관련
+     
+    //MARK:0. 최상위 viewController
+    var topNativeViewCon = UIViewController.init()
+    
+    
+    func topViewCon() -> UIViewController? {
+        
+        if let keyWindow = UIApplication.shared.keyWindow{
+            if var viewController = keyWindow.rootViewController{
+                while viewController.presentedViewController != nil {
+                    viewController = viewController.presentedViewController!
+                }
+                print("[topViewCon] : \(String(describing:viewController))")
+                topNativeViewCon = viewController
+                return viewController
+            }
+        }
+        return nil
+    }
+    
+    
+    //MARK:1 스토리 보드내의 Viwe 이동함수
     func XibViewMove (storyboard:UIStoryboard ,viewName: String)
     {
         let viewController = UIApplication.shared.windows.first!.rootViewController as! ViewController
@@ -25,7 +45,7 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
         viewController.navigationController?.pushViewController(controller, animated: true)
 
     }
-    // 스토리 보드 밖에 있는 View 이동함수
+    //MARK:2 스토리 보드 밖에 있는 View 이동함수
     func ExXibViewMove(viewCont : UIViewController, modalPresentationStyle: Int) {
         
         //let appDelegate  = UIApplication.shared.delegate as! AppDelegate
@@ -36,7 +56,7 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
         
     }
     
-    // 이전화면으로 가기
+    //MARK:3 이전화면으로 가기
     func back( mViewCon : UIViewController) {
         if mViewCon.presentingViewController != nil {
             mViewCon.dismiss(animated: true, completion: nil)
@@ -46,7 +66,7 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
     }
     
     
-    // 현제의 화면에서 사이드메뉴 화면 띄우기
+    //MARK: 현제의 화면에서 사이드메뉴 화면 띄우기
     func leftShowView(storyboard:UIStoryboard, presentVC:UIViewController ) {
             // 사이드 메뉴 띄우기
             let sidemenuVC = storyboard.instantiateViewController(withIdentifier: "SidemenuVC") as! SidemenuViewController
@@ -60,6 +80,13 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
     
     //MARK:-
     //MARK:네이티브 기능 호출 부분
+    
+//------------------------------------------------------------------------------
+    //카메라 앨범관련 객체
+        let picker = UIImagePickerController()
+    
+//------------------------------------------------------------------------------
+    
     //MARK:1. 생체 인식 (리턴 부분 테스트 해야함)
     func BioAuth()->String {
         // LAContext Instance creation
@@ -93,49 +120,46 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
         return ""
     }
 
-//MARK:2. 카메라
+    //MARK:2. 카메라
     func OpenCamera() {
-        let vc = UIImagePickerController()
-        vc.sourceType = .camera
-        vc.allowsEditing = true
-        vc.delegate = self
-        self.topViewCon()?.present(vc, animated: true)
+        picker.sourceType = .camera
+        picker.allowsEditing = true
+        picker.delegate = self
+        self.topViewCon()?.present(picker, animated: true)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true)
-
-        guard let image = info[.editedImage] as? UIImage else {
-            print("No image found")
-            return
-        }
-
-        // print out the image size as a test
-        print(image.size)
+    
+    //MARK:3. 앨범
+    func OpenAlbum() {
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        picker.delegate = self
+        self.topViewCon()?.present(picker, animated: true)
     }
+    
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            picker.dismiss(animated: true)
+
+            guard let image = info[.editedImage] as? UIImage else {
+                print("No image found")
+                return
+            }
+
+            // print out the image size as a test
+            print(image.size)
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
+        {
+            print("Camera Cancel")
+            topNativeViewCon.dismiss(animated: true, completion: nil)
+        }
+    
     
     //MARK:-
     //MARK:그 외
     
-    //MARK:1. 최상위 viewController
-    
-    func topViewCon() -> UIViewController? {
-        
-        if let keyWindow = UIApplication.shared.keyWindow{
-            if var viewController = keyWindow.rootViewController{
-                while viewController.presentedViewController != nil {
-                    viewController = viewController.presentedViewController!
-                }
-                print("[topViewCon] : \(String(describing:viewController))")
-                return viewController
-            }
-        }
-        return nil
-    }
-    
-    
-    
-    //MARK:2. saveValue loadValue removeValue
+    //MARK:1. saveValue loadValue removeValue
     let myUserDefaults = UserDefaults.standard
     func saveValue(value:String,key:String) {
         myUserDefaults.set(value, forKey: key)
