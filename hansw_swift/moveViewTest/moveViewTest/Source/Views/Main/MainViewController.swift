@@ -26,13 +26,11 @@ struct CustomData {
 }
 
 class MainViewController: UIViewController {
-
-//    let data = [
-//        CustomData(title: "1", image: UIImage(named: "IMG_0001")!, url: "test.io/image1"),
-//        CustomData(title: "2", image: UIImage(named: "IMG_0002")!, url: "test.io/image2"),
-//        CustomData(title: "3", image: UIImage(named: "IMG_0003")!, url: "test.io/image3"),
-//        //CustomData(title: "4", image: UIImage(named: "IMG_0004")!, url: "test.io/image4"),
-//    ]
+    
+    //화면 사이즈
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
     
     
     fileprivate let collectionView: UICollectionView = {
@@ -44,6 +42,7 @@ class MainViewController: UIViewController {
         cv.translatesAutoresizingMaskIntoConstraints = false
         //cell클레스를 넣어준다
         cv.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
+        //cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         return cv
     }()
     
@@ -72,12 +71,19 @@ class MainViewController: UIViewController {
 
         //collectionView를 add해 준다.
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .white
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 730).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 140).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -140).isActive = true
-        //collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
-        collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor, multiplier: 0.5).isActive = true
+        collectionView.backgroundColor = UIColor(red: 67.0/255, green: 122.0/255, blue: 255.0/255, alpha: 1.0)
+        //top 340간격
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 740).isActive = true
+        //left 40간격
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
+        //right 40간격
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+        
+        // 높이조절
+        //collectionView.heightAnchor.constraint(equalToConstant: view.frame.height/2).isActive = true
+        //bottom간격
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
+        //collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor, multiplier: 1.8).isActive = true
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -126,25 +132,35 @@ class MainViewController: UIViewController {
 // MARK: -
 // MARK: extension
 extension MainViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.height/2.5)
+    
+    //셀 크기 조절
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+         CGSize(width: collectionView.frame.width/8, height: collectionView.frame.height/2)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4 //data.count
+        return 7 //data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
-        
+
         //cell.data = self.data[indexPath.row]
-        cell.backgroundColor = .red
+        cell.backgroundColor = .white
         return cell
-        
+
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    {
+        //양 옆사이 간격 조절
+           return 10.0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
 
 }
 // MARK: -
@@ -171,7 +187,7 @@ class CustomCell: UICollectionViewCell {
     
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
+        super.init(frame: .zero)
         
         contentView.addSubview(bg)
         bg.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
