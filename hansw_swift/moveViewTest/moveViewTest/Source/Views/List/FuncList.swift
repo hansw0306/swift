@@ -21,7 +21,7 @@ class FuncList: UITableViewController {
 
     var nativeFunctionList = ["카메라","앨범","설정","공유","생체인식"]
     var customViewList = ["그림판","웹","알림"]
-    var functionList = ["데이터 베이스","info","암호화"]
+    var functionList = ["데이터 베이스","info","암호화","틸옥체크"]
     let mNativeFuc = NativeFuc.init()
     
     
@@ -130,6 +130,10 @@ class FuncList: UITableViewController {
                 print("")
             case "웹":
                 print("")
+            case"틸옥체크":
+                do{
+                    print(" 탈옥체크 : \(mNativeFuc.getJailbrokenStatus())")
+                }
             default:
                 print("defaul")
             }
