@@ -116,11 +116,16 @@ class FuncList: UITableViewController {
                     print("OpenAlbum")
                 }
             case "설정":
-                print("")
+                do{
+                    mNativeFuc.OpenSetting()
+                    print("OpenSetting")
+                }
             case "공유":
                 print("")
             case "생체인식":
-                print("")
+                do{
+                    print("OpenBioAuth Result : \(mNativeFuc.OpenBioAuth())")
+                }
             case "그림판":
                 print("")
             case "웹":

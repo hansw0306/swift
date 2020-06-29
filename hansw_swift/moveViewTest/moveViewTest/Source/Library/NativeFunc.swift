@@ -88,7 +88,7 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
 //------------------------------------------------------------------------------
     
     //MARK:1. 생체 인식 (리턴 부분 테스트 해야함)
-    func BioAuth()->String {
+    func OpenBioAuth()->String {
         // LAContext Instance creation
         let authContext = LAContext()
         
@@ -155,7 +155,32 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
             topNativeViewCon.dismiss(animated: true, completion: nil)
         }
     
-    
+    //MARK:3. 설정화면 띄우기
+    func OpenSetting() {
+        
+        let authAlertController : UIAlertController
+        let GetAuthAction : UIAlertAction
+        
+        //얼랏컨트롤 작업
+        authAlertController = UIAlertController(title: "권한체크", message: "설정화면으로 이동하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        
+
+        //확인버튼을 눌렀을때 처리할 동작
+        GetAuthAction = UIAlertAction(title: "네 알겠습니다.", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+            if let appSettings = URL(string: UIApplication.openSettingsURLString){
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(appSettings,options: [:], completionHandler: nil)
+                } else {
+                    // Fallback on earlier versions
+                    UIApplication.shared.openURL(appSettings)
+                    
+                }
+            }
+        })
+        authAlertController.addAction(GetAuthAction)
+        self.topViewCon()?.present(authAlertController, animated: true, completion: nil)
+    }
+
     //MARK:-
     //MARK:그 외
     
