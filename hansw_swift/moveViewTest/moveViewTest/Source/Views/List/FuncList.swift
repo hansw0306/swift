@@ -124,7 +124,9 @@ class FuncList: UITableViewController {
                 print("")
             case "생체인식":
                 do{
-                    print("OpenBioAuth Result : \(mNativeFuc.OpenBioAuth())")
+                    mNativeFuc.OpenBioAuth { (result:String) in
+                        print("지문인식 결과 :  \(result)");
+                    }
                 }
 //---------------------------------------------------------------------------------------------------------
             case "그림판":

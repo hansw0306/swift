@@ -93,7 +93,7 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
 //------------------------------------------------------------------------------
     
     //MARK:1. 생체 인식 (리턴 부분 테스트 해야함)
-    func OpenBioAuth()->String {
+    func OpenBioAuth(callBack:@escaping(String)->Void) {
         // LAContext Instance creation
         let authContext = LAContext()
         
@@ -104,7 +104,8 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
         guard authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
             print("지문인식 안되는 장치 처리")
             print(error!)
-            return "\(String(describing: error))"
+            callBack("\(String(describing: error))")
+            return
         }
         
         authContext.evaluatePolicy(.deviceOwnerAuthentication,
@@ -112,18 +113,40 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
                                    reply: { success, error in
             if success {
                 // Fingerprint recognized
-                print("지문인증 성공 or 암호인증 성공")
+                //print("지문인증 성공 or 암호인증 성공")
+                callBack("Success")
             }
             else {
                 if let error = error {
                     print(error.localizedDescription)
-                    print("에러")
+                    //print("에러")
+                    callBack("Error:\(error.localizedDescription)")
                 }
                 print("취소")
+                callBack("Cancel")
             }
         })
-        return ""
     }
+    
+//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---
+    typealias CustomType = String
+    var customString:CustomType = "Test String"
+    
+    func xxx() -> CustomType {
+        CustomType("한상원")
+    }
+    typealias closureType = (NSString, NSError?) ->Void
+    //let completionBlock:closureType = {strg,error in  //do something}
+    
+    
+    
+    
+    
+//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---
+    
+    
+    
+    
 
     //MARK:2. 카메라
     func OpenCamera() {
