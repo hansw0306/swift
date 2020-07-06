@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import MessageUI
+import SQLite3
 
 //생체 인식에 필요
 import LocalAuthentication
@@ -148,9 +149,33 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
                 print("No image found")
                 return
             }
-
             // print out the image size as a test
-            print(image.size)
+            //print(image.size)
+            
+            var documentsUrl: URL {
+                return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            }
+            var fileName = "image.png"
+            let imageUrlPath = documentsUrl.appendingPathComponent(fileName)
+            //let url = NSURL(string: "Path")
+            //let data = NSData(contentsOf: url! as URL)
+            do {
+                 // note it runs in current thread
+                let imagedata = try Data(contentsOf:imageUrlPath, options: [.alwaysMapped , .uncached ] )
+
+                if let imageSource = CGImageSourceCreateWithData(imagedata as CFData, nil)
+                {
+                  if let dictionary = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) {
+                    print(dictionary)
+                  }
+                }
+
+            }
+            catch {
+
+                print(error)
+            }
+            
         }
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
@@ -170,7 +195,7 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
         
 
         //확인버튼을 눌렀을때 처리할 동작
-        GetAuthAction = UIAlertAction(title: "네 알겠습니다.", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+        GetAuthAction = UIAlertAction(title: "설정화면 이동", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
             if let appSettings = URL(string: UIApplication.openSettingsURLString){
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(appSettings,options: [:], completionHandler: nil)
@@ -186,7 +211,7 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
     }
 
     //MARK:-
-    //MARK:그 외
+    //MARK:기능관련
     
     //MARK:1. saveValue loadValue removeValue
     let myUserDefaults = UserDefaults.standard
@@ -232,6 +257,58 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
         else {
             return false
         }
+    }
+    
+    //MARK:3. 디레토리 생성, 삭제, 존재유무확인
+    func CreateDirectory(drectoryName:String) -> Bool {
+        
+        //로컬 RootDirectory 주소가져오기
+        let filemgr = FileManager.default
+        let dirPaths = filemgr.urls(for: .documentDirectory, in: .userDomainMask)
+        let docsURL = dirPaths[0]
+        //생성할 디릭토리 주소
+        let newDir = docsURL.appendingPathComponent(drectoryName).path
+
+        //해당파일이 존재하지 않을 경우에만 생성하도록 하자
+        if !filemgr.fileExists(atPath: newDir)
+        {
+            do{
+                try filemgr.createDirectory(atPath: newDir,withIntermediateDirectories: true, attributes: nil)
+                
+                //. withIntermediateDirectories : 생성 디렉터리의 부모 디렉터리가 존재하지 않을 경우 생성 여부
+                //. attributes : 디렉터리 속성 객체(NSDictionary), nil일 경우 default값 저장
+                //. 성공여부 반환. withIntermediateDirectories값이 fales일 때 부모 디렉터리가 존재하지 않을 경우에도 false 반환.
+                
+            } catch {
+                print("Error: \(error.localizedDescription)")
+                return false
+            }
+        }
+        return true
+    }
+    
+    func DeleteDirectory(drectoryName:String) -> Bool {
+        
+        //로컬 RootDirectory 주소가져오기
+        let filemgr = FileManager.default
+        let dirPaths = filemgr.urls(for: .documentDirectory, in: .userDomainMask)
+        let docsURL = dirPaths[0]
+        //생성할 디릭토리 주소
+        let newDir = docsURL.appendingPathComponent(drectoryName).path
+
+        return filemgr.isDeletableFile(atPath: newDir)
+    }
+    
+    //디렉토리 내 파일 목록정보 추출
+    func listFilesFromDocumentsFolder() -> [String]?
+    {
+        let fileMngr = FileManager.default;
+
+        // Full path to documents directory
+        let docs = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0].path
+
+        // List all contents of directory and return as [String] OR nil if failed
+        return try? fileMngr.contentsOfDirectory(atPath:docs)
     }
     
     

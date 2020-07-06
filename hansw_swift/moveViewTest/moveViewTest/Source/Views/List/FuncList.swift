@@ -21,7 +21,7 @@ class FuncList: UITableViewController {
 
     var nativeFunctionList = ["카메라","앨범","설정","공유","생체인식"]
     var customViewList = ["그림판","웹","알림"]
-    var functionList = ["데이터 베이스","info","암호화","틸옥체크"]
+    var functionList = ["데이터 베이스","info","암호화","틸옥체크","local 디렉토리 생성"]
     let mNativeFuc = NativeFuc.init()
     
     
@@ -126,14 +126,31 @@ class FuncList: UITableViewController {
                 do{
                     print("OpenBioAuth Result : \(mNativeFuc.OpenBioAuth())")
                 }
+//---------------------------------------------------------------------------------------------------------
             case "그림판":
                 print("")
             case "웹":
                 print("")
+//---------------------------------------------------------------------------------------------------------
+
+//            var functionList = ["데이터 베이스","info","암호화","틸옥체크","local 디렉토리 생성"]
+                
+                
+            case"데이터 베이스":
+                print("데이터 베이스")
+            case"info":
+                print("info")
+            case"암호화":
+                print("암호화")
             case"틸옥체크":
                 do{
                     print(" 탈옥체크 : \(mNativeFuc.getJailbrokenStatus())")
                 }
+            case"local 디렉토리 생성":
+                do{
+                    print(" local 디렉토리 생성 : \(mNativeFuc.CreateDirectory(drectoryName: "image"))")
+                }
+                
             default:
                 print("defaul")
             }
