@@ -116,7 +116,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func LeftNavigationItemButtonAction() {
-            NativeFuc().leftShowView(storyboard: (navigationController?.storyboard!)!, presentVC: self)
+        NativeFuc().leftShowView(storyboard: (navigationController?.storyboard!)!, presentVC: self)
         
         
             // 사이드 메뉴 띄우기

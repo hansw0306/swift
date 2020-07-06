@@ -22,8 +22,8 @@ class FuncList: UITableViewController {
     var nativeFunctionList = ["카메라","앨범","설정","공유","생체인식"]
     var customViewList = ["그림판","웹","알림"]
     var functionList = ["데이터 베이스","info","암호화","틸옥체크","local 디렉토리 생성"]
-    let mNativeFuc = NativeFuc.init()
     
+    let mNativeFunc = NativeFuc.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,25 +106,25 @@ class FuncList: UITableViewController {
             switch cellName {
             case "카메라":
                 do {
-                    mNativeFuc.OpenCamera()
+                    mNativeFunc.OpenCamera()
                     print("OpenCamera")
                     
                 }
             case "앨범":
                 do{
-                    mNativeFuc.OpenAlbum()
+                    mNativeFunc.OpenAlbum()
                     print("OpenAlbum")
                 }
             case "설정":
                 do{
-                    mNativeFuc.OpenSetting()
+                    mNativeFunc.OpenSetting()
                     print("OpenSetting")
                 }
             case "공유":
                 print("")
             case "생체인식":
                 do{
-                    mNativeFuc.OpenBioAuth { (result:String) in
+                    mNativeFunc.OpenBioAuth { (result:String) in
                         print("지문인식 결과 :  \(result)");
                     }
                 }
@@ -146,11 +146,11 @@ class FuncList: UITableViewController {
                 print("암호화")
             case"틸옥체크":
                 do{
-                    print(" 탈옥체크 : \(mNativeFuc.getJailbrokenStatus())")
+                    print(" 탈옥체크 : \(mNativeFunc.getJailbrokenStatus())")
                 }
             case"local 디렉토리 생성":
                 do{
-                    print(" local 디렉토리 생성 : \(mNativeFuc.CreateDirectory(drectoryName: "image"))")
+                    print(" local 디렉토리 생성 : \(mNativeFunc.CreateDirectory(drectoryName: "image"))")
                 }
                 
             default:

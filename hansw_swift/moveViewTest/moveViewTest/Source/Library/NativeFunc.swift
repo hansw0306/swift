@@ -18,8 +18,6 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
     
     typealias MobileLibraryResult = (NSObject?) -> Void
     
-    
-
     //MARK:- 화면관련
      
     //MARK:0. 최상위 viewController
@@ -137,10 +135,6 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
     }
     typealias closureType = (NSString, NSError?) ->Void
     //let completionBlock:closureType = {strg,error in  //do something}
-    
-    
-    
-    
     
 //---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---//---
     
@@ -380,29 +374,19 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
         
     }
 
-        
-    
-    
-func download(){
-    
+    func download(){
     guard let url : URL = URL.init(string: "https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png") else {
         return
     }
-    
     var imageData:Data
     do {
         imageData = try Data.init(contentsOf:url)
     } catch  {
         return
     }
-    
     let image: UIImage = UIImage(data: imageData)!
     print(image)
-    
-    
     }
-    
-    
     
 }
 //MARK:- Another Class
