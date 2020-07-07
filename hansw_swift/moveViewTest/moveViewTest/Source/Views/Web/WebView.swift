@@ -51,8 +51,8 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         
         // WKWebview 셋팅
 #if DEBUG
-        let url = URL(string: "http://127.0.0.1:8088/index.html") //로컬..
-        //let url = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "website")!
+        //let url = URL(string: "http://127.0.0.1:8088/index.html") //로컬..
+        let url = Bundle(for: type(of: self)).url(forResource: "index", withExtension:"html")
 #else
         let url = URL(string: urlString)
 #endif
