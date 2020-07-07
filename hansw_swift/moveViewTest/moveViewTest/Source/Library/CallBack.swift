@@ -10,9 +10,8 @@ import UIKit
 
 //Delegate
 protocol CallBackDelegate {
-    //func CallDelegataFunc()
+    func CallBackDelegateFunc()
 }
-
 
 class CallBack: NSObject {
     //delegate 객체
@@ -24,12 +23,13 @@ class CallBack: NSObject {
         super.init()
         // Designed initialiser
     }
-    convenience override init() {
+    //이렇게 사용해야 객체를 선언할때 init()과 init(delegate:CallBackDelegate?)를 둘다 사용할 수 있다.
+    override convenience init() {
         self.init(delegate:nil)
     }
     
     
-    func CallDelegataFunc(){
+    func CallBackDelegateFunc(){
         
         print("Call NativeFunc Delegate")
     }
