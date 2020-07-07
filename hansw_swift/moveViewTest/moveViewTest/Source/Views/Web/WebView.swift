@@ -51,8 +51,8 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         
         // WKWebview 셋팅
 #if DEBUG
-        //let url = URL(string: "http://127.0.0.1:8088/index.html") //로컬..
-        let url = Bundle(for: type(of: self)).url(forResource: "index", withExtension:"html")
+        let url = URL(string: "http://127.0.0.1:8088/index.html") //로컬..
+        //let url = Bundle(for: type(of: self)).url(forResource: "index", withExtension:"html")
 #else
         let url = URL(string: urlString)
 #endif
@@ -83,17 +83,31 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         
     }
     
+    //Network 설정정보를 얻어와 판단하는 로직  Cellular(LTE)와 WiFi 정보를 판단한다.
     func isConnectedToNetwor() -> Bool {
         var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
         
-//        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) { (<#UnsafePointer<T>#>) -> Result in
-//            <#code#>
-//        }
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1, {
+                zeroSockAddress in SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            })
+        }
         
+        var flags: SCNetworkReachabilityFlags = SCNetworkReachabilityFlags(rawValue: 0)
         
-        return true
+        if SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) == false {
+            return false
+        }
+        
+        // Working for Cellular and WiFi
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        
+        let ret = (isReachable && !needsConnection)
+        
+        return ret
     }
     
     
