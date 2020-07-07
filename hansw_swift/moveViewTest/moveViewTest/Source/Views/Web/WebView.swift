@@ -78,8 +78,27 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         webview = WKWebView(frame: CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: 404), configuration:config)
     }
     
+    //네트워크(인터넷) 연결을 확인하는 함수 추가
     func checkNetworkConnet()
     {
+        if self.isConnectedToNetwor(){
+            print("Network Connection")
+        }
+        else {
+            print("Network Not Connection")
+            
+            let networkCheckAlert = UIAlertController(title: "Network ERROR", message:"다시 시도해주시기 바랍니다.", preferredStyle: UIAlertController.Style.alert)
+            
+            networkCheckAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action:UIAlertAction) in
+                print("")
+                
+                NativeFuc().back(mViewCon: self)
+            }))
+            
+            self.present(networkCheckAlert, animated: true, completion: nil)
+        }
+        
+        
         
     }
     
