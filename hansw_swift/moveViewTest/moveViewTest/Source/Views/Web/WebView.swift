@@ -39,6 +39,30 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         loadUrl(urlString: "")
         
         
+        let webViewBar = UIView()
+        webview.addSubview(webViewBar)
+        
+        //제약조건을 프로그래밍으로 할때는 뷰 자체적으로 수행하는 오토리사이징을 꺼야 함(이유 : 사용자가 지정한 오토레이아웃 조건과 충돌하여 제약조건 문제를 일으킴)
+        webViewBar.translatesAutoresizingMaskIntoConstraints = false
+        let views = ["view":view!, "webViewBar":webViewBar]
+        //오토레이 아웃연습하자...
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[view]-(<=300)-[webViewBar(100)]", options: NSLayoutConstraint.FormatOptions.alignAllCenterY, metrics: nil, views: views)
+        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[view]-(<=0)-[webViewBar(100)]", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
+        view.addConstraints(horizontalConstraints)
+        view.addConstraints(verticalConstraints)
+        
+        
+        let backButton = UIButton(frame: CGRect(x: 20, y: 10, width: 100, height: 50))
+        backButton.backgroundColor = .blue
+        backButton.setTitle("Back", for: .normal)
+        backButton.addTarget(self, action: #selector(backbutton), for: .touchUpInside)
+        
+        
+        webViewBar.addSubview(backButton)
+
+        
+        
+        
         // netWork 연결상태 검사
         //checkNetworkConnect()
     }
@@ -51,8 +75,9 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         
         // WKWebview 셋팅
 #if DEBUG
-        let url = URL(string: "http://127.0.0.1:8088/index.html") //로컬..
-        //let url = Bundle(for: type(of: self)).url(forResource: "index", withExtension:"html")
+        //let url = URL(string: "http://127.0.0.1:8088/index.html") //1. 로컬..
+        //let url = Bundle(for: type(of: self)).url(forResource: "index", withExtension:"html") // 2.파일
+        let url = URL(string: "https://www.google.com") //3. 웹
 #else
         let url = URL(string: urlString)
 #endif
@@ -75,7 +100,7 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         
         config.userContentController = contentController
         
-        webview = WKWebView(frame: CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: 404), configuration:config)
+        webview = WKWebView(frame: CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height), configuration:config)
     }
     
     //네트워크(인터넷) 연결을 확인하는 함수 추가
@@ -129,7 +154,17 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         return ret
     }
     
-    
+    //백버튼
+    @objc func backbutton(sender: UIButton!) {
+        if(webview.canGoBack)
+        {
+            webview.goBack()
+        }
+        else
+        {
+            print("no back page")
+        }
+    }
     
     //MARK:- WKScriptMessageHandler Delegate
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
