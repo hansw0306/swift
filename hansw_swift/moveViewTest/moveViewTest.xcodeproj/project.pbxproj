@@ -16,6 +16,31 @@
 		822BC937247F50BF00B95FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822BC936247F50BF00B95FB4 /* Assets.xcassets */; };
 		822BC93A247F50BF00B95FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822BC938247F50BF00B95FB4 /* LaunchScreen.storyboard */; };
 		822BC944247F831E00B95FB4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822BC943247F831E00B95FB4 /* MainViewController.swift */; };
+		8255957024A594FD0034475D /* SidemenuCsWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255955A24A594FC0034475D /* SidemenuCsWriteViewController.swift */; };
+		8255957124A594FD0034475D /* SidemenuCsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255955B24A594FC0034475D /* SidemenuCsViewController.swift */; };
+		8255957224A594FD0034475D /* SidemenuCsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255955C24A594FC0034475D /* SidemenuCsDetailViewController.swift */; };
+		8255957324A594FD0034475D /* SidemenuNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255955D24A594FC0034475D /* SidemenuNoticeViewController.swift */; };
+		8255957424A594FD0034475D /* SidemenuAlarmSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255955E24A594FC0034475D /* SidemenuAlarmSettingViewController.swift */; };
+		8255957524A594FD0034475D /* SidemenuCancel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255955F24A594FC0034475D /* SidemenuCancel.xib */; };
+		8255957624A594FD0034475D /* SidemenuCsWrite.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255956024A594FC0034475D /* SidemenuCsWrite.xib */; };
+		8255957724A594FD0034475D /* SidemenuCoopbrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255956124A594FC0034475D /* SidemenuCoopbrandViewController.swift */; };
+		8255957824A594FD0034475D /* SidemenuAlarmSetting.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255956224A594FD0034475D /* SidemenuAlarmSetting.xib */; };
+		8255957924A594FD0034475D /* SidemenuCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255956324A594FD0034475D /* SidemenuCouponViewController.swift */; };
+		8255957A24A594FD0034475D /* SidemenuCsDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255956424A594FD0034475D /* SidemenuCsDetail.xib */; };
+		8255957B24A594FD0034475D /* Sidemenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255956524A594FD0034475D /* Sidemenu.xib */; };
+		8255957C24A594FD0034475D /* SidemenuCoopbrand.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255956624A594FD0034475D /* SidemenuCoopbrand.xib */; };
+		8255957D24A594FD0034475D /* SidemenuCsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255956724A594FD0034475D /* SidemenuCsList.xib */; };
+		8255957E24A594FD0034475D /* SidemenuCoupon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255956824A594FD0034475D /* SidemenuCoupon.xib */; };
+		8255957F24A594FD0034475D /* Sidemenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255956924A594FD0034475D /* Sidemenu.swift */; };
+		8255958024A594FD0034475D /* SidemenuCancelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255956A24A594FD0034475D /* SidemenuCancelViewController.swift */; };
+		8255958124A594FD0034475D /* SidemenuAlarm.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255956B24A594FD0034475D /* SidemenuAlarm.xib */; };
+		8255958224A594FD0034475D /* SidemenuNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255956C24A594FD0034475D /* SidemenuNotice.xib */; };
+		8255958324A594FD0034475D /* SidemenuCsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255956D24A594FD0034475D /* SidemenuCsListViewController.swift */; };
+		8255958424A594FD0034475D /* SidemenuCs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8255956E24A594FD0034475D /* SidemenuCs.xib */; };
+		8255958524A594FD0034475D /* SidemenuAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255956F24A594FD0034475D /* SidemenuAlarmViewController.swift */; };
+		8255958724A5AD440034475D /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255958624A5AD440034475D /* NSLayoutConstraint.swift */; };
+		8255959724A5C6450034475D /* MobileLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8255959524A5C6450034475D /* MobileLibrary.m */; };
+		825848A224A9DA1F0006F0C3 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 825848A124A9DA1F0006F0C3 /* image.jpg */; };
 		8265518E248E1639002CD193 /* FuncList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265518D248E1639002CD193 /* FuncList.swift */; };
 		82A8EE112489DEB1000B9896 /* NativeFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8EE102489DEB1000B9896 /* NativeFunc.swift */; };
 		82A8EE2F248A2174000B9896 /* SwCalender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8EE2D248A2174000B9896 /* SwCalender.swift */; };
@@ -23,6 +48,10 @@
 		82A8EE39248A2835000B9896 /* calenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8EE37248A2835000B9896 /* calenderCell.swift */; };
 		82A8EE3A248A2835000B9896 /* calenderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A8EE38248A2835000B9896 /* calenderCell.xib */; };
 		82D99BDA24A57CEA001E0197 /* SidemenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D99BD924A57CEA001E0197 /* SidemenuViewController.swift */; };
+		82F3695124B31CC000D2EAD4 /* CallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3695024B31CC000D2EAD4 /* CallBack.swift */; };
+		82F3695424B320BF00D2EAD4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F3695324B320BF00D2EAD4 /* WebKit.framework */; };
+		82F3695724B3212F00D2EAD4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3695624B3212F00D2EAD4 /* WebView.swift */; };
+		82F8CC5424B3FE6F003A7E3A /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 82F8CC5224B3FD36003A7E3A /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +68,33 @@
 		822BC941247F50F800B95FB4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		822BC942247F50F800B95FB4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		822BC943247F831E00B95FB4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8255955A24A594FC0034475D /* SidemenuCsWriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCsWriteViewController.swift; sourceTree = "<group>"; };
+		8255955B24A594FC0034475D /* SidemenuCsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCsViewController.swift; sourceTree = "<group>"; };
+		8255955C24A594FC0034475D /* SidemenuCsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCsDetailViewController.swift; sourceTree = "<group>"; };
+		8255955D24A594FC0034475D /* SidemenuNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuNoticeViewController.swift; sourceTree = "<group>"; };
+		8255955E24A594FC0034475D /* SidemenuAlarmSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuAlarmSettingViewController.swift; sourceTree = "<group>"; };
+		8255955F24A594FC0034475D /* SidemenuCancel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidemenuCancel.xib; sourceTree = "<group>"; };
+		8255956024A594FC0034475D /* SidemenuCsWrite.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidemenuCsWrite.xib; sourceTree = "<group>"; };
+		8255956124A594FC0034475D /* SidemenuCoopbrandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCoopbrandViewController.swift; sourceTree = "<group>"; };
+		8255956224A594FD0034475D /* SidemenuAlarmSetting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidemenuAlarmSetting.xib; sourceTree = "<group>"; };
+		8255956324A594FD0034475D /* SidemenuCouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCouponViewController.swift; sourceTree = "<group>"; };
+		8255956424A594FD0034475D /* SidemenuCsDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidemenuCsDetail.xib; sourceTree = "<group>"; };
+		8255956524A594FD0034475D /* Sidemenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Sidemenu.xib; sourceTree = "<group>"; };
+		8255956624A594FD0034475D /* SidemenuCoopbrand.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidemenuCoopbrand.xib; sourceTree = "<group>"; };
+		8255956724A594FD0034475D /* SidemenuCsList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidemenuCsList.xib; sourceTree = "<group>"; };
+		8255956824A594FD0034475D /* SidemenuCoupon.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidemenuCoupon.xib; sourceTree = "<group>"; };
+		8255956924A594FD0034475D /* Sidemenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sidemenu.swift; sourceTree = "<group>"; };
+		8255956A24A594FD0034475D /* SidemenuCancelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCancelViewController.swift; sourceTree = "<group>"; };
+		8255956B24A594FD0034475D /* SidemenuAlarm.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidemenuAlarm.xib; sourceTree = "<group>"; };
+		8255956C24A594FD0034475D /* SidemenuNotice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidemenuNotice.xib; sourceTree = "<group>"; };
+		8255956D24A594FD0034475D /* SidemenuCsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCsListViewController.swift; sourceTree = "<group>"; };
+		8255956E24A594FD0034475D /* SidemenuCs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SidemenuCs.xib; sourceTree = "<group>"; };
+		8255956F24A594FD0034475D /* SidemenuAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuAlarmViewController.swift; sourceTree = "<group>"; };
+		8255958624A5AD440034475D /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
+		8255959524A5C6450034475D /* MobileLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileLibrary.m; sourceTree = "<group>"; };
+		8255959624A5C6450034475D /* MobileLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileLibrary.h; sourceTree = "<group>"; };
+		8255959824A5C6800034475D /* moveViewTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "moveViewTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		825848A124A9DA1F0006F0C3 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 		8265518D248E1639002CD193 /* FuncList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncList.swift; sourceTree = "<group>"; };
 		82A8EE102489DEB1000B9896 /* NativeFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeFunc.swift; sourceTree = "<group>"; };
 		82A8EE2D248A2174000B9896 /* SwCalender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCalender.swift; sourceTree = "<group>"; };
@@ -46,6 +102,10 @@
 		82A8EE37248A2835000B9896 /* calenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calenderCell.swift; sourceTree = "<group>"; };
 		82A8EE38248A2835000B9896 /* calenderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = calenderCell.xib; sourceTree = "<group>"; };
 		82D99BD924A57CEA001E0197 /* SidemenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidemenuViewController.swift; sourceTree = "<group>"; };
+		82F3695024B31CC000D2EAD4 /* CallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallBack.swift; sourceTree = "<group>"; };
+		82F3695324B320BF00D2EAD4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		82F3695624B3212F00D2EAD4 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		82F8CC5224B3FD36003A7E3A /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = moveViewTest/Source/Views/Web/index.html; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82F3695424B320BF00D2EAD4 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +123,7 @@
 		8208E3542488FC0000E0DF99 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				825848A124A9DA1F0006F0C3 /* image.jpg */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -80,6 +142,7 @@
 			children = (
 				822BC92C247F50BE00B95FB4 /* moveViewTest */,
 				822BC92B247F50BE00B95FB4 /* Products */,
+				82F3695224B320BF00D2EAD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,13 +173,47 @@
 		82358946249AEB890049E4E6 /* objective_c */ = {
 			isa = PBXGroup;
 			children = (
+				8255959624A5C6450034475D /* MobileLibrary.h */,
+				8255959524A5C6450034475D /* MobileLibrary.m */,
+				8255959824A5C6800034475D /* moveViewTest-Bridging-Header.h */,
 			);
 			path = objective_c;
+			sourceTree = "<group>";
+		};
+		8255955924A5949D0034475D /* sidemenu */ = {
+			isa = PBXGroup;
+			children = (
+				82D99BD924A57CEA001E0197 /* SidemenuViewController.swift */,
+				8255956524A594FD0034475D /* Sidemenu.xib */,
+				8255956924A594FD0034475D /* Sidemenu.swift */,
+				8255956B24A594FD0034475D /* SidemenuAlarm.xib */,
+				8255956F24A594FD0034475D /* SidemenuAlarmViewController.swift */,
+				8255956224A594FD0034475D /* SidemenuAlarmSetting.xib */,
+				8255955E24A594FC0034475D /* SidemenuAlarmSettingViewController.swift */,
+				8255955F24A594FC0034475D /* SidemenuCancel.xib */,
+				8255956A24A594FD0034475D /* SidemenuCancelViewController.swift */,
+				8255956624A594FD0034475D /* SidemenuCoopbrand.xib */,
+				8255956124A594FC0034475D /* SidemenuCoopbrandViewController.swift */,
+				8255956824A594FD0034475D /* SidemenuCoupon.xib */,
+				8255956324A594FD0034475D /* SidemenuCouponViewController.swift */,
+				8255956E24A594FD0034475D /* SidemenuCs.xib */,
+				8255955B24A594FC0034475D /* SidemenuCsViewController.swift */,
+				8255956424A594FD0034475D /* SidemenuCsDetail.xib */,
+				8255955C24A594FC0034475D /* SidemenuCsDetailViewController.swift */,
+				8255956724A594FD0034475D /* SidemenuCsList.xib */,
+				8255956D24A594FD0034475D /* SidemenuCsListViewController.swift */,
+				8255956024A594FC0034475D /* SidemenuCsWrite.xib */,
+				8255955A24A594FC0034475D /* SidemenuCsWriteViewController.swift */,
+				8255956C24A594FD0034475D /* SidemenuNotice.xib */,
+				8255955D24A594FC0034475D /* SidemenuNoticeViewController.swift */,
+			);
+			path = sidemenu;
 			sourceTree = "<group>";
 		};
 		8265518C248E15FB002CD193 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				82A8EE122489FB99000B9896 /* Calender */,
 				8265518D248E1639002CD193 /* FuncList.swift */,
 			);
 			path = List;
@@ -125,10 +222,9 @@
 		82A8EE082489DD2E000B9896 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				82358946249AEB890049E4E6 /* objective_c */,
-				8220F1E02491C07F00754790 /* CreatAccount */,
+				82F3695524B3210E00D2EAD4 /* Web */,
 				8265518C248E15FB002CD193 /* List */,
-				82A8EE122489FB99000B9896 /* Calender */,
+				8220F1E02491C07F00754790 /* CreatAccount */,
 				82A8EE092489DD4D000B9896 /* Main */,
 			);
 			path = Views;
@@ -137,8 +233,9 @@
 		82A8EE092489DD4D000B9896 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				82D99BD924A57CEA001E0197 /* SidemenuViewController.swift */,
+				8255955924A5949D0034475D /* sidemenu */,
 				822BC943247F831E00B95FB4 /* MainViewController.swift */,
+				8255958624A5AD440034475D /* NSLayoutConstraint.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -155,7 +252,9 @@
 		82A8EE0D2489DDD6000B9896 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				82358946249AEB890049E4E6 /* objective_c */,
 				82A8EE102489DEB1000B9896 /* NativeFunc.swift */,
+				82F3695024B31CC000D2EAD4 /* CallBack.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -169,6 +268,23 @@
 				82A8EE2D248A2174000B9896 /* SwCalender.swift */,
 			);
 			path = Calender;
+			sourceTree = "<group>";
+		};
+		82F3695224B320BF00D2EAD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82F3695324B320BF00D2EAD4 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82F3695524B3210E00D2EAD4 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				82F8CC5224B3FD36003A7E3A /* index.html */,
+				82F3695624B3212F00D2EAD4 /* WebView.swift */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +319,7 @@
 				TargetAttributes = {
 					822BC929247F50BE00B95FB4 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -230,12 +347,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82F8CC5424B3FE6F003A7E3A /* index.html in Resources */,
+				8255958424A594FD0034475D /* SidemenuCs.xib in Resources */,
+				8255957A24A594FD0034475D /* SidemenuCsDetail.xib in Resources */,
+				8255958124A594FD0034475D /* SidemenuAlarm.xib in Resources */,
+				8255957E24A594FD0034475D /* SidemenuCoupon.xib in Resources */,
 				8220F1E42491C0F900754790 /* CreatAccountViewController.xib in Resources */,
 				822BC93A247F50BF00B95FB4 /* LaunchScreen.storyboard in Resources */,
 				822BC937247F50BF00B95FB4 /* Assets.xcassets in Resources */,
+				8255957524A594FD0034475D /* SidemenuCancel.xib in Resources */,
 				822BC935247F50BE00B95FB4 /* Main.storyboard in Resources */,
 				82A8EE3A248A2835000B9896 /* calenderCell.xib in Resources */,
 				82A8EE30248A2174000B9896 /* SwCalender.xib in Resources */,
+				8255957C24A594FD0034475D /* SidemenuCoopbrand.xib in Resources */,
+				8255957624A594FD0034475D /* SidemenuCsWrite.xib in Resources */,
+				8255957824A594FD0034475D /* SidemenuAlarmSetting.xib in Resources */,
+				8255957B24A594FD0034475D /* Sidemenu.xib in Resources */,
+				8255957D24A594FD0034475D /* SidemenuCsList.xib in Resources */,
+				8255958224A594FD0034475D /* SidemenuNotice.xib in Resources */,
+				825848A224A9DA1F0006F0C3 /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,15 +377,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				82D99BDA24A57CEA001E0197 /* SidemenuViewController.swift in Sources */,
+				8255957724A594FD0034475D /* SidemenuCoopbrandViewController.swift in Sources */,
 				822BC932247F50BE00B95FB4 /* ViewController.swift in Sources */,
 				8265518E248E1639002CD193 /* FuncList.swift in Sources */,
+				8255958524A594FD0034475D /* SidemenuAlarmViewController.swift in Sources */,
+				8255957224A594FD0034475D /* SidemenuCsDetailViewController.swift in Sources */,
+				8255957F24A594FD0034475D /* Sidemenu.swift in Sources */,
+				8255957024A594FD0034475D /* SidemenuCsWriteViewController.swift in Sources */,
+				8255959724A5C6450034475D /* MobileLibrary.m in Sources */,
+				8255957124A594FD0034475D /* SidemenuCsViewController.swift in Sources */,
 				822BC92E247F50BE00B95FB4 /* AppDelegate.swift in Sources */,
+				82F3695724B3212F00D2EAD4 /* WebView.swift in Sources */,
+				8255957924A594FD0034475D /* SidemenuCouponViewController.swift in Sources */,
 				82A8EE2F248A2174000B9896 /* SwCalender.swift in Sources */,
+				8255957324A594FD0034475D /* SidemenuNoticeViewController.swift in Sources */,
+				82F3695124B31CC000D2EAD4 /* CallBack.swift in Sources */,
 				822BC930247F50BE00B95FB4 /* SceneDelegate.swift in Sources */,
 				8220F1E32491C0F900754790 /* CreatAccountViewController.swift in Sources */,
 				82A8EE112489DEB1000B9896 /* NativeFunc.swift in Sources */,
+				8255957424A594FD0034475D /* SidemenuAlarmSettingViewController.swift in Sources */,
+				8255958324A594FD0034475D /* SidemenuCsListViewController.swift in Sources */,
+				8255958024A594FD0034475D /* SidemenuCancelViewController.swift in Sources */,
 				82A8EE39248A2835000B9896 /* calenderCell.swift in Sources */,
 				822BC944247F831E00B95FB4 /* MainViewController.swift in Sources */,
+				8255958724A5AD440034475D /* NSLayoutConstraint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = STJ3K84EP5;
 				INFOPLIST_FILE = moveViewTest/Info.plist;
@@ -413,6 +559,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.kr.miaps.hansw;
 				PRODUCT_NAME = "SangWon's";
+				SWIFT_OBJC_BRIDGING_HEADER = "moveViewTest/Source/Library/objective_c/moveViewTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -422,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = STJ3K84EP5;
 				INFOPLIST_FILE = moveViewTest/Info.plist;
@@ -432,6 +581,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.kr.miaps.hansw;
 				PRODUCT_NAME = "SangWon's";
+				SWIFT_OBJC_BRIDGING_HEADER = "moveViewTest/Source/Library/objective_c/moveViewTest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,0 +1,354 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <!--meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimal-ui,viewport-fit=cover"-->
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimal-ui">
+                <script>
+                    //--------------------------- 쿠키
+                    function setCookie(name,value,days) {
+                        var expires = "";
+                        if (days) {
+                            var date = new Date();
+                            date.setTime(date.getTime() + (days*24*60*60*1000));
+                            expires = "; expires=" + date.toUTCString();
+                        }
+                        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+                    
+                function getCookie(name) {
+                    var nameEQ = name + "=";
+                    var ca = document.cookie.split(';');
+                    for(var i=0;i < ca.length;i++) {
+                        var c = ca[i];
+                        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+                    }
+                    return null;
+                }
+                function eraseCookie(name) {
+                    document.cookie = name+'=; Max-Age=-99999999;';
+                }
+                //End --------------------------- 쿠키
+                
+                var g_logindata = {};
+                /*
+                 웹에서 -> 네이티브로 이벤트를 발생시켜준다.
+                 */
+                function ExecuteMiap(command,data)
+                {
+                    var jsondata = {"type":command,"param":data,"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function Camera(resolution,outfolder)
+                {
+                    var param = {"resolution":resolution,"path":outfolder};
+                    ExecuteMiap('CAMERA',param);
+                }
+                function Gallery(resolution,outfolder)
+                {
+                    var param = {"resolution":resolution,"path":outfolder};
+                    ExecuteMiap('gallery',param);
+                }
+                
+                function CheckFingerDevice()
+                {
+                    var jsondata = {"type":"FINGER","param":"checkdevice","callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function ScreenShot()
+                {
+                    var jsondata = {"type":"Capture","param":{"resolution":1024,"path":"${ResourceRoot}/data","name":"x.jpg","type":"gallery"},"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function encrypt()
+                {
+                    var jsondata = {"type":"encrypt","param":{"type":"AES256","data":"ABCDEFG HIJK"},"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function shake()
+                {
+                    var jsondata = {"type":"SHAKE","param":"","callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function decrypt(endata)
+                {
+                    var jsondata = {"type":"decrypt","param":{"type":"AES256","data":endata},"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function callNativeFunction(name,mothod,param)
+                {
+                    var jsondata = {"type":"EXTLIB","param":{"name":name,"method":mothod,"param":param},"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                
+                function setDeviceInfo(pathname,userid,userpw,userno,groupid)
+                {
+                    var smobile = 'miapshybrid://mode=setDeviceInfo&userid='+encodeURIComponent(userid)+
+                                                                '&userpw='+encodeURIComponent(userpw)+
+                                                                '&userno='+encodeURIComponent(userno)+
+                                                                '&groupid='+encodeURIComponent(groupid)+
+                                                                '&pathname='+encodeURIComponent(pathname);
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function updateApp(pathname)
+                {
+                    var smobile = 'miapshybrid://mode=updateApp&pathname='+encodeURIComponent(pathname);
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function CloseWebView(buttonid)
+                {
+                    callNativeFunction('miapsex','closewebview',{"info":buttonid});
+                }
+                function clickbutton(buttonid,data)
+                {
+                    callNativeFunction('miapsex','clickedbutton',{"id":buttonid,"data":data});
+                }
+                
+                function AddAlarm()
+                {
+                    //return code : 200 success [인푹인 어레이기 때문에 하나가 에러가나더라도(중복키) 성공으로 리턴한다.]
+                    var jsondata = {"type":"addalarm","param":
+                        [{"id":"xx2","datetime":"201908061730","title":"오후의회의","message":"30분후 오후외의가 예정되어있습니다."},
+                         {"id":"xx3","datetime":"201909061730","title":"오후의회의9","message":"30분후 오후외의가 예정되어있습니다."},
+                         {"id":"xx4","datetime":"201910061730","title":"오후의회의10","message":"30분후 오후외의가 예정되어있습니다."},
+                         {"id":"xx5","datetime":"201911061730","title":"오후의회의11","message":"30분후 오후외의가 예정되어있습니다."},
+                         {"id":"xx6","datetime":"201912061730","title":"오후의회의12","message":"30분후 오후외의가 예정되어있습니다."},
+                         {"id":"xx7","datetime":"202001061730","title":"오후의회의01","message":"30분후 오후외의가 예정되어있습니다."}],
+                        "callback":"OnMiapEvent"};
+                    console.log(jsondata);
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                    
+                }
+                
+                function ModifyAlarm()
+                {
+                    //return code : 200 success [인푹인 어레이기 때문에 키의 데이터가 없더라도 성공으로 리턴한다.]
+                    var jsondata = {"type":"modifyalarm","param":[{"id":"xx2","datetime":"201908061530","title":"오후의회의","message":"30분후 오후외의가 예정되어있습니다."}],"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function DeleteAlarm()
+                {
+                    var jsondata = {"type":"deletealarm","param":["xx1","xx2"],"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function DeleteAllAlarm()
+                {
+                    var jsondata = {"type":"deleteallalarm","param":"","callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function OnOffAlarm()
+                {
+                    var jsondata = {"type":"onoffalarm","param":{"use":false},"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function OnSetBadge(count)
+                {
+                    var jsondata = {"type":"badge","param":count,"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                
+                
+                /*
+                 네이티브 -> 웹 이벤트를 발생시켜준다.
+                 */
+                function OnMiapEvent(jsondata)
+                {
+                    var type = jsondata['type'];
+                    var code = jsondata['code'];
+                    var msg = jsondata['msg'];
+                    var res = jsondata['res'];
+                    var param = jsondata['param'];
+                    switch(type)
+                    {
+                        /*
+                         네이티브 -> 웹 이벤트를 발생시켜준다.
+                         {
+                         type : ssologin,
+                         code : 200(성공)
+                         msg  : 에러일때 ...
+                         res :
+                         {
+                         //로그인에 오는 모든 데이터.
+                         info2:xxxx
+                         info3:yyyy
+                         }
+                         }
+                         */
+                        case 'loadvalue':
+                        {
+                            alert(JSON.stringify(res));
+                        }
+                        break;
+                        case 'CAMERA':
+                        case 'GALLERY':
+                            if(code == 200) /*성공*/
+                            {
+                                alert("성공");
+                            }
+                            else //실패
+                            {
+                                alert("실패");
+                            }
+                            break;
+                        case 'ScreenShot':
+                            alert(res);
+                            break;
+                        case 'encrypt':
+                            decrypt(res);
+                            break;
+                        case 'shake':
+                            decrypt(res);
+                            break;
+                        case 'decrypt':
+                            alert(res);
+                            break;
+                        case 'EXTLIB':
+                            {
+                                var name = param['name'];
+                                var method = param['method'];
+                                switch(method)
+                                {
+                                    case 'responseToweb':
+                                    {
+                                        if(code == 200) /*성공*/
+                                            alert(JSON.stringify(res));
+                                        else
+                                            alert(msg);
+                                    }
+                                    break;
+                                }
+                                break;
+                            }
+                        default:
+                        break;
+                    }
+                }
+                
+                function SaveValue_()
+                {
+                    var jsondata = {"type":"savevalue","param":{"XXData":"울라리용"},"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function LoadValue_()
+                {
+                    var jsondata = {"type":"loadvalue","param":["XXData"],"callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=mobile&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                
+                function sameGetSSOData()
+                {
+                    var data = GetSSOData('info2');
+                    document.getElementById("idStatus").innerHTML = data;
+                }
+                
+                //1>쿠키를 셋하고 - 윈도우를 연다.
+                function MakeCookieRunNew()
+                {
+                    setCookie('testy100','urlencoding',1);
+                    //window.open("http://127.0.0.1:8088/index.html");
+                    window.open("https://miaps.thinkm.co.kr/miaps5/index4.jsp");
+                }
+                //2>새로운 윈도우에서 방금만든 쿠키를 가져온다.
+                function CheckCookie()
+                {
+                    var value = getCookie('testy100');
+                    alert(value);
+                }
+                
+                var gIndex = 0;
+                var gCookieName = '';
+                //1>네이티브로 쿠키를 만든다.
+                function MakeCookieNative()
+                {
+                    //Added By Song 2018.04.04 네이티브단에서 쿠기
+                    gIndex++;
+                    gCookieName = 'test' + gIndex;
+                    callNativeFunction('WebTest','makecookie',{"name":gCookieName});
+                }
+                
+                //2>데이티브에서 만든 쿠키를 가져온다.
+                function CheckCookie2()
+                {
+                    //Added By Song 2018.04.04 네이티브단에서 쿠기
+                    var value = getCookie(gCookieName);
+                    alert(value);
+                }
+                
+                function CloseResponseToweb()
+                {
+                    callNativeFunction('miapsex','responseToweb',{"info":"어떤데이터"});
+                }
+                
+                function RequestHttp()
+                {
+                    var jsondata = {"url":"https://miaps.thinkm.co.kr/miaps5/index4.jsp","param":"id=dabcd&pw=daaa&abc=yyy","callback":"OnMiapEvent"};
+                    var smobile = 'miapshybrid://mode=runHttp&param='+encodeURIComponent(JSON.stringify(jsondata));
+                    window.webkit.messageHandlers.miapshybrid.postMessage(smobile);
+                }
+                    </script>
+                
+                </head>
+    <body>
+        <p style="font-size:16px">WKWebView 샘플입니다.</p>
+        <p id="idStatus" style="">-----------------------------</p>
+        <input style="height:30px;width:90%" type="button" id="docview1" onclick="Camera(800,'${ResourceRoot}/temp');" value="카메라" /><br>
+        <input style="height:30px;width:90%" type="button" id="docview2" onclick="Gallery(800,'${ResourceRoot}/temp');" value="겔러리" /><br>
+        <input style="height:30px;width:90%" type="button" id="docview3" onclick="CheckFingerDevice();" value="지문인식지원장비" /><br>
+        <input style="height:30px;width:90%" type="button" id="docview4" onclick="ScreenShot();" value="스크린샷" /><br>
+        <input style="height:30px;width:90%" type="button" id="docview5" onclick="encrypt();" value="암복호화테스트" 트><br>
+        <input style="height:30px;width:90%" type="button" id="docview6" onclick="shake();" value="흔들기"><br>
+        <input style="height:30px;width:90%" type="button" id="docview7" onclick="CloseWebView('info');" value="웹뷰종료"><br>
+        <input style="height:30px;width:90%" type="button" id="docview8" onclick="clickbutton('id','data');" value="버튼클릭"><br>
+        <input style="height:30px;width:90%" type="button" id="docview9" onclick="CloseResponseToweb();" value="웹에 결과 리턴"><br>
+        <input style="height:30px;width:90%" type="button" id="docview10" onclick="RequestHttp();" value="RequestHttp"><br>
+        <input style="height:30px;width:90%" type="button" id="docview11" onclick="AddAlarm();" value="알람추가"><br>
+        <input style="height:30px;width:90%" type="button" id="docview12" onclick="ModifyAlarm();" value="알람수정"><br>
+        <input style="height:30px;width:90%" type="button" id="docview12" onclick="DeleteAlarm();" value="알람지우기"><br>
+        <input style="height:30px;width:90%" type="button" id="docview12" onclick="DeleteAllAlarm();" value="알람모두지우기"><br>
+        <input style="height:30px;width:90%" type="button" id="docview12" onclick="OnOffAlarm();" value="알람off"><br>
+            <input style="height:30px;width:90%" type="button" id="docview12" onclick="OnSetBadge(0);" value="Set뱃지"><br>
+                
+        <input style="height:30px;width:90%" type="button" id="docview123" onclick="setDeviceInfo('','miaps','miaps','1','1');" value="setDeviceInfo"><br>
+        <input style="height:30px;width:90%" type="button" id="docview124" onclick="updateApp('');" value="updateApp"><br>
+        <input style="height:30px;width:90%" type="button" id="docview124" onclick="SaveValue_('');" value="savevalue"><br>
+        <input style="height:30px;width:90%" type="button" id="docview124" onclick="LoadValue_('');" value="loadvalue"><br>
+        
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p style=""> Added By Song 2018.04.04 네이티브단에서 쿠기</p>
+        <input style="height:30px;width:90%" type="button" id="docview100" onclick="MakeCookieRunNew();" value="쿠키 만들어서 새로운 윈도우 열기"><br>
+        <input style="height:30px;width:90%" type="button" id="docview101" onclick="CheckCookie();" value="쿠기 확인하기"><br>
+        <input style="height:30px;width:90%" type="button" id="docview102" onclick="MakeCookieNative();" value="Native 쿠기 만들기"><br>
+        <input style="height:30px;width:90%" type="button" id="docview103" onclick="CheckCookie2();" value="Native 쿠기 확인하기"><br>
+    </body>
+</html>

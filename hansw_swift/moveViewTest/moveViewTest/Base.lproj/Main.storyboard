@@ -254,7 +254,7 @@ To understand the swift language, it is an app created for the purpose of implem
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKo-vM-RYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1738" y="139"/>
+            <point key="canvasLocation" x="1737.68115942029" y="138.61607142857142"/>
         </scene>
         <!--Func List-->
         <scene sceneID="fNf-ga-z57">
@@ -653,11 +653,47 @@ To understand the swift language, it is an app created for the purpose of implem
             </objects>
             <point key="canvasLocation" x="1716" y="-545"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="maj-nT-m1G">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Xjh-YR-hAr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Tm-co-0hq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0q3-wQ-T9Z">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.55000001192092896" contentMode="scaleToFill" fixedFrame="YES" text="Hello?  My name is IOS" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1OK-S0-Br6">
+                                <rect key="frame" x="20" y="671" width="374" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="WrO-q4-sCI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H2j-WQ-4MM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4fp-VE-CgA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2594.202898550725" y="-36.830357142857139"/>
+        </scene>
     </scenes>
     <resources>
         <image name="SangWon" width="1008" height="1344"/>
         <image name="chevron.down.square" catalog="system" width="128" height="114"/>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
+        <image name="image.jpg" width="564" height="844"/>
         <image name="rectangle.3.offgrid.fill" catalog="system" width="128" height="81"/>
         <image name="snb_menu_alarm_black" width="64" height="64"/>
         <image name="snb_menu_cancel" width="70" height="65"/>

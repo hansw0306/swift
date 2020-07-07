@@ -24,6 +24,7 @@ class FuncList: UITableViewController {
     var functionList = ["데이터 베이스","info","암호화","틸옥체크","local 디렉토리 생성"]
     
     let mNativeFunc = NativeFuc.init()
+    let mWebViewCon = WebView.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,7 +133,10 @@ class FuncList: UITableViewController {
             case "그림판":
                 print("")
             case "웹":
-                print("")
+                do{
+                    //NativeFuc().ExXibViewMove(viewCont: mWebViewCon, modalPresentationStyle: 5)
+                    present(mWebViewCon, animated: true, completion: nil)
+                }
 //---------------------------------------------------------------------------------------------------------
 
 //            var functionList = ["데이터 베이스","info","암호화","틸옥체크","local 디렉토리 생성"]
