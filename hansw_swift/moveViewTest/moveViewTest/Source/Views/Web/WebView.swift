@@ -28,7 +28,7 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
     
     
     
-    weak var webview: WKWebView!
+    weak var webView: WKWebView!
     weak var outputttext: UILabel!
     
     
@@ -37,31 +37,7 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
 
         initWebview_then_callFromJs()
         loadUrl(urlString: "")
-        
-        
-        let webViewBar = UIView()
-        webview.addSubview(webViewBar)
-        
-        //제약조건을 프로그래밍으로 할때는 뷰 자체적으로 수행하는 오토리사이징을 꺼야 함(이유 : 사용자가 지정한 오토레이아웃 조건과 충돌하여 제약조건 문제를 일으킴)
-        webViewBar.translatesAutoresizingMaskIntoConstraints = false
-        let views = ["view":view!, "webViewBar":webViewBar]
-        //오토레이 아웃연습하자...
-        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[view]-(<=300)-[webViewBar(100)]", options: NSLayoutConstraint.FormatOptions.alignAllCenterY, metrics: nil, views: views)
-        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[view]-(<=0)-[webViewBar(100)]", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
-        view.addConstraints(horizontalConstraints)
-        view.addConstraints(verticalConstraints)
-        
-        
-        let backButton = UIButton(frame: CGRect(x: 20, y: 10, width: 100, height: 50))
-        backButton.backgroundColor = .blue
-        backButton.setTitle("Back", for: .normal)
-        backButton.addTarget(self, action: #selector(backbutton), for: .touchUpInside)
-        
-        
-        webViewBar.addSubview(backButton)
-
-        
-        
+        WebViews_AutoLayout()
         
         // netWork 연결상태 검사
         //checkNetworkConnect()
@@ -71,7 +47,7 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
     
 //MARK:-  function
     func loadUrl(urlString:String) {
-        view.addSubview(webview)
+        view.addSubview(webView)
         
         // WKWebview 셋팅
 #if DEBUG
@@ -83,10 +59,10 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
 #endif
         let request = URLRequest(url: url!);
         
-        webview.load(request)
+        webView.load(request)
         
-        webview.uiDelegate = self
-        webview.navigationDelegate = self
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
     }
     
     
@@ -100,8 +76,87 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         
         config.userContentController = contentController
         
-        webview = WKWebView(frame: CGRect(x: 0, y: 44, width: self.view.frame.size.width, height: self.view.frame.size.height), configuration:config)
+        //webView = WKWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height), configuration:config)
+        webView = WKWebView(frame: self.view.frame, configuration: config)
     }
+    
+    func WebViews_AutoLayout() {
+        //오토레이 아웃 화면 작업
+        /*
+               시각적 형식 문법
+               다음은 애플에서 제공하는 제약조건의 시각적 형식 예제
+               
+               시각적 형식                         문법                                      설명
+               Standard Space                 [button]-[textField]                        button과 textField의 사이는 표준 간격 차이, 표준 간격은 8.
+               Fixed Space                    H:|-50-[purpleBox]-50-|                     purpleBox이 superview를 기준으로 왼쪽 50, 오른쪽 50 간격.(Leading, Trailing)
+               Fixed Space                    V:|-75-[label]|                             label이 superview를 기준으로 위에서 75, 아래와 붙어 있도록 함.
+               Fixed Width                    H:[button(50)]                              button의 가로는 50으로 고정.
+               Fixed Height                   V:[button(50)]                              button의 세로는 50으로 고정.
+               Width Constraint               H:[button(>=50)]                            button의 크기는 50보다 크거나 같아야 함.
+               Vertical Layout                V:[topField]-10-[bottomField]               topField와 buttonField의 사이 간격은 10.
+               Flush Views                    [maroonView][blueView]                      maroonView과 blueView 간격은 없음.
+               Priority                       H:[button(100@20)]                          button의 가로는 100으로, 우선순위의 값을 20으로 설정
+               Equal Widths                   H:[button1(==button2)]                      button1과 button2의 가로 길이는 동일하게 설정
+               Multiple Predicates            H:[flexibleButton(>=70,<=100)]              flexibleButton의 가로 길이가 70보다 크거나 같고 100보다 작거나 같게 설정
+               A Complete Line of Layout      |-[find]-[findNext]-[findField(>=20)]-|    find, findNext, findField와 superview의 사이는 표준간격이며, findField 크기는 20보다 크거나 같음.
+               */
+        
+        let webViewBar = UIView()
+        let backButton = UIButton()
+        view.addSubview(webViewBar)
+        
+        //제약조건을 프로그래밍으로 할때는 뷰 자체적으로 수행하는 오토리사이징을 꺼야 함(이유 : 사용자가 지정한 오토레이아웃 조건과 충돌하여 제약조건 문제를 일으킴)
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        webViewBar.translatesAutoresizingMaskIntoConstraints = false
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        let webViews = ["view":view!, "webView":webView!, "webViewBar":webViewBar, "backButton":backButton]
+        
+        let horizontalWebView = NSLayoutConstraint.constraints(withVisualFormat: "H:|[webView]|",
+                                                               options: NSLayoutConstraint.FormatOptions.alignAllCenterY,
+                                                               metrics: nil,
+                                                               views: webViews)
+        
+        let verticalWebView = NSLayoutConstraint.constraints(withVisualFormat: "V:|-[webView][webViewBar]",
+                                                               options: NSLayoutConstraint.FormatOptions.alignAllCenterX,
+                                                               metrics: nil,
+                                                               views: webViews)
+        view.addConstraints(horizontalWebView)
+        view.addConstraints(verticalWebView)
+        //--------------------------------------------------  webView
+        //오토레이 아웃연습하자...
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[webViewBar]|",
+                                                                   options: NSLayoutConstraint.FormatOptions.alignAllCenterY,
+                                                                   metrics: nil,
+                                                                   views: webViews)
+        
+        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[webViewBar(100)]|",
+                                                                 options: NSLayoutConstraint.FormatOptions.alignAllCenterX,
+                                                                 metrics: nil,
+                                                                 views: webViews)
+        view.addConstraints(horizontalConstraints)
+        view.addConstraints(verticalConstraints)
+        webViewBar.backgroundColor = .lightGray
+        //--------------------------------------------------  webViewBar AutoLayout
+        
+        backButton.setTitle("Back", for: .normal)
+        backButton.addTarget(self, action: #selector(backbutton), for: .touchUpInside)
+        webViewBar.addSubview(backButton)
+        
+        let horizontalBackButton = NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[backButton(80)]", // 가로크기 80, 왼쪽으로 10 이동
+                                                                  options: NSLayoutConstraint.FormatOptions.alignAllCenterY,
+                                                                  metrics: nil,
+                                                                  views: webViews)
+        let verticalBackButton = NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[backButton(45)]",
+                                                                options: NSLayoutConstraint.FormatOptions.alignAllCenterX,
+                                                                metrics: nil,
+                                                                views: webViews)
+        webViewBar.addConstraints(horizontalBackButton)
+        webViewBar.addConstraints(verticalBackButton)
+        backButton.backgroundColor = .blue
+        //--------------------------------------------------  backButton
+    }
+    
+    
     
     //네트워크(인터넷) 연결을 확인하는 함수 추가
     func checkNetworkConnet()
@@ -156,9 +211,9 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
     
     //백버튼
     @objc func backbutton(sender: UIButton!) {
-        if(webview.canGoBack)
+        if(webView.canGoBack)
         {
-            webview.goBack()
+            webView.goBack()
         }
         else
         {
