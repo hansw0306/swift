@@ -134,7 +134,7 @@ class FuncList: UITableViewController {
                 print("")
             case "웹":
                 do{
-                    //NativeFuc().ExXibViewMove(viewCont: mWebViewCon, modalPresentationStyle: 5)
+                    mWebViewCon.modalPresentationStyle = .overFullScreen
                     present(mWebViewCon, animated: true, completion: nil)
                 }
 //---------------------------------------------------------------------------------------------------------

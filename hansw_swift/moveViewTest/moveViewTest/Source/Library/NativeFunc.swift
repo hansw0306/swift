@@ -49,12 +49,14 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
 
     }
     //MARK:2 스토리 보드 밖에 있는 View 이동함수
-    func ExXibViewMove(viewCont : UIViewController, modalPresentationStyle: Int) {
-        
+    func ExXibViewMove(viewCont : UIViewController, overFullScreen: Bool) {
         //let appDelegate  = UIApplication.shared.delegate as! AppDelegate
         
         let viewController = UIApplication.shared.windows.first!.rootViewController as! ViewController
-        viewCont.modalPresentationStyle = UIModalPresentationStyle(rawValue: modalPresentationStyle)!;
+        //modalPresentationStyle는 .overFullScreen
+        if overFullScreen{
+            viewCont.modalPresentationStyle = UIModalPresentationStyle(rawValue: 5)!;
+        }
         viewController.present(viewCont, animated: true, completion: nil)
         
     }
