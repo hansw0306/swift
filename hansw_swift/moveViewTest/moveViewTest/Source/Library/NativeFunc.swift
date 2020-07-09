@@ -10,6 +10,8 @@ import UIKit
 import Foundation
 import MessageUI
 import SQLite3
+import Zip
+
 
 //생체 인식에 필요
 import LocalAuthentication
@@ -330,8 +332,19 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
         return try? fileMngr.contentsOfDirectory(atPath:docs)
     }
     
-    
-    
+    //MARK:4. Zip파일
+    func Unzip(filePath:URL) {
+        
+        do{
+            //집을 푸는법
+            let _ = try Zip.quickUnzipFile(filePath)
+            
+        }
+        catch{
+            
+        }
+        
+    }
     
     //MARK:10. 비동기 처리
     func Asynchronous()  {
