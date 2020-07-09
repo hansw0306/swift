@@ -46,6 +46,8 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
     
     
 //MARK:-  function
+    
+    //MARK: webView Load작업
     func loadUrl(urlString:String) {
         view.addSubview(webView)
         
@@ -75,13 +77,11 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         contentController.add(self, name: "test")
         
         config.userContentController = contentController
-        
-        //webView = WKWebView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height), configuration:config)
         webView = WKWebView(frame: self.view.frame, configuration: config)
     }
     
+    //MARK: 오토레이 아웃 화면 작업
     func WebViews_AutoLayout() {
-        //오토레이 아웃 화면 작업
         /*
                시각적 형식 문법
                다음은 애플에서 제공하는 제약조건의 시각적 형식 예제
@@ -139,7 +139,7 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         //--------------------------------------------------  webViewBar AutoLayout
         
         backButton.setTitle("Back", for: .normal)
-        backButton.addTarget(self, action: #selector(backbutton), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
         webViewBar.addSubview(backButton)
         
         let horizontalBackButton = NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[backButton(80)]", // 가로크기 80, 왼쪽으로 10 이동
@@ -157,8 +157,7 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
     }
     
     
-    
-    //네트워크(인터넷) 연결을 확인하는 함수 추가
+    //MARK: 네트워크(인터넷) 연결을 확인하는 함수
     func checkNetworkConnet()
     {
         if self.isConnectedToNetwor(){
@@ -209,17 +208,81 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         return ret
     }
     
-    //백버튼
-    @objc func backbutton(sender: UIButton!) {
+    //뒤로 가기
+    @objc func backButtonAction(sender: UIButton!) {
         if(webView.canGoBack)
         {
             webView.goBack()
         }
-        else
-        {
+        else {
             print("no back page")
         }
     }
+    //앞으로 가기
+    func forwardButtonAction() {
+        if(webView.canGoForward){
+            webView.goForward()
+        }
+        else {
+            print("no forward page")
+        }
+    }
+    //새로고침
+    func refreshButtonAction() {
+        print("refresh page")
+        webView.reload()
+    }
+    
+    
+    //Native에서 JavaScritpt를 호출
+    func jsCallButtonAction() {
+        
+        // Javascript Fucntion Setting
+        let testhybridfunc = "testhybrid()"
+        
+        //Native -> JS Call
+        webView.evaluateJavaScript(testhybridfunc) { (ScriptResult, error) in
+            if let result = ScriptResult {
+                print(result)
+            }
+        }
+        //JavaScript
+        /*
+        function testhybrid(){
+            alert('test call')
+            return "success call"
+         }
+         */
+    }
+    
+    func jsCallParamButtonAction(params:NSDictionary) {
+        
+        let name : String = params["name"] as! String
+        let age : String = params["age"] as! String
+        let address : String = params["address"] as! String
+        
+        //Javascript Function Setting (Param)
+        let testhybridparamfunc = "testhybridparam('\(name)', '\(age)', '\(address)')"
+        
+        // Native -> JS Call (Parma)
+        webView.evaluateJavaScript(testhybridparamfunc) { (ScriptResult, error) in
+            if let result = ScriptResult {
+                print(result)
+            }
+        }
+        //JavaScript
+        /*
+        function testhybridparam(name, age, address){
+            alert(name + '/'+ age + '/' + address)
+            return "sccess param call"
+         }
+         */
+    }
+    
+    
+    
+    
+    
     
     //MARK:- WKScriptMessageHandler Delegate
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
