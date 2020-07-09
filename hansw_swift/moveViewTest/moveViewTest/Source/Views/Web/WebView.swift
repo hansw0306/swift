@@ -290,12 +290,12 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         //자바스크립트로 메시지를 전달할때
         if(message.name == "hello")
         {
-            var data = message.body
-            outputttext.text = data as! String
+            let data = message.body
+            outputttext.text = data as? String
         }
         else if( message.name == "test"){
-            var data = message.body
-            outputttext.text = data as! String
+            let data = message.body
+            outputttext.text = (data as! String)
         }
         
     }
