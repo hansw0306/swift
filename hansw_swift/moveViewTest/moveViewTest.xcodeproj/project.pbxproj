@@ -17,12 +17,6 @@
 		822BC937247F50BF00B95FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822BC936247F50BF00B95FB4 /* Assets.xcassets */; };
 		822BC93A247F50BF00B95FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822BC938247F50BF00B95FB4 /* LaunchScreen.storyboard */; };
 		822BC944247F831E00B95FB4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822BC943247F831E00B95FB4 /* MainViewController.swift */; };
-		82497B0724B6FF6100D318A8 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 82497AF624B6FF6100D318A8 /* unzip.c */; };
-		82497B0824B6FF6100D318A8 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 82497AF724B6FF6100D318A8 /* zip.c */; };
-		82497B0924B6FF6100D318A8 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 82497AF824B6FF6100D318A8 /* ioapi.c */; };
-		82497B0A24B6FF6100D318A8 /* QuickZip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82497B0124B6FF6100D318A8 /* QuickZip.swift */; };
-		82497B0B24B6FF6100D318A8 /* ZipUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82497B0224B6FF6100D318A8 /* ZipUtilities.swift */; };
-		82497B0C24B6FF6100D318A8 /* Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82497B0624B6FF6100D318A8 /* Zip.swift */; };
 		8255957024A594FD0034475D /* SidemenuCsWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255955A24A594FC0034475D /* SidemenuCsWriteViewController.swift */; };
 		8255957124A594FD0034475D /* SidemenuCsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255955B24A594FC0034475D /* SidemenuCsViewController.swift */; };
 		8255957224A594FD0034475D /* SidemenuCsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255955C24A594FC0034475D /* SidemenuCsDetailViewController.swift */; };
@@ -47,8 +41,6 @@
 		8255958524A594FD0034475D /* SidemenuAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255956F24A594FD0034475D /* SidemenuAlarmViewController.swift */; };
 		8255958724A5AD440034475D /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255958624A5AD440034475D /* NSLayoutConstraint.swift */; };
 		8255959724A5C6450034475D /* MobileLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8255959524A5C6450034475D /* MobileLibrary.m */; };
-		826494D524B6DD49009D70B9 /* Resource.zip in Resources */ = {isa = PBXBuildFile; fileRef = 826494D424B6DD49009D70B9 /* Resource.zip */; };
-		8264954B24B6F1E9009D70B9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8264954A24B6F1D8009D70B9 /* libz.tbd */; };
 		8265518E248E1639002CD193 /* FuncList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265518D248E1639002CD193 /* FuncList.swift */; };
 		82A8EE112489DEB1000B9896 /* NativeFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8EE102489DEB1000B9896 /* NativeFunc.swift */; };
 		82A8EE2F248A2174000B9896 /* SwCalender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8EE2D248A2174000B9896 /* SwCalender.swift */; };
@@ -61,22 +53,10 @@
 		82F3695724B3212F00D2EAD4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F3695624B3212F00D2EAD4 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		82497ADE24B6FB0D00D318A8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		8220F1E12491C0F900754790 /* CreatAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatAccountViewController.swift; sourceTree = "<group>"; };
 		8220F1E22491C0F900754790 /* CreatAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatAccountViewController.xib; sourceTree = "<group>"; };
+		8228215524B4320C0039A053 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = index.html; path = moveViewTest/Resource/index.html; sourceTree = "<group>"; };
 		8228215C24B4341D0039A053 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		822BC92A247F50BE00B95FB4 /* SangWon's.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SangWon's.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		822BC92D247F50BE00B95FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,20 +69,6 @@
 		822BC941247F50F800B95FB4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		822BC942247F50F800B95FB4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		822BC943247F831E00B95FB4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		82497AF624B6FF6100D318A8 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
-		82497AF724B6FF6100D318A8 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
-		82497AF824B6FF6100D318A8 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
-		82497AFA24B6FF6100D318A8 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		82497AFC24B6FF6100D318A8 /* Minizip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Minizip.h; sourceTree = "<group>"; };
-		82497AFD24B6FF6100D318A8 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
-		82497AFE24B6FF6100D318A8 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
-		82497AFF24B6FF6100D318A8 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
-		82497B0024B6FF6100D318A8 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
-		82497B0124B6FF6100D318A8 /* QuickZip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickZip.swift; sourceTree = "<group>"; };
-		82497B0224B6FF6100D318A8 /* ZipUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipUtilities.swift; sourceTree = "<group>"; };
-		82497B0424B6FF6100D318A8 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		82497B0524B6FF6100D318A8 /* Zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zip.h; sourceTree = "<group>"; };
-		82497B0624B6FF6100D318A8 /* Zip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zip.swift; sourceTree = "<group>"; };
 		8255955A24A594FC0034475D /* SidemenuCsWriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCsWriteViewController.swift; sourceTree = "<group>"; };
 		8255955B24A594FC0034475D /* SidemenuCsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCsViewController.swift; sourceTree = "<group>"; };
 		8255955C24A594FC0034475D /* SidemenuCsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCsDetailViewController.swift; sourceTree = "<group>"; };
@@ -129,8 +95,6 @@
 		8255959524A5C6450034475D /* MobileLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileLibrary.m; sourceTree = "<group>"; };
 		8255959624A5C6450034475D /* MobileLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileLibrary.h; sourceTree = "<group>"; };
 		8255959824A5C6800034475D /* moveViewTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "moveViewTest-Bridging-Header.h"; sourceTree = "<group>"; };
-		826494D424B6DD49009D70B9 /* Resource.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Resource.zip; sourceTree = "<group>"; };
-		8264954A24B6F1D8009D70B9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8265518D248E1639002CD193 /* FuncList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncList.swift; sourceTree = "<group>"; };
 		82A8EE102489DEB1000B9896 /* NativeFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeFunc.swift; sourceTree = "<group>"; };
 		82A8EE2D248A2174000B9896 /* SwCalender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCalender.swift; sourceTree = "<group>"; };
@@ -149,7 +113,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				82F3695424B320BF00D2EAD4 /* WebKit.framework in Frameworks */,
-				8264954B24B6F1E9009D70B9 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +122,6 @@
 		8208E3542488FC0000E0DF99 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				826494D424B6DD49009D70B9 /* Resource.zip */,
 				8228215C24B4341D0039A053 /* index.html */,
 			);
 			path = Resource;
@@ -177,6 +139,7 @@
 		822BC921247F50BE00B95FB4 = {
 			isa = PBXGroup;
 			children = (
+				8228215524B4320C0039A053 /* index.html */,
 				822BC92C247F50BE00B95FB4 /* moveViewTest */,
 				822BC92B247F50BE00B95FB4 /* Products */,
 				82F3695224B320BF00D2EAD4 /* Frameworks */,
@@ -217,46 +180,6 @@
 			path = objective_c;
 			sourceTree = "<group>";
 		};
-		82497AF524B6FF6100D318A8 /* minizip */ = {
-			isa = PBXGroup;
-			children = (
-				82497AF624B6FF6100D318A8 /* unzip.c */,
-				82497AF724B6FF6100D318A8 /* zip.c */,
-				82497AF824B6FF6100D318A8 /* ioapi.c */,
-				82497AF924B6FF6100D318A8 /* module */,
-				82497AFB24B6FF6100D318A8 /* include */,
-			);
-			path = minizip;
-			sourceTree = "<group>";
-		};
-		82497AF924B6FF6100D318A8 /* module */ = {
-			isa = PBXGroup;
-			children = (
-				82497AFA24B6FF6100D318A8 /* module.modulemap */,
-			);
-			path = module;
-			sourceTree = "<group>";
-		};
-		82497AFB24B6FF6100D318A8 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				82497AFC24B6FF6100D318A8 /* Minizip.h */,
-				82497AFD24B6FF6100D318A8 /* crypt.h */,
-				82497AFE24B6FF6100D318A8 /* zip.h */,
-				82497AFF24B6FF6100D318A8 /* unzip.h */,
-				82497B0024B6FF6100D318A8 /* ioapi.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		82497B0324B6FF6100D318A8 /* zlib */ = {
-			isa = PBXGroup;
-			children = (
-				82497B0424B6FF6100D318A8 /* module.modulemap */,
-			);
-			path = zlib;
-			sourceTree = "<group>";
-		};
 		8255955924A5949D0034475D /* sidemenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,19 +208,6 @@
 				8255955D24A594FC0034475D /* SidemenuNoticeViewController.swift */,
 			);
 			path = sidemenu;
-			sourceTree = "<group>";
-		};
-		826494D624B6DDBE009D70B9 /* Zip */ = {
-			isa = PBXGroup;
-			children = (
-				82497AF524B6FF6100D318A8 /* minizip */,
-				82497B0124B6FF6100D318A8 /* QuickZip.swift */,
-				82497B0524B6FF6100D318A8 /* Zip.h */,
-				82497B0624B6FF6100D318A8 /* Zip.swift */,
-				82497B0224B6FF6100D318A8 /* ZipUtilities.swift */,
-				82497B0324B6FF6100D318A8 /* zlib */,
-			);
-			path = Zip;
 			sourceTree = "<group>";
 		};
 		8265518C248E15FB002CD193 /* List */ = {
@@ -342,7 +252,6 @@
 		82A8EE0D2489DDD6000B9896 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				826494D624B6DDBE009D70B9 /* Zip */,
 				82358946249AEB890049E4E6 /* objective_c */,
 				82A8EE102489DEB1000B9896 /* NativeFunc.swift */,
 				82F3695024B31CC000D2EAD4 /* CallBack.swift */,
@@ -364,7 +273,6 @@
 		82F3695224B320BF00D2EAD4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8264954A24B6F1D8009D70B9 /* libz.tbd */,
 				82F3695324B320BF00D2EAD4 /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -388,7 +296,6 @@
 				822BC926247F50BE00B95FB4 /* Sources */,
 				822BC927247F50BE00B95FB4 /* Frameworks */,
 				822BC928247F50BE00B95FB4 /* Resources */,
-				82497ADE24B6FB0D00D318A8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,7 +356,6 @@
 				822BC937247F50BF00B95FB4 /* Assets.xcassets in Resources */,
 				8255957524A594FD0034475D /* SidemenuCancel.xib in Resources */,
 				822BC935247F50BE00B95FB4 /* Main.storyboard in Resources */,
-				826494D524B6DD49009D70B9 /* Resource.zip in Resources */,
 				82A8EE3A248A2835000B9896 /* calenderCell.xib in Resources */,
 				82A8EE30248A2174000B9896 /* SwCalender.xib in Resources */,
 				8255957C24A594FD0034475D /* SidemenuCoopbrand.xib in Resources */,
@@ -472,17 +378,13 @@
 				8255957724A594FD0034475D /* SidemenuCoopbrandViewController.swift in Sources */,
 				822BC932247F50BE00B95FB4 /* ViewController.swift in Sources */,
 				8265518E248E1639002CD193 /* FuncList.swift in Sources */,
-				82497B0724B6FF6100D318A8 /* unzip.c in Sources */,
 				8255958524A594FD0034475D /* SidemenuAlarmViewController.swift in Sources */,
-				82497B0924B6FF6100D318A8 /* ioapi.c in Sources */,
 				8255957224A594FD0034475D /* SidemenuCsDetailViewController.swift in Sources */,
 				8255957F24A594FD0034475D /* Sidemenu.swift in Sources */,
 				8255957024A594FD0034475D /* SidemenuCsWriteViewController.swift in Sources */,
 				8255959724A5C6450034475D /* MobileLibrary.m in Sources */,
 				8255957124A594FD0034475D /* SidemenuCsViewController.swift in Sources */,
-				82497B0B24B6FF6100D318A8 /* ZipUtilities.swift in Sources */,
 				822BC92E247F50BE00B95FB4 /* AppDelegate.swift in Sources */,
-				82497B0824B6FF6100D318A8 /* zip.c in Sources */,
 				82F3695724B3212F00D2EAD4 /* WebView.swift in Sources */,
 				8255957924A594FD0034475D /* SidemenuCouponViewController.swift in Sources */,
 				82A8EE2F248A2174000B9896 /* SwCalender.swift in Sources */,
@@ -495,10 +397,8 @@
 				8255958324A594FD0034475D /* SidemenuCsListViewController.swift in Sources */,
 				8255958024A594FD0034475D /* SidemenuCancelViewController.swift in Sources */,
 				82A8EE39248A2835000B9896 /* calenderCell.swift in Sources */,
-				82497B0C24B6FF6100D318A8 /* Zip.swift in Sources */,
 				822BC944247F831E00B95FB4 /* MainViewController.swift in Sources */,
 				8255958724A5AD440034475D /* NSLayoutConstraint.swift in Sources */,
-				82497B0A24B6FF6100D318A8 /* QuickZip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,29 +546,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = STJ3K84EP5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/moveViewTest/Source/Library/Zip",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GENERATE_PKGINFO_FILE = NO;
 				INFOPLIST_FILE = moveViewTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = co.kr.miaps.hansw;
 				PRODUCT_NAME = "SangWon's";
-				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Source/Library/Zip/minizip";
 				SWIFT_OBJC_BRIDGING_HEADER = "moveViewTest/Source/Library/objective_c/moveViewTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -680,29 +568,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = STJ3K84EP5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/moveViewTest/Source/Library/Zip",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GENERATE_PKGINFO_FILE = NO;
 				INFOPLIST_FILE = moveViewTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = co.kr.miaps.hansw;
 				PRODUCT_NAME = "SangWon's";
-				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Source/Library/Zip/minizip";
 				SWIFT_OBJC_BRIDGING_HEADER = "moveViewTest/Source/Library/objective_c/moveViewTest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

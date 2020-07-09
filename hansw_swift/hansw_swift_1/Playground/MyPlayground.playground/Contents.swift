@@ -1038,9 +1038,9 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //let names = ["John", "Paul", "George", "Ringo"]
 //let beatle = names.first?.uppercased()
 //////------------------------------------------------------ Optional try
-//enum PasswordError: Error {
-//    case obvious
-//}
+enum PasswordError: Error {
+    case obvious
+}
 
 //func checkPassword(_ password: String) throws -> Bool {
 //    if password == "password" {
@@ -1102,19 +1102,5 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //    }
 //}
 
-//////------------------------------------------------------ NSDictionary 테스트
-let Dics : NSDictionary = ["key1":"value1", "key2":"value2", "key3":"value3", "key4":"value4"]
 
-//let keys = Dics.allKeys as! [String]
-//print(keys)
 
-//for dic in Dics
-//{
-//    if dic.key as! String == "key1"
-//    {
-//        print(dic.value)
-//    }
-//}
-
-let sss :NSString = Dics["key1"] as! NSString
-print(sss)

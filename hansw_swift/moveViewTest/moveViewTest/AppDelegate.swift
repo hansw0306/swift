@@ -15,35 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        // 프로젝트의 리소스를 앱 내의 Documents 폴더에 넣으려고 한다
-        // *조건 : 앱을 최초 실행할때만 작업하도록 하기위해 UserDefaults를 사용한다.
-        if UserDefaults.standard.bool(forKey: "firstLaunch") == false {
-            
-            UserDefaults.standard.set(true, forKey: "firstLaunch")
-            UserDefaults.standard.synchronize()
-            
-            let fileManager = FileManager.default
-            let fileNames = ["index.html", "Resource.zip"]
-            
-            let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL
-            let bundleUrl = Bundle.main.resourceURL
-            
-            for file in fileNames {
-                if let srcPath = bundleUrl?.appendingPathComponent(file).path{
-                    
-                    let toPath = documentsUrl.appendingPathComponent(file).path
-                    do{
-                        try fileManager.copyItem(atPath: srcPath, toPath: toPath)
-                    }
-                    catch{
-                        print("error")
-                    }
-                }
-            }
-        }
-        
-        
         return true
     }
 
