@@ -334,6 +334,30 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
     }
     
     
+    //
+    func ProjectFileInDocuments(fileNames:Array<Any>)  {
+        //project에 있는 파일들의 목록을 입력하여 앱을 최초 실행할 경우에만 앱 로컬에 copy하는 로직이다.
+        if UserDefaults.standard.bool(forKey: "firstLaunch") == false {
+            UserDefaults.standard.set(true, forKey: "firstLaunch")
+            UserDefaults.standard.synchronize()
+            let fileManager = FileManager.default
+            //let fileNames = ["index.html"]
+            let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0] as URL
+            let bundleUrl = Bundle.main.resourceURL
+            
+            for file in fileNames {
+                
+                if let srcPath = bundleUrl?.appendingPathComponent(file as! String).path{
+                    let toPath = documentsUrl.appendingPathComponent(file as! String).path
+                    do {
+                        try fileManager.copyItem(atPath: srcPath, toPath: toPath)
+                    } catch {}
+                }
+            }
+        }
+    }
+    
+    
     
     
     //MARK:10. 비동기 처리
@@ -429,28 +453,3 @@ class MyPageViewController: UIViewController , MFMailComposeViewControllerDelega
         controller.dismiss(animated: true, completion: nil)
     }
 }
-
-
-
-//MARK: objetive_c class
-
-//0. Objetive c 클래스를 확장하는 방법
-//@objc class MobileLibrary:NSObject
-//{
-//    func MobilePrint() {
-//
-//        print("hansw Test")
-//
-//    }
-//
-//}
-
-//1. Bridg header를 이용하여 Objetive c 소스를 그대로 사용한다.
-class objClass: NSObject {
-    let objLib = MobileLibrary()
-    func objeFucn()  {
-        objLib.nsLogPrint()
-    }
-}
-
-
