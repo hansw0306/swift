@@ -16,13 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        if mObjClass.Obj_UnzipResource(){
-            print("[NativeSysLog]: Resource Unzip Success")
+        if UserDefaults.standard.bool(forKey: "firstLaunch") == false {
+            UserDefaults.standard.set(true, forKey: "firstLaunch")
+            UserDefaults.standard.synchronize()
+            
+            if mObjClass.Obj_UnzipResource(){
+                print("[NativeSysLog]: Resource Unzip Success")
+            }
+            else{
+                print("[NativeSysLog]: Resource Unzip faile")
+            }
         }
-        else{
-            print("[NativeSysLog]: Resource Unzip faile")
-        }
-
         
         
         return true
