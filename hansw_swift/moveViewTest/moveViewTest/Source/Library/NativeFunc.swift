@@ -239,6 +239,7 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
     let myUserDefaults = UserDefaults.standard
     func saveValue(value:String,key:String) {
         myUserDefaults.set(value, forKey: key)
+        myUserDefaults.synchronize()
     }
     
     func loadValue(key:String)->String {
@@ -334,9 +335,8 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
     }
     
     
-    //
+    //MARK:4. project에 있는 파일들의 목록을 입력하여 앱을 최초 실행할 경우에만 앱 로컬에 copy
     func ProjectFileInDocuments(fileNames:Array<Any>)  {
-        //project에 있는 파일들의 목록을 입력하여 앱을 최초 실행할 경우에만 앱 로컬에 copy하는 로직이다.
         if UserDefaults.standard.bool(forKey: "firstLaunch") == false {
             UserDefaults.standard.set(true, forKey: "firstLaunch")
             UserDefaults.standard.synchronize()
