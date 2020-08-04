@@ -20,7 +20,7 @@ import UIKit
 class FuncList: UITableViewController {
 
     var nativeFunctionList = ["카메라","앨범","설정","공유","생체인식"]
-    var customViewList = ["그림판","웹","알림"]
+    var customViewList = ["그림판","웹","알림","패널"]
     var functionList = ["데이터 베이스","info","암호화","틸옥체크","local 디렉토리 생성"]
     
     let mNativeFunc = NativeFuc.init()
@@ -137,6 +137,13 @@ class FuncList: UITableViewController {
                     mWebViewCon.modalPresentationStyle = .overFullScreen
                     present(mWebViewCon, animated: true, completion: nil)
                 }
+            case "알림":
+                do{
+                    print("")
+                }
+            case "패널":
+                self.ShowPanel()
+                
 //---------------------------------------------------------------------------------------------------------
 
 //            var functionList = ["데이터 베이스","info","암호화","틸옥체크","local 디렉토리 생성"]
@@ -226,6 +233,52 @@ class FuncList: UITableViewController {
     }
     */
 
+    
+    
+// MARK: - function
+    
+    
+    func ShowPanel(){
+        //패널View
+        let panelView = UIView.init(frame:self.view.frame)
+        panelView.backgroundColor = UIColor(red: 67.0/255, green: 122.0/255, blue: 255.0/255, alpha: 0.4)
+        
+        //패널에 넣을 View
+        
+        let backButton = UIButton()
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        let panelViewItmes = ["backButton":backButton]
+        
+        backButton.setTitle("Back", for: .normal)
+            
+        backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
+        panelView.addSubview(backButton)
+        
+        let horizontalBackButton = NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[backButton(80)]", // 가로크기 80, 왼쪽으로 10 이동
+                                                                  options: NSLayoutConstraint.FormatOptions.alignAllCenterY,
+                                                                  metrics: nil,
+                                                                  views: panelViewItmes)
+        let verticalBackButton = NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[backButton(45)]",
+                                                                options: NSLayoutConstraint.FormatOptions.alignAllCenterX,
+                                                                metrics: nil,
+                                                                views: panelViewItmes)
+        panelView.addConstraints(horizontalBackButton)
+        panelView.addConstraints(verticalBackButton)
+        
+        
+        self.mNativeFunc.topViewCon()?.view.addSubview(panelView)
+    }
+    
+    @objc func backButtonAction(sender: UIButton!) {
+            print("no back page")
+        let views = self.mNativeFunc.topNativeViewCon.view.subviews
+        views.last?.removeFromSuperview()
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
