@@ -15,6 +15,8 @@
 //요기 좋다
 //https://unclean.tistory.com/60?category=834416
 
+// 사용자 접근성( 보이스오버 ) 관련 기능을 사용하기 위해 사용하는 Class
+// UIAccessibilityElement
 
 
 import UIKit
