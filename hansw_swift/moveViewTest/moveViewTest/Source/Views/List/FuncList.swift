@@ -150,7 +150,11 @@ class FuncList: UITableViewController {
                 
                 
             case"데이터 베이스":
-                print("데이터 베이스")
+                do{
+                    print("데이터 베이스")
+                    
+                    
+                }
             case"info":
                 print("info")
             case"암호화":
