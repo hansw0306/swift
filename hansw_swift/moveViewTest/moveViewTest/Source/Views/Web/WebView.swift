@@ -65,6 +65,8 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         
         webView.uiDelegate = self
         webView.navigationDelegate = self
+        //WKWebview 뒤로가기, 앞으로가기 제스처 사용 ON
+        webView.allowsBackForwardNavigationGestures = true
     }
     
     
