@@ -11,6 +11,9 @@ import SQLite3
 
 class DBManager: NSObject {
     
+    /**
+     설명 : SQLlite 파일생성, 테이블 생성, 데이터 입력
+     */
     func xxx() {
         //객체 생성과 동시에 sqllite파일 및 테이블 생성
         let db:DBHelper = DBHelper()
@@ -26,8 +29,6 @@ class DBManager: NSObject {
         persons = db.read()
         
     }
-    
-    
 
 }
 

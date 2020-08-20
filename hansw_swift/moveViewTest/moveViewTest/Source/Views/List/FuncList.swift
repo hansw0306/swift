@@ -19,7 +19,7 @@ import UIKit
 
 class FuncList: UITableViewController {
 
-    var nativeFunctionList = ["카메라","앨범","설정","공유","생체인식"]
+    var nativeFunctionList = ["카메라","앨범","설정","공유","생체인식","위치정보"]
     var customViewList = ["그림판","웹","알림","패널"]
     var functionList = ["데이터 베이스","info","암호화","틸옥체크","local 디렉토리 생성"]
     
@@ -129,6 +129,10 @@ class FuncList: UITableViewController {
                         print("지문인식 결과 :  \(result)");
                     }
                 }
+            case "위치정보":
+                do{
+                    GpsManager().GetGps()
+                    }
 //---------------------------------------------------------------------------------------------------------
             case "그림판":
                 print("")
@@ -152,8 +156,6 @@ class FuncList: UITableViewController {
             case"데이터 베이스":
                 do{
                     print("데이터 베이스")
-                    
-                    
                 }
             case"info":
                 print("info")
