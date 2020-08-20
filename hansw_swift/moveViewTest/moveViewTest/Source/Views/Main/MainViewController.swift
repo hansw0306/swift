@@ -68,6 +68,16 @@ class MainViewController: UIViewController {
             
             
         } else {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back",
+                                                               style: .plain,
+                                                               target: self,
+                                                               action: #selector(LeftNavigationItemButtonAction))
+            
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "func List",
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(RightNavigationItemButtonAction))
+            
             // Fallback on earlier versions
         }
 

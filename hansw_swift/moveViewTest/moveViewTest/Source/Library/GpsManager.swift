@@ -16,17 +16,37 @@ class GpsManager: NSObject, CLLocationManagerDelegate {
     func GetGps() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization() //  권한요청
+        //베터리에 맞게 권장되는 최적의 정확도
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        //GPS 사용여부 체크
+        if CLLocationManager.locationServicesEnabled()
+        {
+            
+            let status: CLAuthorizationStatus = CLLocationManager.authorizationStatus()
+            if status == CLAuthorizationStatus.notDetermined
+            {
+                //권한요청
+                locationManager.requestAlwaysAuthorization()
+                //locationManager.requestWhenInUseAuthorization()
+            }
+            else
+            {
+                let coor = locationManager.location?.coordinate
+                let latitude = coor?.latitude
+                let longitude = coor?.longitude
+                print("위도: \(String(describing: latitude)) 경도 : \(String(describing: longitude))")
+            }
+        }
+        else {
+            
+            print("locationServices disenabled")
+        }
+        //위치 업데이트
         locationManager.startUpdatingLocation()
         
-        //장치에서 위치 서비스를 사용할 수 있는지 여부를 나타내는 Boolean 값을 반환한다.
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
-        }else{
-            print("오..이런..gps.")
-        }
     }
-    
+        
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

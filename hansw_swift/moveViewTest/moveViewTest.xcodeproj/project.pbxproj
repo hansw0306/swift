@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8220F1E32491C0F900754790 /* CreatAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8220F1E12491C0F900754790 /* CreatAccountViewController.swift */; };
 		8220F1E42491C0F900754790 /* CreatAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8220F1E22491C0F900754790 /* CreatAccountViewController.xib */; };
+		822438F024EE733000613789 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822438EF24EE733000613789 /* CoreLocation.framework */; };
 		8228215D24B4341D0039A053 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8228215C24B4341D0039A053 /* index.html */; };
 		822BC92E247F50BE00B95FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822BC92D247F50BE00B95FB4 /* AppDelegate.swift */; };
 		822BC930247F50BE00B95FB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822BC92F247F50BE00B95FB4 /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 		828DC01E24B806E5007D977B /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 828DC01924B806E5007D977B /* ZipArchive.mm */; };
 		828DC02024B826B9007D977B /* Resource.zip in Resources */ = {isa = PBXBuildFile; fileRef = 828DC01F24B826B9007D977B /* Resource.zip */; };
 		828DC02224B82775007D977B /* ObjClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DC02124B82775007D977B /* ObjClass.swift */; };
+		8299B37924DD2C720099F332 /* GpsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8299B37824DD2C720099F332 /* GpsManager.swift */; };
 		829E383324B71A8D00C12B42 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 829E383224B71A8200C12B42 /* libz.tbd */; };
 		82A8EE112489DEB1000B9896 /* NativeFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8EE102489DEB1000B9896 /* NativeFunc.swift */; };
 		82A8EE2F248A2174000B9896 /* SwCalender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8EE2D248A2174000B9896 /* SwCalender.swift */; };
@@ -66,6 +68,7 @@
 /* Begin PBXFileReference section */
 		8220F1E12491C0F900754790 /* CreatAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatAccountViewController.swift; sourceTree = "<group>"; };
 		8220F1E22491C0F900754790 /* CreatAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatAccountViewController.xib; sourceTree = "<group>"; };
+		822438EF24EE733000613789 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8228215C24B4341D0039A053 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		822BC92A247F50BE00B95FB4 /* SangWon's.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SangWon's.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		822BC92D247F50BE00B95FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		828DC01924B806E5007D977B /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		828DC01F24B826B9007D977B /* Resource.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Resource.zip; sourceTree = "<group>"; };
 		828DC02124B82775007D977B /* ObjClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjClass.swift; sourceTree = "<group>"; };
+		8299B37824DD2C720099F332 /* GpsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpsManager.swift; sourceTree = "<group>"; };
 		829E383224B71A8200C12B42 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		82A8EE102489DEB1000B9896 /* NativeFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeFunc.swift; sourceTree = "<group>"; };
 		82A8EE2D248A2174000B9896 /* SwCalender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwCalender.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				822438F024EE733000613789 /* CoreLocation.framework in Frameworks */,
 				8265BF9C24DBDF230092E0CA /* libsqlite3.tbd in Frameworks */,
 				82F3695424B320BF00D2EAD4 /* WebKit.framework in Frameworks */,
 				829E383324B71A8D00C12B42 /* libz.tbd in Frameworks */,
@@ -307,10 +312,11 @@
 		82A8EE0D2489DDD6000B9896 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				82358946249AEB890049E4E6 /* objective_c */,
 				82A8EE102489DEB1000B9896 /* NativeFunc.swift */,
 				824A6AEF24DBF1760072A6E5 /* DBManager.swift */,
 				82F3695024B31CC000D2EAD4 /* CallBack.swift */,
-				82358946249AEB890049E4E6 /* objective_c */,
+				8299B37824DD2C720099F332 /* GpsManager.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 		82F3695224B320BF00D2EAD4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				822438EF24EE733000613789 /* CoreLocation.framework */,
 				8265BF9B24DBDF120092E0CA /* libsqlite3.tbd */,
 				829E383224B71A8200C12B42 /* libz.tbd */,
 				82F3695324B320BF00D2EAD4 /* WebKit.framework */,
@@ -459,6 +466,7 @@
 				822BC930247F50BE00B95FB4 /* SceneDelegate.swift in Sources */,
 				8220F1E32491C0F900754790 /* CreatAccountViewController.swift in Sources */,
 				82A8EE112489DEB1000B9896 /* NativeFunc.swift in Sources */,
+				8299B37924DD2C720099F332 /* GpsManager.swift in Sources */,
 				8255957424A594FD0034475D /* SidemenuAlarmSettingViewController.swift in Sources */,
 				8255958324A594FD0034475D /* SidemenuCsListViewController.swift in Sources */,
 				8255958024A594FD0034475D /* SidemenuCancelViewController.swift in Sources */,
