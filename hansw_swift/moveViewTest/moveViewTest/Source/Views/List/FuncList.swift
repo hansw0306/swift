@@ -25,6 +25,7 @@ class FuncList: UITableViewController {
     
     let mNativeFunc = NativeFuc.init()
     let mWebViewCon = WebView.init()
+    let gpsManager = GpsManager.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,7 +132,7 @@ class FuncList: UITableViewController {
                 }
             case "위치정보":
                 do{
-                    GpsManager().GetGps()
+                    gpsManager.GetGps()
                     }
 //---------------------------------------------------------------------------------------------------------
             case "그림판":
