@@ -32,6 +32,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //기기 UDID 값..
+        //이 값은 앱이 지워지지 않는 한 고유한 값을 생성한다.
+        let snuuid = UIDevice.current.identifierForVendor!.uuidString
+        print(snuuid)
 //---------------객체 초기 설정-----------------
 
 //1. 입력창 설정
