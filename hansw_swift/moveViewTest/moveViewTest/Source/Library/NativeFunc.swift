@@ -124,8 +124,11 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
         
         // Check if the device has finger print sensor
         guard authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
-            print("지문인식 안되는 장치 처리")
-            print(error!)
+            //생체인식 안되는 장치 처리
+            //print("\(String(describing: error))")
+            
+            //1> 생체인식을 사용할 수 없는 기기일때
+            //2> 설정에서 암호를 끄고 있을때
             callBack("\(String(describing: error))")
             return
         }
