@@ -85,6 +85,25 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
     }
     
     
+    //MARK: Alet뷰 작업
+    func showAlet(type:NSString, title:String, msg:String, viewCon:UIViewController?) {
+        
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        
+        if (type == "YES/NO")
+        {
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        }
+        else
+        {
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        }
+        
+        //화면 표시
+           viewCon?.present(alert, animated: true)
+    }
+    
     
     //MARK:-
     //MARK:네이티브 기능 호출 부분

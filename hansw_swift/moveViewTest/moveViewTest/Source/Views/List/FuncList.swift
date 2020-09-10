@@ -128,11 +128,23 @@ class FuncList: UITableViewController {
                 do{
                     mNativeFunc.OpenBioAuth { (result:String) in
                         print("지문인식 결과 :  \(result)");
+                        
+                        //메일스레드에 넣어주지 않으면 최초에 오는 결과 값에 대한 반응이 느리다.
+                        OperationQueue.main.addOperation {
+                            self.mNativeFunc.showAlet(type: "",
+                                                      title: "지문인식", msg: result,
+                                                      viewCon: self.mNativeFunc.topViewCon())
+                        }
                     }
                 }
             case "위치정보":
                 do{
                     gpsManager.GetGps()
+                    
+                    self.mNativeFunc.showAlet(type: "", title: "GPS",
+                                              msg: gpsManager.GetCurrentlocation(),
+                                              viewCon: self.mNativeFunc.topViewCon())
+                    
                     }
 //---------------------------------------------------------------------------------------------------------
             case "그림판":
