@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "firstLaunch")
             UserDefaults.standard.synchronize()
             
+            //앱 내부 디렉토리에 Resource 파일의 존재여부를 확인하여 없을경우 zip파일을 풀어준다.
             if mObjClass.Obj_UnzipResource(){
                 print("[NativeSysLog]: Resource Unzip Success")
             }
