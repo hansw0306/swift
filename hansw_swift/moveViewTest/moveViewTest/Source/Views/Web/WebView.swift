@@ -53,16 +53,51 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         
         // WKWebview 셋팅
 #if DEBUG
-        //let url = URL(string: "http://127.0.0.1:8088/index.html") //1. 로컬..
-        //let url = Bundle(for: type(of: self)).url(forResource: "index", withExtension:"html") // 2.파일
-        let url = URL(string: "https://www.google.com") //3. 웹
+        //1. 로컬..
+        //let url = URL(string: "http://127.0.0.1:8080/index.html")
+        // --> 안됨
+        
+        //2. 웹
+        //let url = URL(string: "https://www.google.com")
+        
+        //3-1> 앱 로컬 디렉토리에 있는 파일을 읽어 실행하는 방법
+        // FileManager 인스턴스 생성
+        let fileManager = FileManager()
+        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+        do {
+            // web디렉토리 URL을 가져오고
+            let webURL = documentURL?.appendingPathComponent("Resource")
+            // 디렉토리 내의 파일 목록을 출력해본다.
+            //print("web directory Files : \(try FileManager.default.contentsOfDirectory(atPath : webURL!.path))")
+            
+            let htmlFileURL = webURL?.appendingPathComponent("index.html")
+            
+            // webView에서 로드해준다.
+            // 이 부분에서 allowingReadAccessTo 파라미터에는 index.html의 부모 디렉토리 이상 레벨의 URL을 지정해준다.
+            // 여기서는 최상위 레벨인 Document의 URL을 추가했다. webURL을 추가해도 무방하다.
+            webView.loadFileURL(htmlFileURL!, allowingReadAccessTo: documentURL!)
+        }
+        catch {
+            // 알 수 없는 오류
+            print("error")
+        }
 #else
         let url = URL(string: urlString)
+
+        if(url == nil)
+        {
+        //3-2>  로컬파일 프로젝트 내에 있느 파일을 읽을때
+            guard url = Bundle.main.url(forResource: "index", withExtension: "html")
+                else {
+                    print("path is nil")
+                    return
+            }
+        }
+        let request = URLRequest(url: url);
+        webView.load(request as URLRequest)
+        
+        
 #endif
-        let request = URLRequest(url: url!);
-        
-        webView.load(request)
-        
         webView.uiDelegate = self
         webView.navigationDelegate = self
         //WKWebview 뒤로가기, 앞으로가기 제스처 사용 ON
@@ -218,6 +253,11 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         }
         else {
             print("no back page")
+
+            
+            
+            
+            
         }
     }
     //앞으로 가기
