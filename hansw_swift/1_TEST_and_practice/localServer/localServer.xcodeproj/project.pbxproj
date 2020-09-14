@@ -82,6 +82,7 @@
 		82827012250DD4C000FA46B5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82827011250DD4C000FA46B5 /* WebKit.framework */; };
 		82827014250DD4D300FA46B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82827013250DD4D300FA46B5 /* Foundation.framework */; };
 		82827016250DD4DC00FA46B5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82827015250DD4DC00FA46B5 /* SystemConfiguration.framework */; };
+		8282702C250F330400FA46B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8282702B250F330400FA46B5 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +164,7 @@
 		82827011250DD4C000FA46B5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		82827013250DD4D300FA46B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		82827015250DD4DC00FA46B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8282702B250F330400FA46B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82827012250DD4C000FA46B5 /* WebKit.framework in Frameworks */,
+				8282702C250F330400FA46B5 /* UIKit.framework in Frameworks */,
 				82827016250DD4DC00FA46B5 /* SystemConfiguration.framework in Frameworks */,
 				82827014250DD4D300FA46B5 /* Foundation.framework in Frameworks */,
 			);
@@ -336,6 +339,7 @@
 		82827010250DD4C000FA46B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8282702B250F330400FA46B5 /* UIKit.framework */,
 				82827015250DD4DC00FA46B5 /* SystemConfiguration.framework */,
 				82827013250DD4D300FA46B5 /* Foundation.framework */,
 				82827011250DD4C000FA46B5 /* WebKit.framework */,
