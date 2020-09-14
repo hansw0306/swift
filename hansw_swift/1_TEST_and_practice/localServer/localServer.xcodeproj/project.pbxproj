@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		82826F6F250DD26E00FA46B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82826F6E250DD26E00FA46B5 /* AppDelegate.swift */; };
-		82826F71250DD26E00FA46B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82826F70250DD26E00FA46B5 /* SceneDelegate.swift */; };
 		82826F73250DD26E00FA46B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82826F72250DD26E00FA46B5 /* ViewController.swift */; };
 		82826F76250DD26E00FA46B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82826F74250DD26E00FA46B5 /* Main.storyboard */; };
 		82826F78250DD26F00FA46B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82826F77250DD26F00FA46B5 /* Assets.xcassets */; };
@@ -80,12 +79,14 @@
 		8282700D250DD39800FA46B5 /* LineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82826FCA250DD39700FA46B5 /* LineIcons.ttf */; };
 		8282700E250DD39800FA46B5 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 82826FCB250DD39800FA46B5 /* index.html */; };
 		8282700F250DD39800FA46B5 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 82826FCC250DD39800FA46B5 /* license.txt */; };
+		82827012250DD4C000FA46B5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82827011250DD4C000FA46B5 /* WebKit.framework */; };
+		82827014250DD4D300FA46B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82827013250DD4D300FA46B5 /* Foundation.framework */; };
+		82827016250DD4DC00FA46B5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82827015250DD4DC00FA46B5 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		82826F6B250DD26E00FA46B5 /* localServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = localServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82826F6E250DD26E00FA46B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		82826F70250DD26E00FA46B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		82826F72250DD26E00FA46B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		82826F75250DD26E00FA46B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82826F77250DD26F00FA46B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +160,9 @@
 		82826FCA250DD39700FA46B5 /* LineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LineIcons.ttf; sourceTree = "<group>"; };
 		82826FCB250DD39800FA46B5 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		82826FCC250DD39800FA46B5 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		82827011250DD4C000FA46B5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		82827013250DD4D300FA46B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		82827015250DD4DC00FA46B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82827012250DD4C000FA46B5 /* WebKit.framework in Frameworks */,
+				82827016250DD4DC00FA46B5 /* SystemConfiguration.framework in Frameworks */,
+				82827014250DD4D300FA46B5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +184,7 @@
 			children = (
 				82826F6D250DD26E00FA46B5 /* localServer */,
 				82826F6C250DD26E00FA46B5 /* Products */,
+				82827010250DD4C000FA46B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,7 +201,6 @@
 			children = (
 				82826F82250DD36C00FA46B5 /* Resource */,
 				82826F6E250DD26E00FA46B5 /* AppDelegate.swift */,
-				82826F70250DD26E00FA46B5 /* SceneDelegate.swift */,
 				82826F72250DD26E00FA46B5 /* ViewController.swift */,
 				82826F74250DD26E00FA46B5 /* Main.storyboard */,
 				82826F77250DD26F00FA46B5 /* Assets.xcassets */,
@@ -324,6 +331,16 @@
 				82826FCA250DD39700FA46B5 /* LineIcons.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		82827010250DD4C000FA46B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82827015250DD4DC00FA46B5 /* SystemConfiguration.framework */,
+				82827013250DD4D300FA46B5 /* Foundation.framework */,
+				82827011250DD4C000FA46B5 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,7 +483,6 @@
 			files = (
 				82826F73250DD26E00FA46B5 /* ViewController.swift in Sources */,
 				82826F6F250DD26E00FA46B5 /* AppDelegate.swift in Sources */,
-				82826F71250DD26E00FA46B5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -596,7 +612,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -613,6 +629,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T42LSGY5JT;
 				INFOPLIST_FILE = localServer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,6 +648,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T42LSGY5JT;
 				INFOPLIST_FILE = localServer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
