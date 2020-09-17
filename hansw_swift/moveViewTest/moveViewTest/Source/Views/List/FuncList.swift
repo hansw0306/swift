@@ -21,7 +21,7 @@ class FuncList: UITableViewController {
 
     var nativeFunctionList = ["카메라","앨범","설정","공유","생체인식","위치정보"]
     var customViewList = ["그림판","웹","알림","패널"]
-    var functionList = ["데이터 베이스","info","암호화","틸옥체크","local 디렉토리 생성"]
+    var functionList = ["데이터 베이스","info","암호화","탈옥체크","local 디렉토리 생성"]
     
     let mNativeFunc = NativeFuc.init()
     let mWebViewCon = WebView.init()
@@ -29,7 +29,7 @@ class FuncList: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "함수 호출"
+        title = "기능 구현"
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
         } else {
@@ -163,7 +163,7 @@ class FuncList: UITableViewController {
                 
 //---------------------------------------------------------------------------------------------------------
 
-//            var functionList = ["데이터 베이스","info","암호화","틸옥체크","local 디렉토리 생성"]
+//            var functionList = ["데이터 베이스","info","암호화","탈옥체크","local 디렉토리 생성"]
                 
                 
             case"데이터 베이스":
@@ -174,7 +174,7 @@ class FuncList: UITableViewController {
                 print("info")
             case"암호화":
                 print("암호화")
-            case"틸옥체크":
+            case"탈옥체크":
                 do{
                     print(" 탈옥체크 : \(mNativeFunc.getJailbrokenStatus())")
                 }
