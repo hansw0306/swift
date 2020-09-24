@@ -140,13 +140,19 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         
         let webViewBar = UIView()
         let backButton = UIButton()
+        let closeButton = UIButton()
         view.addSubview(webViewBar)
         
         //제약조건을 프로그래밍으로 할때는 뷰 자체적으로 수행하는 오토리사이징을 꺼야 함(이유 : 사용자가 지정한 오토레이아웃 조건과 충돌하여 제약조건 문제를 일으킴)
         webView.translatesAutoresizingMaskIntoConstraints = false
         webViewBar.translatesAutoresizingMaskIntoConstraints = false
         backButton.translatesAutoresizingMaskIntoConstraints = false
-        let webViews = ["view":view!, "webView":webView!, "webViewBar":webViewBar, "backButton":backButton]
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        let webViews = ["view":view!,
+                            "webView":webView!,
+                                "webViewBar":webViewBar,
+                                    "backButton":backButton,
+                                    "closeButton":closeButton]
         
         let horizontalWebView = NSLayoutConstraint.constraints(withVisualFormat: "H:|[webView]|",
                                                                options: NSLayoutConstraint.FormatOptions.alignAllCenterY,
@@ -166,13 +172,16 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
                                                                    metrics: nil,
                                                                    views: webViews)
         
-        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[webViewBar(100)]|",
+        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[webViewBar(70)]|",
                                                                  options: NSLayoutConstraint.FormatOptions.alignAllCenterX,
                                                                  metrics: nil,
                                                                  views: webViews)
         view.addConstraints(horizontalConstraints)
         view.addConstraints(verticalConstraints)
-        webViewBar.backgroundColor = .lightGray
+        //배경색 말고 선색으로 구분하게 하였다.
+        webViewBar.backgroundColor = .white
+        webViewBar.layer.borderColor = UIColor.blue.cgColor
+        
         //--------------------------------------------------  webViewBar AutoLayout
         
         backButton.setTitle("Back", for: .normal)
@@ -191,6 +200,21 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         webViewBar.addConstraints(verticalBackButton)
         backButton.backgroundColor = .blue
         //--------------------------------------------------  backButton
+        closeButton.setTitle("Close", for:.normal)
+        closeButton.addTarget(self, action:#selector(closeButtonAction), for: .touchUpInside)
+        webViewBar.addSubview(closeButton) //-----> closeButton Add
+        
+        let horizontalcloseButton = NSLayoutConstraint.constraints(withVisualFormat: "H:[backButton]-20-[closeButton(80)]", // 가로크기 80, 왼쪽으로 10 이동
+                                                                  options: NSLayoutConstraint.FormatOptions.alignAllCenterY,
+                                                                  metrics: nil,
+                                                                  views: webViews)
+        let verticalcloseButton = NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[closeButton(45)]",
+                                                                options: NSLayoutConstraint.FormatOptions.alignAllCenterX,
+                                                                metrics: nil,
+                                                                views: webViews)
+        webViewBar.addConstraints(horizontalcloseButton)
+        webViewBar.addConstraints(verticalcloseButton)
+        closeButton.backgroundColor = .orange
     }
     
     
@@ -253,11 +277,6 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         }
         else {
             print("no back page")
-
-            
-            
-            
-            
         }
     }
     //앞으로 가기
@@ -273,6 +292,10 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
     func refreshButtonAction() {
         print("refresh page")
         webView.reload()
+    }
+    
+    @objc func closeButtonAction(sender: UIButton!) {
+        dismiss(animated: true, completion: nil)
     }
     
     
