@@ -123,6 +123,7 @@
 		828DC01924B806E5007D977B /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		828DC01F24B826B9007D977B /* Resource.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Resource.zip; sourceTree = "<group>"; };
 		828DC02124B82775007D977B /* ObjClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjClass.swift; sourceTree = "<group>"; };
+		829423E8251C3890004B58B7 /* readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
 		8299B37824DD2C720099F332 /* GpsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpsManager.swift; sourceTree = "<group>"; };
 		829E383224B71A8200C12B42 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		82A8EE102489DEB1000B9896 /* NativeFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeFunc.swift; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 			children = (
 				828DC01F24B826B9007D977B /* Resource.zip */,
 				8228215C24B4341D0039A053 /* index.html */,
+				829423E8251C3890004B58B7 /* readme */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
