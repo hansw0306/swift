@@ -44,6 +44,14 @@
 		8255958724A5AD440034475D /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255958624A5AD440034475D /* NSLayoutConstraint.swift */; };
 		8265518E248E1639002CD193 /* FuncList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8265518D248E1639002CD193 /* FuncList.swift */; };
 		8265BF9C24DBDF230092E0CA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8265BF9B24DBDF120092E0CA /* libsqlite3.tbd */; };
+		826DD369251D8FF300EA2DF8 /* UIImage+Bundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 826DD35C251D8FF300EA2DF8 /* UIImage+Bundle.m */; };
+		826DD36A251D8FF300EA2DF8 /* CommDefine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 826DD35F251D8FF300EA2DF8 /* CommDefine.cpp */; };
+		826DD36B251D8FF300EA2DF8 /* SWErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 826DD361251D8FF300EA2DF8 /* SWErrorViewController.m */; };
+		826DD36C251D8FF300EA2DF8 /* SWErrorViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 826DD364251D8FF300EA2DF8 /* SWErrorViewCell.xib */; };
+		826DD36D251D8FF300EA2DF8 /* SWErrorViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 826DD365251D8FF300EA2DF8 /* SWErrorViewCell.m */; };
+		826DD36E251D8FF300EA2DF8 /* SWErrorView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826DD367251D8FF300EA2DF8 /* SWErrorView.storyboard */; };
+		826DD36F251D8FF300EA2DF8 /* SWErrorViewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 826DD368251D8FF300EA2DF8 /* SWErrorViewDetailController.m */; };
+		826DD377251DA6FF00EA2DF8 /* weblogoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 826DD376251DA6FE00EA2DF8 /* weblogoff.png */; };
 		828DC00C24B80691007D977B /* MobileLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 828DC00A24B80691007D977B /* MobileLibrary.m */; };
 		828DC01A24B806E5007D977B /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 828DC00F24B806E5007D977B /* unzip.c */; };
 		828DC01B24B806E5007D977B /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 828DC01024B806E5007D977B /* zip.c */; };
@@ -108,6 +116,19 @@
 		8255959824A5C6800034475D /* moveViewTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "moveViewTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		8265518D248E1639002CD193 /* FuncList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncList.swift; sourceTree = "<group>"; };
 		8265BF9B24DBDF120092E0CA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		826DD35C251D8FF300EA2DF8 /* UIImage+Bundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Bundle.m"; sourceTree = "<group>"; };
+		826DD35D251D8FF300EA2DF8 /* UIImage+Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Bundle.h"; sourceTree = "<group>"; };
+		826DD35E251D8FF300EA2DF8 /* CommDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommDefine.h; sourceTree = "<group>"; };
+		826DD35F251D8FF300EA2DF8 /* CommDefine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = CommDefine.cpp; sourceTree = "<group>"; };
+		826DD361251D8FF300EA2DF8 /* SWErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWErrorViewController.m; sourceTree = "<group>"; };
+		826DD362251D8FF300EA2DF8 /* SWErrorViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWErrorViewCell.h; sourceTree = "<group>"; };
+		826DD363251D8FF300EA2DF8 /* SWErrorViewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWErrorViewDetailController.h; sourceTree = "<group>"; };
+		826DD364251D8FF300EA2DF8 /* SWErrorViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWErrorViewCell.xib; sourceTree = "<group>"; };
+		826DD365251D8FF300EA2DF8 /* SWErrorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWErrorViewCell.m; sourceTree = "<group>"; };
+		826DD366251D8FF300EA2DF8 /* SWErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWErrorViewController.h; sourceTree = "<group>"; };
+		826DD367251D8FF300EA2DF8 /* SWErrorView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SWErrorView.storyboard; sourceTree = "<group>"; };
+		826DD368251D8FF300EA2DF8 /* SWErrorViewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWErrorViewDetailController.m; sourceTree = "<group>"; };
+		826DD376251DA6FE00EA2DF8 /* weblogoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weblogoff.png; sourceTree = "<group>"; };
 		828DC00924B80691007D977B /* MobileLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileLibrary.h; sourceTree = "<group>"; };
 		828DC00A24B80691007D977B /* MobileLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileLibrary.m; sourceTree = "<group>"; };
 		828DC00F24B806E5007D977B /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
@@ -207,6 +228,7 @@
 		82358946249AEB890049E4E6 /* objective_c */ = {
 			isa = PBXGroup;
 			children = (
+				826DD35A251D8FBB00EA2DF8 /* Log */,
 				828DC00D24B806C8007D977B /* Zip */,
 				828DC00924B80691007D977B /* MobileLibrary.h */,
 				828DC00A24B80691007D977B /* MobileLibrary.m */,
@@ -255,6 +277,42 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		826DD35A251D8FBB00EA2DF8 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				826DD360251D8FF300EA2DF8 /* LogView */,
+				826DD35B251D8FF300EA2DF8 /* Common */,
+				826DD376251DA6FE00EA2DF8 /* weblogoff.png */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		826DD35B251D8FF300EA2DF8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				826DD35C251D8FF300EA2DF8 /* UIImage+Bundle.m */,
+				826DD35D251D8FF300EA2DF8 /* UIImage+Bundle.h */,
+				826DD35E251D8FF300EA2DF8 /* CommDefine.h */,
+				826DD35F251D8FF300EA2DF8 /* CommDefine.cpp */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		826DD360251D8FF300EA2DF8 /* LogView */ = {
+			isa = PBXGroup;
+			children = (
+				826DD361251D8FF300EA2DF8 /* SWErrorViewController.m */,
+				826DD362251D8FF300EA2DF8 /* SWErrorViewCell.h */,
+				826DD363251D8FF300EA2DF8 /* SWErrorViewDetailController.h */,
+				826DD364251D8FF300EA2DF8 /* SWErrorViewCell.xib */,
+				826DD365251D8FF300EA2DF8 /* SWErrorViewCell.m */,
+				826DD366251D8FF300EA2DF8 /* SWErrorViewController.h */,
+				826DD367251D8FF300EA2DF8 /* SWErrorView.storyboard */,
+				826DD368251D8FF300EA2DF8 /* SWErrorViewDetailController.m */,
+			);
+			path = LogView;
+			sourceTree = "<group>";
+		};
 		828DC00D24B806C8007D977B /* Zip */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,11 +339,19 @@
 			path = minizip;
 			sourceTree = "<group>";
 		};
+		829423EC251C3951004B58B7 /* List_code */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List_code;
+			sourceTree = "<group>";
+		};
 		82A8EE082489DD2E000B9896 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				82F3695524B3210E00D2EAD4 /* Web */,
 				8265518C248E15FB002CD193 /* List */,
+				829423EC251C3951004B58B7 /* List_code */,
 				8220F1E02491C07F00754790 /* CreatAccount */,
 				82A8EE092489DD4D000B9896 /* Main */,
 			);
@@ -415,6 +481,7 @@
 			files = (
 				8255958424A594FD0034475D /* SidemenuCs.xib in Resources */,
 				8255957A24A594FD0034475D /* SidemenuCsDetail.xib in Resources */,
+				826DD36E251D8FF300EA2DF8 /* SWErrorView.storyboard in Resources */,
 				8255958124A594FD0034475D /* SidemenuAlarm.xib in Resources */,
 				8228215D24B4341D0039A053 /* index.html in Resources */,
 				8255957E24A594FD0034475D /* SidemenuCoupon.xib in Resources */,
@@ -425,6 +492,7 @@
 				822BC935247F50BE00B95FB4 /* Main.storyboard in Resources */,
 				828DC02024B826B9007D977B /* Resource.zip in Resources */,
 				82A8EE3A248A2835000B9896 /* calenderCell.xib in Resources */,
+				826DD377251DA6FF00EA2DF8 /* weblogoff.png in Resources */,
 				82A8EE30248A2174000B9896 /* SwCalender.xib in Resources */,
 				8255957C24A594FD0034475D /* SidemenuCoopbrand.xib in Resources */,
 				8255957624A594FD0034475D /* SidemenuCsWrite.xib in Resources */,
@@ -432,6 +500,7 @@
 				8255957B24A594FD0034475D /* Sidemenu.xib in Resources */,
 				8255957D24A594FD0034475D /* SidemenuCsList.xib in Resources */,
 				8255958224A594FD0034475D /* SidemenuNotice.xib in Resources */,
+				826DD36C251D8FF300EA2DF8 /* SWErrorViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +514,9 @@
 				82D99BDA24A57CEA001E0197 /* SidemenuViewController.swift in Sources */,
 				8255957724A594FD0034475D /* SidemenuCoopbrandViewController.swift in Sources */,
 				822BC932247F50BE00B95FB4 /* ViewController.swift in Sources */,
+				826DD36D251D8FF300EA2DF8 /* SWErrorViewCell.m in Sources */,
 				8265518E248E1639002CD193 /* FuncList.swift in Sources */,
+				826DD36A251D8FF300EA2DF8 /* CommDefine.cpp in Sources */,
 				828DC01E24B806E5007D977B /* ZipArchive.mm in Sources */,
 				828DC01A24B806E5007D977B /* unzip.c in Sources */,
 				8255958524A594FD0034475D /* SidemenuAlarmViewController.swift in Sources */,
@@ -461,6 +532,7 @@
 				828DC01B24B806E5007D977B /* zip.c in Sources */,
 				8255957924A594FD0034475D /* SidemenuCouponViewController.swift in Sources */,
 				828DC00C24B80691007D977B /* MobileLibrary.m in Sources */,
+				826DD369251D8FF300EA2DF8 /* UIImage+Bundle.m in Sources */,
 				828DC01D24B806E5007D977B /* mztools.c in Sources */,
 				82A8EE2F248A2174000B9896 /* SwCalender.swift in Sources */,
 				8255957324A594FD0034475D /* SidemenuNoticeViewController.swift in Sources */,
@@ -473,7 +545,9 @@
 				8255958324A594FD0034475D /* SidemenuCsListViewController.swift in Sources */,
 				8255958024A594FD0034475D /* SidemenuCancelViewController.swift in Sources */,
 				82A8EE39248A2835000B9896 /* calenderCell.swift in Sources */,
+				826DD36B251D8FF300EA2DF8 /* SWErrorViewController.m in Sources */,
 				822BC944247F831E00B95FB4 /* MainViewController.swift in Sources */,
+				826DD36F251D8FF300EA2DF8 /* SWErrorViewDetailController.m in Sources */,
 				8255958724A5AD440034475D /* NSLayoutConstraint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

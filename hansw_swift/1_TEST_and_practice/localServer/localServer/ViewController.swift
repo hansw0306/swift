@@ -8,6 +8,8 @@
 
 import UIKit
 import WebKit
+//로컬 웹서버
+
 
 //네트워크 체크로직에 필요
 import Foundation
@@ -17,20 +19,26 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     
     //WkwebView
     weak var webView: WKWebView!
-    weak var outputttext: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //1> WKwebview객체 생성 및 설정 작업
         initWebview_then_callFromJs()
-        //웹 주소를 읽는 작업
+        //2> local server 시작
+        startWebServer()
+        //3> 웹 주소를 읽는 작업
         loadUrl(urlString: "")
-        //화면을 구성
+        
+        //추가 화면을 구성(툴바)
         WebViews_AutoLayout()
     }
-
     
-    //MARK:-  function
+    override func viewDidDisappear(_ animated: Bool) {
+      super.viewDidDisappear(animated)
+    }
+    
+//MARK:-  function
         
     
 //MARK: webView 객체 생성
@@ -51,7 +59,6 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         func loadUrl(urlString:String) {
             view.addSubview(webView)
             
-            //MARK:-
             let fileManager = FileManager()
             let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
             do {
@@ -79,6 +86,11 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
             //WKWebview 뒤로가기, 앞으로가기 제스처 사용 ON
             webView.allowsBackForwardNavigationGestures = true
         }
+    
+//MARK: 로컬 웹서버 시작
+    func startWebServer() {
+        
+    }
     
     //MARK: 오토레이 아웃 화면 작업
     func WebViews_AutoLayout() {
@@ -193,18 +205,17 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     }
     @objc func testButtonAction(sender: UIButton!) {
 
-        //주소 변경 시도..
-        let url = URL(string: "https://www.google.com")
-
-        if(url == nil)
-        {
-        //3-2>  로컬파일 프로젝트 내에 있느 파일을 읽을때
-            guard url == Bundle.main.url(forResource: "index", withExtension: "html")
-                else {
-                    print("path is nil")
-                    return
-            }
-        }
+        let fileManager = FileManager()
+        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+        
+        let xxx = documentURL?.appendingPathComponent("xxx.html")
+//
+//
+//        //주소 변경 시도..
+        let url = URL(string: "http://192.168.0.118:80/xxx.html")
+//        //http://192.168.7.130/
+//        //http://Kangguui-iPhone.local/
+//
         let request = URLRequest(url: url!);
         webView.load(request as URLRequest)
     }
@@ -215,13 +226,14 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
             if(message.name == "hello")
             {
                 let data = message.body
-                outputttext.text = data as? String
+                print(data as? String)
             }
             else if( message.name == "test"){
                 let data = message.body
-                outputttext.text = (data as! String)
+                print(data as? String)
             }
         }
         
 }
+
 

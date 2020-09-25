@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("[NativeSysLog]: Resource Unzip faile")
             }
         }
-        
+        mObjClass.Obj_LogSetting()
         
         return true
     }
