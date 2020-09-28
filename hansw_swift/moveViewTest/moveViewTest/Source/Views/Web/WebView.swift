@@ -62,25 +62,32 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
         
         //3-1> 앱 로컬 디렉토리에 있는 파일을 읽어 실행하는 방법
         // FileManager 인스턴스 생성
-        let fileManager = FileManager()
-        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
-        do {
-            // web디렉토리 URL을 가져오고
-            let webURL = documentURL?.appendingPathComponent("Resource")
-            // 디렉토리 내의 파일 목록을 출력해본다.
-            //print("web directory Files : \(try FileManager.default.contentsOfDirectory(atPath : webURL!.path))")
-            
-            let htmlFileURL = webURL?.appendingPathComponent("index.html")
-            
-            // webView에서 로드해준다.
-            // 이 부분에서 allowingReadAccessTo 파라미터에는 index.html의 부모 디렉토리 이상 레벨의 URL을 지정해준다.
-            // 여기서는 최상위 레벨인 Document의 URL을 추가했다. webURL을 추가해도 무방하다.
-            webView.loadFileURL(htmlFileURL!, allowingReadAccessTo: documentURL!)
-        }
-        catch {
-            // 알 수 없는 오류
-            print("error")
-        }
+//        let fileManager = FileManager()
+//        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+//        do {
+//            // web디렉토리 URL을 가져오고
+//            let webURL = documentURL?.appendingPathComponent("Resource")
+//            // 디렉토리 내의 파일 목록을 출력해본다.
+//            //print("web directory Files : \(try FileManager.default.contentsOfDirectory(atPath : webURL!.path))")
+//
+//            let htmlFileURL = webURL?.appendingPathComponent("index.html")
+//
+//            // webView에서 로드해준다.
+//            // 이 부분에서 allowingReadAccessTo 파라미터에는 index.html의 부모 디렉토리 이상 레벨의 URL을 지정해준다.
+//            // 여기서는 최상위 레벨인 Document의 URL을 추가했다. webURL을 추가해도 무방하다.
+//            webView.loadFileURL(htmlFileURL!, allowingReadAccessTo: documentURL!)
+//        }
+//        catch {
+//            // 알 수 없는 오류
+//            print("error")
+//        }
+
+        let url = URL(string: "https://welfare.cretop.com/miaps/main/kakao.html")
+
+        let request = URLRequest(url: url!);
+        webView.load(request as URLRequest)
+
+
 #else
         let url = URL(string: urlString)
 
@@ -421,6 +428,37 @@ class WebView: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMes
     public func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         webView.reload()
     }
+    
+    //WebKit 안에서 링크를 클릭시 사파리로 이동해 주는 함수
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+    ) {
+        print(navigationAction.request.url?.absoluteString ?? "")
+
+        // 카카오 SDK가 호출하는 스킴인 경우 open을 시도합니다.
+        if let url = navigationAction.request.url
+            , ["kakaokompassauth", "kakaolink"].contains(url.scheme) {
+
+            // 카카오톡 실행
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                // Fallback on earlier versions
+                let success = UIApplication.shared.openURL(url)
+                    print("Open \(url.scheme): \(success)")
+            }
+
+            decisionHandler(.cancel)
+            return
+        }
+
+        // 서비스 상황에 맞는 나머지 로직을 구현합니다.
+
+
+        decisionHandler(.allow)
+    }
+    
 }
 
 
