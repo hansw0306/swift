@@ -290,8 +290,8 @@
 		826DD35B251D8FF300EA2DF8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				826DD35C251D8FF300EA2DF8 /* UIImage+Bundle.m */,
 				826DD35D251D8FF300EA2DF8 /* UIImage+Bundle.h */,
+				826DD35C251D8FF300EA2DF8 /* UIImage+Bundle.m */,
 				826DD35E251D8FF300EA2DF8 /* CommDefine.h */,
 				826DD35F251D8FF300EA2DF8 /* CommDefine.cpp */,
 			);
@@ -301,14 +301,14 @@
 		826DD360251D8FF300EA2DF8 /* LogView */ = {
 			isa = PBXGroup;
 			children = (
-				826DD361251D8FF300EA2DF8 /* SWErrorViewController.m */,
-				826DD362251D8FF300EA2DF8 /* SWErrorViewCell.h */,
 				826DD363251D8FF300EA2DF8 /* SWErrorViewDetailController.h */,
-				826DD364251D8FF300EA2DF8 /* SWErrorViewCell.xib */,
-				826DD365251D8FF300EA2DF8 /* SWErrorViewCell.m */,
-				826DD366251D8FF300EA2DF8 /* SWErrorViewController.h */,
-				826DD367251D8FF300EA2DF8 /* SWErrorView.storyboard */,
 				826DD368251D8FF300EA2DF8 /* SWErrorViewDetailController.m */,
+				826DD366251D8FF300EA2DF8 /* SWErrorViewController.h */,
+				826DD361251D8FF300EA2DF8 /* SWErrorViewController.m */,
+				826DD367251D8FF300EA2DF8 /* SWErrorView.storyboard */,
+				826DD362251D8FF300EA2DF8 /* SWErrorViewCell.h */,
+				826DD365251D8FF300EA2DF8 /* SWErrorViewCell.m */,
+				826DD364251D8FF300EA2DF8 /* SWErrorViewCell.xib */,
 			);
 			path = LogView;
 			sourceTree = "<group>";

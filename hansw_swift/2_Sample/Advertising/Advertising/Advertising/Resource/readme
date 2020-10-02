@@ -1,0 +1,33 @@
+
+작업에 관한 내용
+
+2020.09.24
+베너 광고 넣는 작업에 관한 내용
+https://siuh.tistory.com/30
+
+2020.09.26
+이 앱은 공공 API를 이용하여 정보를 제공하는 어플로
+앱스토어에 올리는 작업까지 목표로 한다.
+
+해야할일
+1. 서울 공공 API 정보가져오기
+인증키 : 686276565068616e363045564e697a
+1-1. 통신방법
+서울문화포털 문화행사
+https://data.seoul.go.kr/dataList/OA-15486/S/1/datasetView.do
+-> 서울문화포털 문화행사 해당페이지
+http://openapi.seoul.go.kr:8088/(인증키)/xml/culturalEventInfo/1/5/
+-> 데이터 불러오는 URL
+https://www.ridicorp.com/blog/2016/05/22/making-ios-api-client/
+-> 통신하는 법에 관하여
+
+
+
+
+
+
+
+
+////////////////////////////////////////// 유용사이트 //////////////////////////////////////////
+//황금비율 계산 사이트
+https://voidism.net/metallicratio/
