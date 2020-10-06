@@ -379,7 +379,33 @@ class NativeFuc: NSObject, UIImagePickerControllerDelegate & UINavigationControl
         }
     }
     
-    
+    //MARK:5. http통신 및 결과값 가져오기
+    func httpTest(url:String, completion: @escaping ([String: Any]?, Error?) -> Void){
+        //* info에 App Transport Security Settings -> Allow Arbitrary Loads를 YES로 설정해 줘야 HTTP통신을 사용할 수 있다.
+        //url
+        let urlPath = url
+        let url = NSURL(string: urlPath)
+        //session
+        let session = URLSession.shared
+        
+        //Task
+        let task = session.dataTask(with: url! as URL, completionHandler: {
+            (data, response, error) -> Void in
+            
+            if error == nil{
+                let urlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                print(urlContent ?? "No contents found")
+                completion(urlContent as? [String : Any], nil)
+            }
+            else
+            {
+                print("Error occurred")
+                completion(nil, error)
+            }
+        })
+        //Task Resume
+        task.resume()
+    }
     
     
     //MARK:10. 비동기 처리
