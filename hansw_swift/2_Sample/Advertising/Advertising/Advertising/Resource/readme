@@ -13,13 +13,11 @@ https://siuh.tistory.com/30
 1. 서울 공공 API 정보가져오기
 인증키 : 686276565068616e363045564e697a
 1-1. 통신방법
-서울문화포털 문화행사
+서울문화포털
 https://data.seoul.go.kr/dataList/OA-15486/S/1/datasetView.do
--> 서울문화포털 문화행사 해당페이지
-http://openapi.seoul.go.kr:8088/(인증키)/xml/culturalEventInfo/1/5/
--> 데이터 불러오는 URL
-https://www.ridicorp.com/blog/2016/05/22/making-ios-api-client/
--> 통신하는 법에 관하여
+1> 문화행사
+http://openapi.seoul.go.kr:8088/(인증키)/json/culturalEventInfo/1/5/
+
 
 
 
@@ -31,3 +29,8 @@ https://www.ridicorp.com/blog/2016/05/22/making-ios-api-client/
 ////////////////////////////////////////// 유용사이트 //////////////////////////////////////////
 //황금비율 계산 사이트
 https://voidism.net/metallicratio/
+//Json 정리 사이트
+http://json.parser.online.fr
+
+공부
+https://zeddios.tistory.com/25

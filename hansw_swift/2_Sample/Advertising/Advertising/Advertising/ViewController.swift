@@ -10,18 +10,37 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var mainTableView: MainTableView!
-    
+    var mCommunicationAPI: CommunicationAPI!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        mainTableView.dataSource = mainTableView
-        mainTableView.delegate = mainTableView
-        //스토리보드에 같이 있을때
-        //mainTableView.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
+        mCommunicationAPI = CommunicationAPI.init()
         
-        let viewCellNibName = UINib(nibName: "MainTableViewCell", bundle: nil)
-        mainTableView.register(viewCellNibName, forCellReuseIdentifier: "MainTableViewCell")
+        mCommunicationAPI.httpJson(pageInt:"5") { (result, error) in
+            if let result = result {
+                print("success: \(result)")
+                
+                DispatchQueue.main.async {
+                    
+                    self.mainTableView.setJsonData(jsonData: result)
+                    
+                    self.mainTableView.dataSource = self.mainTableView
+                    self.mainTableView.delegate = self.mainTableView
+                    //스토리보드에 같이 있을때
+                    //mainTableView.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
+                    
+                    let viewCellNibName = UINib(nibName: "MainTableViewCell", bundle: nil)
+                    self.mainTableView.register(viewCellNibName, forCellReuseIdentifier: "MainTableViewCell")
+                }
+            } else if let error = error {
+                print("error: \(error.localizedDescription)")
+            }
+        }
+        
+        
+        
+        
         
     }
 
