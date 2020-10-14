@@ -12,8 +12,12 @@ class MainTableView: UITableView {
 //    var categoryArry = ["C","C","C","C"]
 //    var bigTitleArry = ["big1","big2","big3","big4"]
 //    var smallTitleArry = ["small1","small2","small3","small4"]
+    var mainViewDataArry : NSArray = []
     
+//MARK:- FUNC
     var jsonDic : Dictionary<AnyHashable, Any>?
+    let unknownImage: UIImage = UIImage(named: "Unknown")!
+    
     func setJsonData(jsonData:[AnyHashable : Any]?) {
         //최상위Json
         
@@ -61,27 +65,8 @@ class MainTableView: UITableView {
          */
         
         
-        //1-3 가져온 정보
-        var row = culturalEventInfo.object(forKey: "row") as! NSDictionary
-        
-        var codename = row.object(forKey: "CODENAME") as! NSString
-        var title = row.object(forKey: "TITLE") as! NSString
-        var date = row.object(forKey: "DATE") as! NSString
-        var place = row.object(forKey: "PLACE") as! NSString
-        var org_name = row.object(forKey: "ORG_NAME") as! NSString
-        var use_trgt = row.object(forKey: "USE_TRGT") as! NSString
-        var use_fee = row.object(forKey: "USE_FEE") as! NSString
-        var player = row.object(forKey: "PLAYER") as! NSString
-        var program = row.object(forKey: "PROGRAM") as! NSString
-        var etc_desc = row.object(forKey: "ETC_DESC") as! NSString
-        var org_link = row.object(forKey: "ORG_LINK") as! NSString
-        var main_img = row.object(forKey: "MAIN_IMG") as! NSString
-        var rgstdate = row.object(forKey: "RGSTDATE") as! NSString
-        var ticket = row.object(forKey: "TICKET") as! NSString
-        var strtdate = row.object(forKey: "STRTDATE") as! NSString
-        var end_date = row.object(forKey: "END_DATE") as! NSString
-        var themecode = row.object(forKey: "THEMECODE") as! NSString
-        
+        //1-3 가져온 정보 저장
+        self.mainViewDataArry = culturalEventInfo.object(forKey: "row") as! NSArray
 
     }
     
@@ -111,7 +96,7 @@ extension MainTableView:UITableViewDataSource
 {
     // table row 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return mainViewDataArry.count
     }
     
     //tabl cell 작업
@@ -119,21 +104,54 @@ extension MainTableView:UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
 
+        //저장한 데이터를 리스트에 뿌려주는 작업을 해야한다.
+        var mainViewData =  mainViewDataArry[indexPath.row] as! NSDictionary
+        
+//        var codename = mainViewData.object(forKey: "CODENAME") as! NSString
+        var title = mainViewData.object(forKey: "TITLE") as! NSString
+//        var date = mainViewData.object(forKey: "DATE") as! NSString
+//        var place = mainViewData.object(forKey: "PLACE") as! NSString
+        var org_name = mainViewData.object(forKey: "ORG_NAME") as! NSString
+//        var use_trgt = mainViewData.object(forKey: "USE_TRGT") as! NSString
+//        var use_fee = mainViewData.object(forKey: "USE_FEE") as! NSString
+//        var player = mainViewData.object(forKey: "PLAYER") as! NSString
+//        var program = mainViewData.object(forKey: "PROGRAM") as! NSString
+//        var etc_desc = mainViewData.object(forKey: "ETC_DESC") as! NSString
+//        var org_link = mainViewData.object(forKey: "ORG_LINK") as! NSString
+        var main_img = mainViewData.object(forKey: "MAIN_IMG") as! NSString
+//        var rgstdate = mainViewData.object(forKey: "RGSTDATE") as! NSString
+//        var ticket = mainViewData.object(forKey: "TICKET") as! NSString
+//        var strtdate = mainViewData.object(forKey: "STRTDATE") as! NSString
+//        var end_date = mainViewData.object(forKey: "END_DATE") as! NSString
+//        var themecode = mainViewData.object(forKey: "THEMECODE") as! NSString
+        
+
+        
+        main_img = main_img.replacingOccurrences(of: "http://culture.seoul.go.krhttps", with:"https") as NSString
         
         
         
-//        cell.cellCategory.text = categoryArry[indexPath.row]
-//        cell.cellBigTitle.text = bigTitleArry[indexPath.row]
-//        cell.cellSmallTitle.text = smallTitleArry[indexPath.row]
+        cell.cellCategory.text = "C"
+        cell.cellBigTitle.text = title as String
+        cell.cellSmallTitle.text = org_name as String
         
-//        let unknownImage: UIImage = UIImage(named: "Unknown")!
-//        cell.celImage =  UIImageView(image: unknownImage)
+        let url = URL(string: main_img as String)
+        let imageData = try? Data(contentsOf: url!)
+
+        if (imageData != nil) {
+            cell.celImage.image = UIImage(data: imageData!)
+        }
+        else
+        {
+            cell.celImage.image =  unknownImage
+        }
+        
         
         return cell
     }
     
     override func numberOfRows(inSection section: Int) -> Int {
-        return 5
+        return mainViewDataArry.count
     }
     
 }

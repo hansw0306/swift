@@ -7,32 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "70D4DE92-F19F-4762-86CA-F0E8001317B9"
+            uuid = "E3A13F55-4377-4E38-B9E1-C347BBC81965"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Advertising/View/Main/MainTableView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "setJsonData(jsonData:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E3A13F55-4377-4E38-B9E1-C347BBC81965 - f34e16e41d777320"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Advertising.MainTableView.setJsonData(jsonData: Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; ()"
+                  moduleName = "Advertising"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sangwonhan/Documents/iOS/iphone&amp;ipad/swift/hansw_swift/2_Sample/Advertising/Advertising/Advertising/View/Main/MainTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "E3A13F55-4377-4E38-B9E1-C347BBC81965 - f34e16e41d777320"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Advertising.MainTableView.setJsonData(jsonData: Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; ()"
+                  moduleName = "Advertising"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sangwonhan/Documents/iOS/iphone&amp;ipad/swift/hansw_swift/2_Sample/Advertising/Advertising/Advertising/View/Main/MainTableView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "9504">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "08A35AFD-3FE5-4398-AD88-17BFAA54C201"
-            shouldBeEnabled = "No"
+            uuid = "C055850F-64EE-4725-9D01-1B57CD8D1891"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Advertising/View/Main/MainTableView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "setJsonData(jsonData:)"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
