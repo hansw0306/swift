@@ -8,15 +8,11 @@
 import UIKit
 
 class MainTableView: UITableView {
-    
-//    var categoryArry = ["C","C","C","C"]
-//    var bigTitleArry = ["big1","big2","big3","big4"]
-//    var smallTitleArry = ["small1","small2","small3","small4"]
-    var mainViewDataArry : NSArray = []
+    //var jsonDic : Dictionary<AnyHashable, Any>?
+    var mainViewDataArry = NSArray()
+    let unknownImage: UIImage = UIImage(named: "Unknown")!
     
 //MARK:- FUNC
-    var jsonDic : Dictionary<AnyHashable, Any>?
-    let unknownImage: UIImage = UIImage(named: "Unknown")!
     
     func setJsonData(jsonData:[AnyHashable : Any]?) {
         //최상위Json
@@ -105,25 +101,25 @@ extension MainTableView:UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as! MainTableViewCell
 
         //저장한 데이터를 리스트에 뿌려주는 작업을 해야한다.
-        var mainViewData =  mainViewDataArry[indexPath.row] as! NSDictionary
+        let mainViewData =  mainViewDataArry[indexPath.row] as! NSDictionary
         
-//        var codename = mainViewData.object(forKey: "CODENAME") as! NSString
-        var title = mainViewData.object(forKey: "TITLE") as! NSString
-//        var date = mainViewData.object(forKey: "DATE") as! NSString
-//        var place = mainViewData.object(forKey: "PLACE") as! NSString
-        var org_name = mainViewData.object(forKey: "ORG_NAME") as! NSString
-//        var use_trgt = mainViewData.object(forKey: "USE_TRGT") as! NSString
-//        var use_fee = mainViewData.object(forKey: "USE_FEE") as! NSString
-//        var player = mainViewData.object(forKey: "PLAYER") as! NSString
-//        var program = mainViewData.object(forKey: "PROGRAM") as! NSString
-//        var etc_desc = mainViewData.object(forKey: "ETC_DESC") as! NSString
-//        var org_link = mainViewData.object(forKey: "ORG_LINK") as! NSString
+//        let codename = mainViewData.object(forKey: "CODENAME") as! NSString
+        let title = mainViewData.object(forKey: "TITLE") as! NSString
+//        let date = mainViewData.object(forKey: "DATE") as! NSString
+//        let place = mainViewData.object(forKey: "PLACE") as! NSString
+        let org_name = mainViewData.object(forKey: "ORG_NAME") as! NSString
+//        let use_trgt = mainViewData.object(forKey: "USE_TRGT") as! NSString
+//        let use_fee = mainViewData.object(forKey: "USE_FEE") as! NSString
+//        let player = mainViewData.object(forKey: "PLAYER") as! NSString
+//        let program = mainViewData.object(forKey: "PROGRAM") as! NSString
+//        let etc_desc = mainViewData.object(forKey: "ETC_DESC") as! NSString
+//        let org_link = mainViewData.object(forKey: "ORG_LINK") as! NSString
         var main_img = mainViewData.object(forKey: "MAIN_IMG") as! NSString
-//        var rgstdate = mainViewData.object(forKey: "RGSTDATE") as! NSString
-//        var ticket = mainViewData.object(forKey: "TICKET") as! NSString
-//        var strtdate = mainViewData.object(forKey: "STRTDATE") as! NSString
-//        var end_date = mainViewData.object(forKey: "END_DATE") as! NSString
-//        var themecode = mainViewData.object(forKey: "THEMECODE") as! NSString
+//        let rgstdate = mainViewData.object(forKey: "RGSTDATE") as! NSString
+//        let ticket = mainViewData.object(forKey: "TICKET") as! NSString
+//        let strtdate = mainViewData.object(forKey: "STRTDATE") as! NSString
+//        let end_date = mainViewData.object(forKey: "END_DATE") as! NSString
+//        let themecode = mainViewData.object(forKey: "THEMECODE") as! NSString
         
 
         

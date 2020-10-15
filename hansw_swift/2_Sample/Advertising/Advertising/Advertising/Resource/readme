@@ -13,15 +13,33 @@ https://siuh.tistory.com/30
 1. 서울 공공 API 정보가져오기
 인증키 : 686276565068616e363045564e697a
 1-1. 통신방법
-서울문화포털
+
+[서울문화포털]
+서울특별시 문화행사 정보
 https://data.seoul.go.kr/dataList/OA-15486/S/1/datasetView.do
 1> 문화행사
 http://openapi.seoul.go.kr:8088/(인증키)/json/culturalEventInfo/1/5/
 
+서울시 문화행사 공공서비스예약 정보
+https://data.seoul.go.kr/dataList/OA-2269/S/1/datasetView.do
+1> 문화행사 공공서비스예약 정보 조회
+http://openAPI.seoul.go.kr:8088/(인증키)/xml/ListPublicReservationCulture/1/5/
+2> 콘서트 공공서비스예약 정보 조회
+http://openAPI.seoul.go.kr:8088/(인증키)/xml/ListPublicReservationCulture/1/5/콘서트
+
+문화행사 장르분류 목록 --> 이건 나중에 검색해서 코드만 확인하고 작업을 진행하도록 하자.
+http://openAPI.seoul.go.kr:8088/(인증키)/xml/SearchConcertSubjectCatalogService/1/5/
 
 
+서울특별시 문화공간 정보
+https://data.seoul.go.kr/dataList/OA-15487/S/1/datasetView.do
+1>서울문화포털 문화공간
+http://openapi.seoul.go.kr:8088/(인증키)/xml/culturalSpaceInfo/1/5/
 
-
+서울시 문화행사 기간 검색
+https://data.seoul.go.kr/dataList/OA-134/A/1/datasetView.do
+1>2013년 7월1일(시작일자)부터 2013년 12월31일(종료일자) 기간사이의 문화행사 검색
+http://openAPI.seoul.go.kr:8088/(인증키)/xml/SearchConcertPeriodService/1/5/20130701/20131231/
 
 
 
