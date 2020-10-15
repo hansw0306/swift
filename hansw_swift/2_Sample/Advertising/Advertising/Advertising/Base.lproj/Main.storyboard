@@ -18,31 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a8s-fe-GWZ" customClass="MainTableView" customModule="Advertising" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113" width="414" height="700"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="mGM-TE-iEb"/>
                                 </constraints>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojc-wS-XWF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="73"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="oAB-KY-Y9x"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a8s-fe-GWZ" secondAttribute="bottom" id="ATY-RB-61p"/>
                             <constraint firstItem="a8s-fe-GWZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EbF-Mz-OgB"/>
-                            <constraint firstItem="Ojc-wS-XWF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OeM-ZE-wr4"/>
-                            <constraint firstItem="a8s-fe-GWZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="69" id="QZ2-cM-WCJ"/>
+                            <constraint firstItem="a8s-fe-GWZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QZ2-cM-WCJ"/>
                             <constraint firstItem="a8s-fe-GWZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a6p-3k-VVS"/>
-                            <constraint firstItem="Ojc-wS-XWF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a8m-41-Pt2"/>
-                            <constraint firstItem="Ojc-wS-XWF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iSq-9X-TFQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ojc-wS-XWF" secondAttribute="bottom" constant="696" id="xhk-jQ-Mpd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7SC-9b-Mc4"/>
@@ -53,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1223" y="75"/>
+            <point key="canvasLocation" x="1221.7391304347827" y="75"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jB8-Fu-tJ8">
@@ -221,9 +210,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

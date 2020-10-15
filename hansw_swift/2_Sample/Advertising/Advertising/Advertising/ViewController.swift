@@ -21,20 +21,26 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         
         //UIView부분의 이벤트 추가
-        let bigMenu1taps = UITapGestureRecognizer(target: self, action: Selector(("bigMenu1TapGesture")))
-        self.bigMenu1.addGestureRecognizer(bigMenu1taps)
+        let bigMenu1Gesture = UITapGestureRecognizer(target: self, action:  #selector(self.bigMenu1TapGesture))
+        self.bigMenu1.addGestureRecognizer(bigMenu1Gesture)
     }
 
 }
 
 extension ViewController {
     
-    func bigMenu1TapGesture(recognizer: UITapGestureRecognizer) {
+    //이벤트
+    @objc func bigMenu1TapGesture(sender : UITapGestureRecognizer) {
         print("Touch bigMenu1")
         //객채를 생성 -> 화면 이동
         if let controller = storyboard?.instantiateViewController(withIdentifier: "MainTableViewController"){
             navigationController?.pushViewController(controller, animated: true)
         }
-        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    
 }

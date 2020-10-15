@@ -14,7 +14,7 @@ class MainTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        navigationController?.navigationBar.isHidden = false
 //MARK: 데이터 작업
         mCommunicationAPI = CommunicationAPI.init()
         mCommunicationAPI.httpJson(pageInt:"5") { (result, error) in
@@ -44,5 +44,6 @@ class MainTableViewController: UIViewController {
         
     }
 
-
+    
+    
 }
