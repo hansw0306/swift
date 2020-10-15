@@ -17,6 +17,7 @@
 		82412C54251F2BAD0095FFE1 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82412C53251F2BAD0095FFE1 /* MainTableView.swift */; };
 		82412C58251F2CAD0095FFE1 /* CommunicationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82412C57251F2CAD0095FFE1 /* CommunicationAPI.swift */; };
 		8245DA4A25217DBF00A1FB55 /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8245DA4925217DBF00A1FB55 /* Unknown.png */; };
+		825BF09A25382E5200C712BD /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825BF09925382E5200C712BD /* MainTableViewController.swift */; };
 		82C82B5C252D9F8C000ACF49 /* readme_Data in Resources */ = {isa = PBXBuildFile; fileRef = 82C82B5B252D9F8C000ACF49 /* readme_Data */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		82412C53251F2BAD0095FFE1 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		82412C57251F2CAD0095FFE1 /* CommunicationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationAPI.swift; sourceTree = "<group>"; };
 		8245DA4925217DBF00A1FB55 /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
+		825BF09925382E5200C712BD /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		82C82B5B252D9F8C000ACF49 /* readme_Data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme_Data; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,8 +75,8 @@
 				82412BF4251F0DA60095FFE1 /* AppDelegate.swift */,
 				82412BF8251F0DA60095FFE1 /* ViewController.swift */,
 				82412BFA251F0DA60095FFE1 /* Main.storyboard */,
-				82412BFD251F0DA60095FFE1 /* Assets.xcassets */,
 				82412BFF251F0DA60095FFE1 /* LaunchScreen.storyboard */,
+				82412BFD251F0DA60095FFE1 /* Assets.xcassets */,
 				82412C02251F0DA70095FFE1 /* Info.plist */,
 				82412C2A251F0E330095FFE1 /* Resource */,
 			);
@@ -103,6 +105,7 @@
 		82412C46251F27B70095FFE1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				825BF09925382E5200C712BD /* MainTableViewController.swift */,
 				82412C53251F2BAD0095FFE1 /* MainTableView.swift */,
 				82412C4B251F28550095FFE1 /* MainTableViewCell.swift */,
 				82412C4C251F28550095FFE1 /* MainTableViewCell.xib */,
@@ -204,6 +207,7 @@
 				82412C54251F2BAD0095FFE1 /* MainTableView.swift in Sources */,
 				82412C58251F2CAD0095FFE1 /* CommunicationAPI.swift in Sources */,
 				82412C4D251F28550095FFE1 /* MainTableViewCell.swift in Sources */,
+				825BF09A25382E5200C712BD /* MainTableViewController.swift in Sources */,
 				82412BF5251F0DA60095FFE1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

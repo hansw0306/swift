@@ -9,41 +9,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var mainTableView: MainTableView!
+    @IBOutlet var bigMenu1: UIView!
     var mCommunicationAPI: CommunicationAPI!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//MARK: 데이터 작업
-        mCommunicationAPI = CommunicationAPI.init()
-        mCommunicationAPI.httpJson(pageInt:"5") { (result, error) in
-            if let result = result {
-                print("success: \(result)")
-                
-//                DispatchQueue.main.async {
-//
-//                }
-                self.mainTableView.setJsonData(jsonData: result)
-                DispatchQueue.main.async {
-                    self.mainTableView.dataSource = self.mainTableView
-                    self.mainTableView.delegate = self.mainTableView
-                    //스토리보드에 같이 있을때
-                    //mainTableView.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
-                    
-                    let viewCellNibName = UINib(nibName: "MainTableViewCell", bundle: nil)
-                    self.mainTableView.register(viewCellNibName, forCellReuseIdentifier: "MainTableViewCell")
-                    
-                    //$$ TEST---> 인디게이터를 만들고 아래의 reloadData를 했을때 지우는 작업을 넣어주도록 한다.
-                    self.mainTableView.reloadData()
-                }
-            } else if let error = error {
-                print("error: \(error.localizedDescription)")
-            }
-        }
         
+        //메인화면에 네비게이션 지워주자
+        navigationController?.navigationBar.isHidden = true
+        
+        //UIView부분의 이벤트 추가
+        let bigMenu1taps = UITapGestureRecognizer(target: self, action: Selector(("bigMenu1TapGesture")))
+        self.bigMenu1.addGestureRecognizer(bigMenu1taps)
     }
-
 
 }
 
+extension ViewController {
+    
+    func bigMenu1TapGesture(recognizer: UITapGestureRecognizer) {
+        print("Touch bigMenu1")
+        //객채를 생성 -> 화면 이동
+        if let controller = storyboard?.instantiateViewController(withIdentifier: "MainTableViewController"){
+            navigationController?.pushViewController(controller, animated: true)
+        }
+        
+    }
+}
