@@ -17,7 +17,7 @@ class MainTableViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
 //MARK: 데이터 작업
         mCommunicationAPI = CommunicationAPI.init()
-        mCommunicationAPI.httpJson(pageInt:"5") { (result, error) in
+        mCommunicationAPI.httpJson(pageInt:"15") { (result, error) in
             if let result = result {
                 print("success: \(result)")
                 
