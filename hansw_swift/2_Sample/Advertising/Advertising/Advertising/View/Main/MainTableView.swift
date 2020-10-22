@@ -143,14 +143,9 @@ extension MainTableView:UITableViewDataSource
                 if let data = NSData(contentsOf: url as URL) {
                     DispatchQueue.main.async {
                         if((UIImage(data: data as Data)) != nil){
-                            
                             if(UIImage(data: data as Data) != nil){
                                 cell.celImage.image = UIImage(data: data as Data)
                             }
-                            else{
-                                cell.celImage.image =  self.unknownImage
-                            }
-                            
                         }
                     }
                 }
