@@ -15,15 +15,13 @@ class MainTableViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.isHidden = false
-//MARK: 데이터 작업
+        //MARK: 데이터 작업
         mCommunicationAPI = CommunicationAPI.init()
         mCommunicationAPI.httpJson(pageInt:"15") { (result, error) in
             if let result = result {
                 print("success: \(result)")
                 
-//                DispatchQueue.main.async {
-//
-//                }
+                
                 self.mainTableView.setJsonData(jsonData: result)
                 DispatchQueue.main.async {
                     self.mainTableView.dataSource = self.mainTableView

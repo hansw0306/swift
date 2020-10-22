@@ -11,7 +11,7 @@ class MainTableView: UITableView {
     //var jsonDic : Dictionary<AnyHashable, Any>?
     var mainViewDataArry = NSArray()
     let unknownImage: UIImage = UIImage(named: "Unknown")!
-    
+    let commonObj = common()
 //MARK:- FUNC
     
     func setJsonData(jsonData:[AnyHashable : Any]?) {
@@ -158,6 +158,16 @@ extension MainTableView:UITableViewDataSource
     
     override func numberOfRows(inSection section: Int) -> Int {
         return mainViewDataArry.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //print("선택 셀 \([indexPath.row])")
+        let mainDetailVC = MainTableDetailViewController.init()
+        
+        
+        mainDetailVC.lable.text = "선택셀 \([indexPath.row])"
+        commonObj.ExXibViewMove(viewCont: mainDetailVC, overFullScreen: true)
     }
     
 }
