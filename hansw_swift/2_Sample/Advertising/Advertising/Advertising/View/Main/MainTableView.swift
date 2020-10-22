@@ -122,24 +122,39 @@ extension MainTableView:UITableViewDataSource
 //        let themecode = mainViewData.object(forKey: "THEMECODE") as! NSString
         
 
+        let image_url_array = main_img.components(separatedBy: "http://culture.seoul.go.kr")
         
-        main_img = main_img.replacingOccurrences(of: "http://culture.seoul.go.krhttps", with:"https") as NSString
+        var imageURL = "http://culture.seoul.go.kr" + image_url_array.last! as String
         
-        
+        //문자열 찾기
+        if imageURL.contains("http://culture.seoul.go.krhttp://www") {
+            //문자열 자르기
+            imageURL = (imageURL.replacingOccurrences(of: "http://culture.seoul.go.krhttp", with:"http") as NSString) as String
+        }
         
         cell.cellCategory.text = "C"
         cell.cellBigTitle.text = title as String
         cell.cellSmallTitle.text = org_name as String
         
-        let url = URL(string: main_img as String)
-        let imageData = try? Data(contentsOf: url!)
-
-        if (imageData != nil) {
-            cell.celImage.image = UIImage(data: imageData!)
-        }
-        else
-        {
-            cell.celImage.image =  unknownImage
+        //NSData(contentsOf: url as URL) 으로 변환하면 리스트를 다시 그릴때 버벅거린다.
+        //1. 비동기로 하면 버벅거리는 현상은 없지만 이미지가 다시 들어가는게 너무 느리다.
+        if let url = NSURL(string: imageURL as String) {
+            DispatchQueue.global(qos: .default).async{
+                if let data = NSData(contentsOf: url as URL) {
+                    DispatchQueue.main.async {
+                        if((UIImage(data: data as Data)) != nil){
+                            
+                            if(UIImage(data: data as Data) != nil){
+                                cell.celImage.image = UIImage(data: data as Data)
+                            }
+                            else{
+                                cell.celImage.image =  self.unknownImage
+                            }
+                            
+                        }
+                    }
+                }
+            }
         }
         
         
