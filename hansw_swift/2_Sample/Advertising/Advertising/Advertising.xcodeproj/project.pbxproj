@@ -18,7 +18,10 @@
 		82412C58251F2CAD0095FFE1 /* CommunicationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82412C57251F2CAD0095FFE1 /* CommunicationAPI.swift */; };
 		8245DA4A25217DBF00A1FB55 /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 8245DA4925217DBF00A1FB55 /* Unknown.png */; };
 		825BF09A25382E5200C712BD /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825BF09925382E5200C712BD /* MainTableViewController.swift */; };
+		82B6FB6C25415D30002E0945 /* MainTableDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6FB6B25415D30002E0945 /* MainTableDetailViewController.swift */; };
+		82B6FB712541775A002E0945 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B6FB702541775A002E0945 /* common.swift */; };
 		82C82B5C252D9F8C000ACF49 /* readme_Data in Resources */ = {isa = PBXBuildFile; fileRef = 82C82B5B252D9F8C000ACF49 /* readme_Data */; };
+		82E9751A258365800006C9B7 /* MainTableDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E97519258365800006C9B7 /* MainTableDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +41,10 @@
 		82412C57251F2CAD0095FFE1 /* CommunicationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationAPI.swift; sourceTree = "<group>"; };
 		8245DA4925217DBF00A1FB55 /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
 		825BF09925382E5200C712BD /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		82B6FB6B25415D30002E0945 /* MainTableDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableDetailViewController.swift; sourceTree = "<group>"; };
+		82B6FB702541775A002E0945 /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 		82C82B5B252D9F8C000ACF49 /* readme_Data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme_Data; sourceTree = "<group>"; };
+		82E97519258365800006C9B7 /* MainTableDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 		82412C45251F27AC0095FFE1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				82B6FB6F254176DE002E0945 /* Lib */,
 				8245DA4825217D9000A1FB55 /* Dummy */,
 				82412C52251F2AF30095FFE1 /* Communication */,
 				82412C46251F27B70095FFE1 /* Main */,
@@ -109,6 +116,7 @@
 				82412C53251F2BAD0095FFE1 /* MainTableView.swift */,
 				82412C4B251F28550095FFE1 /* MainTableViewCell.swift */,
 				82412C4C251F28550095FFE1 /* MainTableViewCell.xib */,
+				82E9751D258367D10006C9B7 /* DetailView */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -127,6 +135,23 @@
 				8245DA4925217DBF00A1FB55 /* Unknown.png */,
 			);
 			path = Dummy;
+			sourceTree = "<group>";
+		};
+		82B6FB6F254176DE002E0945 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				82B6FB702541775A002E0945 /* common.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		82E9751D258367D10006C9B7 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				82B6FB6B25415D30002E0945 /* MainTableDetailViewController.swift */,
+				82E97519258365800006C9B7 /* MainTableDetailViewController.xib */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +216,7 @@
 				8245DA4A25217DBF00A1FB55 /* Unknown.png in Resources */,
 				82412BFE251F0DA60095FFE1 /* Assets.xcassets in Resources */,
 				82412C4E251F28550095FFE1 /* MainTableViewCell.xib in Resources */,
+				82E9751A258365800006C9B7 /* MainTableDetailViewController.xib in Resources */,
 				82C82B5C252D9F8C000ACF49 /* readme_Data in Resources */,
 				82412BFC251F0DA60095FFE1 /* Main.storyboard in Resources */,
 			);
@@ -203,11 +229,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82B6FB712541775A002E0945 /* common.swift in Sources */,
 				82412BF9251F0DA60095FFE1 /* ViewController.swift in Sources */,
 				82412C54251F2BAD0095FFE1 /* MainTableView.swift in Sources */,
 				82412C58251F2CAD0095FFE1 /* CommunicationAPI.swift in Sources */,
 				82412C4D251F28550095FFE1 /* MainTableViewCell.swift in Sources */,
 				825BF09A25382E5200C712BD /* MainTableViewController.swift in Sources */,
+				82B6FB6C25415D30002E0945 /* MainTableDetailViewController.swift in Sources */,
 				82412BF5251F0DA60095FFE1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,15 +387,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = STJ3K84EP5;
 				INFOPLIST_FILE = Advertising/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.kr.miaps.hansw;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kr.miaps.hansw.Advertising;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "XC IOS All";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -378,15 +408,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = STJ3K84EP5;
 				INFOPLIST_FILE = Advertising/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.kr.miaps.hansw;
+				PRODUCT_BUNDLE_IDENTIFIER = co.kr.miaps.hansw.Advertising;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "XC IOS All";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
