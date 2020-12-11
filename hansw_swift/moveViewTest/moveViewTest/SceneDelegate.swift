@@ -11,8 +11,14 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
+    enum ActionType: String {
+        case searchAction = "SearchAction"
+        case shareAction = "ShareAction"
+        case favoriteAction = "FavoriteAction"
+    }
+    static let favoriteIdentifierInfoKey = "FavoriteIdentifier"
+    
     @available(iOS 13.0, *)
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -57,7 +63,49 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+//MARK:- 숏컷
+    @available(iOS 13.0, *)
+    func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        let handled = handleShortCutItem(shortcutItem: shortcutItem)
+        completionHandler(handled)
+    }
 
-
+    // MARK: - Application Shortcut Support
+    
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: "Quick Action", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+        window?.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    func handleShortCutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        /** In this sample an alert is being shown to indicate that the action has been triggered,
+            but in real code the functionality for the quick action would be triggered.
+        */
+        if let actionTypeValue = ActionType(rawValue: shortcutItem.type) {
+            switch actionTypeValue {
+            case .searchAction:
+                showAlert(message: "Search triggered")
+            case .shareAction:
+                showAlert(message: "Share triggered")
+            case .favoriteAction:
+                // Go to that particular favorite shortcut.
+                if let favoriteIdentifier = shortcutItem.userInfo?[SceneDelegate.favoriteIdentifierInfoKey] as? String {
+                    // Find the favorite contact from the userInfo identifier.
+                    if let foundFavoriteContact = ContactsData.shared.contact(favoriteIdentifier) {
+                        // Go to that favorite contact.
+                        if let navController = window?.rootViewController as? UINavigationController {
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            //이벤트 처리
+                            // Pass the contact to the detail view controller and push it.
+                            print("favoriteAction")
+                            
+                        }
+                    }
+                }
+            }
+        }
+        return true
+    }
 }
 

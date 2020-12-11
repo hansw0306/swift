@@ -18,6 +18,8 @@
 		822BC937247F50BF00B95FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 822BC936247F50BF00B95FB4 /* Assets.xcassets */; };
 		822BC93A247F50BF00B95FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822BC938247F50BF00B95FB4 /* LaunchScreen.storyboard */; };
 		822BC944247F831E00B95FB4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822BC943247F831E00B95FB4 /* MainViewController.swift */; };
+		824418E7256CCB5D007354F7 /* ContactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824418E6256CCB5D007354F7 /* ContactsData.swift */; };
+		824418EA256CCBDB007354F7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824418E9256CCBDB007354F7 /* Contact.swift */; };
 		824A6AF024DBF1760072A6E5 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A6AEF24DBF1760072A6E5 /* DBManager.swift */; };
 		8255957024A594FD0034475D /* SidemenuCsWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255955A24A594FC0034475D /* SidemenuCsWriteViewController.swift */; };
 		8255957124A594FD0034475D /* SidemenuCsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255955B24A594FC0034475D /* SidemenuCsViewController.swift */; };
@@ -89,6 +91,8 @@
 		822BC941247F50F800B95FB4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		822BC942247F50F800B95FB4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		822BC943247F831E00B95FB4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		824418E6256CCB5D007354F7 /* ContactsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsData.swift; sourceTree = "<group>"; };
+		824418E9256CCBDB007354F7 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		824A6AEF24DBF1760072A6E5 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		8255955A24A594FC0034475D /* SidemenuCsWriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCsWriteViewController.swift; sourceTree = "<group>"; };
 		8255955B24A594FC0034475D /* SidemenuCsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidemenuCsViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +242,15 @@
 			path = objective_c;
 			sourceTree = "<group>";
 		};
+		824418EC256CCBF3007354F7 /* shortcut */ = {
+			isa = PBXGroup;
+			children = (
+				824418E6256CCB5D007354F7 /* ContactsData.swift */,
+				824418E9256CCBDB007354F7 /* Contact.swift */,
+			);
+			path = shortcut;
+			sourceTree = "<group>";
+		};
 		8255955924A5949D0034475D /* sidemenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +384,7 @@
 		82A8EE0A2489DD74000B9896 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				824418EC256CCBF3007354F7 /* shortcut */,
 				82A8EE0D2489DDD6000B9896 /* Library */,
 				82A8EE082489DD2E000B9896 /* Views */,
 			);
@@ -523,6 +537,7 @@
 				828DC01C24B806E5007D977B /* ioapi.c in Sources */,
 				8255957224A594FD0034475D /* SidemenuCsDetailViewController.swift in Sources */,
 				8255957F24A594FD0034475D /* Sidemenu.swift in Sources */,
+				824418EA256CCBDB007354F7 /* Contact.swift in Sources */,
 				824A6AF024DBF1760072A6E5 /* DBManager.swift in Sources */,
 				8255957024A594FD0034475D /* SidemenuCsWriteViewController.swift in Sources */,
 				8255957124A594FD0034475D /* SidemenuCsViewController.swift in Sources */,
@@ -543,6 +558,7 @@
 				8299B37924DD2C720099F332 /* GpsManager.swift in Sources */,
 				8255957424A594FD0034475D /* SidemenuAlarmSettingViewController.swift in Sources */,
 				8255958324A594FD0034475D /* SidemenuCsListViewController.swift in Sources */,
+				824418E7256CCB5D007354F7 /* ContactsData.swift in Sources */,
 				8255958024A594FD0034475D /* SidemenuCancelViewController.swift in Sources */,
 				82A8EE39248A2835000B9896 /* calenderCell.swift in Sources */,
 				826DD36B251D8FF300EA2DF8 /* SWErrorViewController.m in Sources */,
