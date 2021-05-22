@@ -25,9 +25,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //객체선언
+        //날씨정보 가져오기
         CommunicationObj = Communication.init()
-        
         CommunicationObj?.httpJson(pageInt: "1", completion: { (result, error) in
             if let result = result {
                 print("success: \(result)")

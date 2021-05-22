@@ -18,13 +18,10 @@ class Communication: NSObject {
 
 
 extension Communication {
-    // new functionality to add to SomeType goes here
-    
     
     func httpJson(pageInt:String, completion: @escaping ([AnyHashable : Any]?, Error?) -> Void) {
-        let urlPath = "http://apis.data.go.kr/1360000/MidFcstInfoService"
-        let urlParam = self.makeUrl(str: "중기전망조회")
-        let url = NSURL(string: urlPath+urlParam)
+        let urlStr = self.makeUrlPlace(str: "중기전망조회")
+        let url = NSURL(string: urlStr)
         
         //Task
         let task = session.dataTask(with: url! as URL, completionHandler: {
@@ -51,16 +48,29 @@ extension Communication {
                     print("error occured")
                 }
             }
-            
-
-           
         })
         //Task Resume
         task.resume()
     }
     
+    //MARK: -
     
-    func makeUrl(str:String) -> String {
+    //MARK: 동네예보 URL
+    func makeUrlPlace(str:String) -> String {
+        let url = "http://apis.data.go.kr/1360000/VilageFcstInfoService"
+        let KeyString = infoDic["APIKey_Place"] as! String
+        var urlParam = ""
+        
+        urlParam = "/getVilageFcst?ServiceKey=\(KeyString)&pageNo=1&numOfRows=10&dataType=JSON&base_date=20210522&base_time=0500&nx=60&ny=127"
+        
+        return url+urlParam
+    }
+    
+    
+    
+    
+    //MARK: 중기예보 URL
+    func makeUrlJungGi(str:String) -> String {
         
         let url = "http://apis.data.go.kr/1360000/MidFcstInfoService"
         let KeyString = infoDic["APIKey_Mid-term forecast"] as! String

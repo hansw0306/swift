@@ -4,6 +4,8 @@
 <dict>
 	<key>APIKey_Mid-term forecast</key>
 	<string>3rKBNxPBfyGunKrKyauTCf4Fe5%2BWnUC6RtgYEhdn%2B1E8wK3ykWixKW%2F7U0%2BIgeHbY1UTPD4%2Fsh9UGdVpcNH%2FZw%3D%3D</string>
+	<key>APIKey_Place</key>
+	<string>3rKBNxPBfyGunKrKyauTCf4Fe5%2BWnUC6RtgYEhdn%2B1E8wK3ykWixKW%2F7U0%2BIgeHbY1UTPD4%2Fsh9UGdVpcNH%2FZw%3D%3D</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
