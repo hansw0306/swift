@@ -13,7 +13,9 @@
 		821C0F9B2647C42B00D111CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 821C0F9A2647C42B00D111CE /* Assets.xcassets */; };
 		821C0F9E2647C42B00D111CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 821C0F9C2647C42B00D111CE /* LaunchScreen.storyboard */; };
 		824B2EB22653E46E0056A73D /* Communication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824B2EB12653E46E0056A73D /* Communication.swift */; };
-		82F956982658D92B0068D5A5 /* ObjetiveClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F956972658D92B0068D5A5 /* ObjetiveClass.m */; };
+		82F76A802659031B00964E6E /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F76A7F2659031B00964E6E /* DBManager.swift */; };
+		82F76A88265903BD00964E6E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F76A86265903BB00964E6E /* TableViewController.swift */; };
+		82F76A89265903BD00964E6E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F76A87265903BD00964E6E /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +27,9 @@
 		821C0F9D2647C42B00D111CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		821C0F9F2647C42B00D111CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		824B2EB12653E46E0056A73D /* Communication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communication.swift; sourceTree = "<group>"; };
-		82F956952658D92B0068D5A5 /* SgWeather-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SgWeather-Bridging-Header.h"; sourceTree = "<group>"; };
-		82F956962658D92B0068D5A5 /* ObjetiveClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjetiveClass.h; sourceTree = "<group>"; };
-		82F956972658D92B0068D5A5 /* ObjetiveClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjetiveClass.m; sourceTree = "<group>"; };
+		82F76A7F2659031B00964E6E /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBManager.swift; path = ../../../../moveViewTest/moveViewTest/Source/Library/DBManager.swift; sourceTree = "<group>"; };
+		82F76A86265903BB00964E6E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		82F76A87265903BD00964E6E /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +62,8 @@
 		821C0F902647C42900D111CE /* SgWeather */ = {
 			isa = PBXGroup;
 			children = (
-				82F956942658D9030068D5A5 /* Objc */,
-				821C0FC52647C7A400D111CE /* 7DayList */,
 				821C0FC42647C79800D111CE /* CallApi */,
+				82F76A832659033F00964E6E /* View */,
 				821C0F912647C42900D111CE /* AppDelegate.swift */,
 				821C0F952647C42900D111CE /* ViewController.swift */,
 				821C0F972647C42900D111CE /* Main.storyboard */,
@@ -76,26 +77,27 @@
 		821C0FC42647C79800D111CE /* CallApi */ = {
 			isa = PBXGroup;
 			children = (
+				82F76A7F2659031B00964E6E /* DBManager.swift */,
 				824B2EB12653E46E0056A73D /* Communication.swift */,
 			);
 			path = CallApi;
 			sourceTree = "<group>";
 		};
-		821C0FC52647C7A400D111CE /* 7DayList */ = {
+		82F76A822659033100964E6E /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				82F76A87265903BD00964E6E /* Data.swift */,
+				82F76A86265903BB00964E6E /* TableViewController.swift */,
 			);
-			path = 7DayList;
+			path = Search;
 			sourceTree = "<group>";
 		};
-		82F956942658D9030068D5A5 /* Objc */ = {
+		82F76A832659033F00964E6E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82F956962658D92B0068D5A5 /* ObjetiveClass.h */,
-				82F956972658D92B0068D5A5 /* ObjetiveClass.m */,
-				82F956952658D92B0068D5A5 /* SgWeather-Bridging-Header.h */,
+				82F76A822659033100964E6E /* Search */,
 			);
-			path = Objc;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F956982658D92B0068D5A5 /* ObjetiveClass.m in Sources */,
+				82F76A802659031B00964E6E /* DBManager.swift in Sources */,
+				82F76A89265903BD00964E6E /* Data.swift in Sources */,
 				821C0F962647C42900D111CE /* ViewController.swift in Sources */,
 				821C0F922647C42900D111CE /* AppDelegate.swift in Sources */,
+				82F76A88265903BD00964E6E /* TableViewController.swift in Sources */,
 				824B2EB22653E46E0056A73D /* Communication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +333,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.kr.kisang.weather.SgWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SgWeather/Objc/SgWeather-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -351,7 +355,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.kr.kisang.weather.SgWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SgWeather/Objc/SgWeather-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
