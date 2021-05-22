@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DOu-Gb-ZOI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DOu-Gb-ZOI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -66,10 +67,10 @@
                                     <action selector="autoLoginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7q-zG-0WG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-PA-6nE">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-PA-6nE">
                                 <rect key="frame" x="72" y="541" width="270" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +79,7 @@
                                     <action selector="LoginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fgF-Fe-yNB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxg-Tm-uu1">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxg-Tm-uu1">
                                 <rect key="frame" x="72" y="613" width="270" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,7 +91,7 @@
                                     <action selector="AccountCreationButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YpN-Oj-PV5"/>
                                 </connections>
                             </button>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="aii-Dw-4r8">
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="aii-Dw-4r8">
                                 <rect key="frame" x="72" y="692" width="189" height="31"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
@@ -106,7 +107,7 @@
                                     </attributedString>
                                 </state>
                             </button>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="sGq-c1-7Cr">
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="sGq-c1-7Cr">
                                 <rect key="frame" x="72" y="731" width="40" height="31"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
@@ -129,8 +130,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="k2S-QZ-jXC"/>
                     <connections>
@@ -206,15 +207,15 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Iyb-jQ-MYJ">
                                 <rect key="frame" x="20" y="432" width="374" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Hello? I am Han Sang-won, an iOS app developer.
 This is an app that I am developing personally
 To understand the swift language, it is an app created for the purpose of implementing and testing functions.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iw-ig-yrZ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iw-ig-yrZ">
                                 <rect key="frame" x="192" y="369" width="103" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -247,8 +248,8 @@ To understand the swift language, it is an app created for the purpose of implem
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mZf-Fy-rGa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="fqu-UJ-yXm"/>
                 </viewController>
@@ -263,7 +264,7 @@ To understand the swift language, it is an app created for the purpose of implem
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MWd-Nn-TT7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tableCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="INU-FD-NJ5">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -315,7 +316,7 @@ To understand the swift language, it is an app created for the purpose of implem
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDp-sE-792">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDp-sE-792">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                                         <connections>
                                                             <action selector="closeSidemenuButtonClick:" destination="BSY-IF-qiL" eventType="touchUpInside" id="ZYT-13-iOa"/>
@@ -350,7 +351,7 @@ To understand the swift language, it is an app created for the purpose of implem
                                                         <color key="textColor" red="0.28277680840000002" green="0.28277680840000002" blue="0.28277680840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ei9-Hc-X2b">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ei9-Hc-X2b">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                                         <connections>
                                                             <action selector="alarmButtonClick:" destination="BSY-IF-qiL" eventType="touchUpInside" id="mnq-0N-zQz"/>
@@ -392,7 +393,7 @@ To understand the swift language, it is an app created for the purpose of implem
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ul8-UC-ym7">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ul8-UC-ym7">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                                         <connections>
                                                             <action selector="noticeButtonClick:" destination="BSY-IF-qiL" eventType="touchUpInside" id="1qD-IF-qlc"/>
@@ -429,7 +430,7 @@ To understand the swift language, it is an app created for the purpose of implem
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPL-vw-SDM">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPL-vw-SDM">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                                         <connections>
                                                             <action selector="couponButtonClick:" destination="BSY-IF-qiL" eventType="touchUpInside" id="jcw-en-sV5"/>
@@ -468,7 +469,7 @@ To understand the swift language, it is an app created for the purpose of implem
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p50-1e-idi">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p50-1e-idi">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                                         <connections>
                                                             <action selector="cancleButtonClick:" destination="BSY-IF-qiL" eventType="touchUpInside" id="QOQ-ce-fB7"/>
@@ -503,7 +504,7 @@ To understand the swift language, it is an app created for the purpose of implem
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wF3-Qq-o0E">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wF3-Qq-o0E">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                                         <connections>
                                                             <action selector="csButtonClick:" destination="BSY-IF-qiL" eventType="touchUpInside" id="s70-IB-anu"/>
@@ -538,7 +539,7 @@ To understand the swift language, it is an app created for the purpose of implem
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7r-tz-gLY">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7r-tz-gLY">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="70"/>
                                                         <connections>
                                                             <action selector="coopbrandButtonClick:" destination="BSY-IF-qiL" eventType="touchUpInside" id="ww1-WC-Bby"/>
@@ -603,7 +604,7 @@ To understand the swift language, it is an app created for the purpose of implem
                                     <constraint firstItem="HPg-K7-Cnn" firstAttribute="top" secondItem="J9G-4Y-f8R" secondAttribute="top" id="p1C-Pa-VdN"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zv1-Um-cyh">
+                            <button opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zv1-Um-cyh">
                                 <rect key="frame" x="393.5" y="44" width="20.5" height="818"/>
                                 <color key="backgroundColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -611,6 +612,7 @@ To understand the swift language, it is an app created for the purpose of implem
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="asF-bX-wjV"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="J9G-4Y-f8R" firstAttribute="top" secondItem="asF-bX-wjV" secondAttribute="top" id="1d5-gc-50p"/>
@@ -622,7 +624,6 @@ To understand the swift language, it is an app created for the purpose of implem
                             <constraint firstItem="J9G-4Y-f8R" firstAttribute="width" secondItem="asF-bX-wjV" secondAttribute="width" multiplier="0.95" id="Wj6-nk-t4A"/>
                             <constraint firstItem="Zv1-Um-cyh" firstAttribute="leading" secondItem="J9G-4Y-f8R" secondAttribute="trailing" id="aha-Re-pCp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="asF-bX-wjV"/>
                     </view>
                     <connections>
                         <outlet property="ContentsView" destination="HPg-K7-Cnn" id="r9a-qM-gi1"/>
@@ -679,8 +680,8 @@ To understand the swift language, it is an app created for the purpose of implem
                                 </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="WrO-q4-sCI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="H2j-WQ-4MM"/>
                 </viewController>
@@ -702,5 +703,14 @@ To understand the swift language, it is an app created for the purpose of implem
         <image name="snb_menu_cs" width="78" height="62"/>
         <image name="snb_menu_notice" width="63" height="63"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

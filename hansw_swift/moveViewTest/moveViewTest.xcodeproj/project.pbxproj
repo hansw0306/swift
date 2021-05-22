@@ -62,6 +62,7 @@
 		828DC01E24B806E5007D977B /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 828DC01924B806E5007D977B /* ZipArchive.mm */; };
 		828DC02024B826B9007D977B /* Resource.zip in Resources */ = {isa = PBXBuildFile; fileRef = 828DC01F24B826B9007D977B /* Resource.zip */; };
 		828DC02224B82775007D977B /* ObjClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DC02124B82775007D977B /* ObjClass.swift */; };
+		829313D4263E8C9500ACE8B5 /* zzz.png in Resources */ = {isa = PBXBuildFile; fileRef = 829313D3263E8C9500ACE8B5 /* zzz.png */; };
 		8299B37924DD2C720099F332 /* GpsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8299B37824DD2C720099F332 /* GpsManager.swift */; };
 		829E383324B71A8D00C12B42 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 829E383224B71A8200C12B42 /* libz.tbd */; };
 		82A8EE112489DEB1000B9896 /* NativeFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A8EE102489DEB1000B9896 /* NativeFunc.swift */; };
@@ -148,6 +149,7 @@
 		828DC01924B806E5007D977B /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		828DC01F24B826B9007D977B /* Resource.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Resource.zip; sourceTree = "<group>"; };
 		828DC02124B82775007D977B /* ObjClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjClass.swift; sourceTree = "<group>"; };
+		829313D3263E8C9500ACE8B5 /* zzz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zzz.png; sourceTree = "<group>"; };
 		829423E8251C3890004B58B7 /* readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
 		8299B37824DD2C720099F332 /* GpsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpsManager.swift; sourceTree = "<group>"; };
 		829E383224B71A8200C12B42 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -180,6 +182,7 @@
 		8208E3542488FC0000E0DF99 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				829313D3263E8C9500ACE8B5 /* zzz.png */,
 				828DC01F24B826B9007D977B /* Resource.zip */,
 				8228215C24B4341D0039A053 /* index.html */,
 				829423E8251C3890004B58B7 /* readme */,
@@ -508,6 +511,7 @@
 				82A8EE3A248A2835000B9896 /* calenderCell.xib in Resources */,
 				826DD377251DA6FF00EA2DF8 /* weblogoff.png in Resources */,
 				82A8EE30248A2174000B9896 /* SwCalender.xib in Resources */,
+				829313D4263E8C9500ACE8B5 /* zzz.png in Resources */,
 				8255957C24A594FD0034475D /* SidemenuCoopbrand.xib in Resources */,
 				8255957624A594FD0034475D /* SidemenuCsWrite.xib in Resources */,
 				8255957824A594FD0034475D /* SidemenuAlarmSetting.xib in Resources */,

@@ -12,8 +12,6 @@ class CommunicationAPI: NSObject {
 
     let infoDic = Bundle.main.infoDictionary!
     
-    
-    
     func httpJson(pageInt:String, completion: @escaping ([AnyHashable : Any]?, Error?) -> Void) {
         
         var KeyString = infoDic["APIKey"] as! String
