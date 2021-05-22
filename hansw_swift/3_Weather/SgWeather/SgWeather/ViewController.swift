@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
     //금일 시간편
     //금일 상세정보
-    //설명,일출, 일몰, 비올 확률, 습도, 바람, 습도, 체감, 강수량, 기압, 가시거리, 자외선 지수
+    //설명,일출, 일몰, 비올 확률, 습도, 바람, 체감, 강수량, 기압, 가시거리, 자외선 지수
     
     private var CommunicationObj : Communication?
     
@@ -27,6 +27,12 @@ class ViewController: UIViewController {
         
         //객체선언
         CommunicationObj = Communication.init()
+        
+        CommunicationObj?.httpJson(pageInt: "1", completion: { (result, error) in
+            if let result = result {
+                print("success: \(result)")
+            }
+        })
         
     }
 
