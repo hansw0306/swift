@@ -11,54 +11,24 @@ import SQLite3
 
 class DBManager: NSObject {
     
-    /**
-     설명 : SQLlite 파일생성, 테이블 생성, 데이터 입력
-     */
-//    func xxx() {
-//        //객체 생성과 동시에 sqllite파일 및 테이블 생성
-//        let db:DBHelper = DBHelper()
-//        var persons:[Person] = []
-//        //데이터 insert
-//        db.insert(id: 1, name: "Bilal", age: 24)
-//        db.insert(id: 2, name: "Bosh", age: 25)
-//        db.insert(id: 3, name: "Thor", age: 23)
-//        db.insert(id: 4, name: "Edward", age: 44)
-//        db.insert(id: 5, name: "Ronaldo", age: 34)
-//        persons = db.select()
-//    }
-    
-    func selectPlace(palceStr:String)->Dictionary<String, String> {
-        
-        let db:DBHelper = DBHelper()
-        var places:[KorPlace] = []
-        
-        
-       places = db.selectKorPlace()
-        
-        let px = ""
-        let py = ""
-        return [px:py]
-    
-    }
-
-}
-
-
-//MARK:- DB관련 작업
-class DBHelper
-{
-    init()
-    {
-        db = openDatabase()
-        //createTable()
-    }
-
-    //let dbPath: String = "myDb.sqlite"
     let dbPath: String = "placeDB.sqlite"
     var db:OpaquePointer?
+    
+    override init()
+    {
+        super.init()
+        db = self.openDatabase()
+    }
+        
+    //MARK:- SQLite 함수
+    /**
+     설명 : SQLite 파일생성, 테이블 생성, 데이터 입력
+     */
 
+    //MARK: DB를 사용할수 있게 open한다
     func openDatabase() -> OpaquePointer?
     {
+        self.copyandpasteDB()
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent(dbPath)
         var db: OpaquePointer? = nil
@@ -73,7 +43,27 @@ class DBHelper
             return db
         }
     }
+
+    //MARK: DB로컬파일을 앱 내부에 저장한다.
+    func copyandpasteDB() {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let dbpath: NSString = path[0] as NSString
+        
+        let strdbpath =  dbpath.strings(byAppendingPaths: ["placeDB.sqlite"])[0]
+        print(strdbpath)
+        let fmnager  =  FileManager.default
+        
+        if !fmnager.fileExists(atPath: strdbpath) {
+            let local  = Bundle.main.path(forResource: "placeDB", ofType: "sqlite")
+            do {
+                try fmnager.copyItem(atPath: local!, toPath: strdbpath)
+            } catch {
+                print("Error creating directory: \(error.localizedDescription)")
+            }
+        }
+    }
     
+    //MARK: createTable
     func createTable() {
         let createTableString = "CREATE TABLE IF NOT EXISTS person(Id INTEGER PRIMARY KEY,name TEXT,age INTEGER);"
         var createTableStatement: OpaquePointer? = nil
@@ -91,17 +81,9 @@ class DBHelper
         sqlite3_finalize(createTableStatement)
     }
     
-    
+    //MARK: insert
     func insert(id:Int, name:String, age:Int)
     {
-        let persons = select()
-        for p in persons
-        {
-            if p.id == id
-            {
-                return
-            }
-        }
         let insertStatementString = "INSERT INTO person (Id, name, age) VALUES (?, ?, ?);"
         var insertStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
@@ -120,18 +102,19 @@ class DBHelper
         sqlite3_finalize(insertStatement)
     }
     
-    func select() -> [Person] {
-        let queryStatementString = "SELECT * FROM person;"
+    //MARK: select
+    func select(selctStr:String) -> [NSObject] {
+        let queryStatementString = selctStr
         var queryStatement: OpaquePointer? = nil
-        var psns : [Person] = []
+        var psns : [NSObject] = []
         if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
             while sqlite3_step(queryStatement) == SQLITE_ROW {
-                let id = sqlite3_column_int(queryStatement, 0)
-                let name = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
-                let year = sqlite3_column_int(queryStatement, 2)
-                psns.append(Person(id: Int(id), name: name, age: Int(year)))
-                print("Query Result:")
-                print("\(id) | \(name) | \(year)")
+//                let id = sqlite3_column_int(queryStatement, 0)
+//                let name = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
+//                let year = sqlite3_column_int(queryStatement, 2)
+//                psns.append(Person(id: Int(id), name: name, age: Int(year)))
+//                print("Query Result:")
+//                print("\(id) | \(name) | \(year)")
             }
         } else {
             print("SELECT statement could not be prepared")
@@ -140,6 +123,7 @@ class DBHelper
         return psns
     }
     
+    //MARK: deleteByID
     func deleteByID(id:Int) {
         let deleteStatementStirng = "DELETE FROM person WHERE Id = ?;"
         var deleteStatement: OpaquePointer? = nil
@@ -156,20 +140,21 @@ class DBHelper
         sqlite3_finalize(deleteStatement)
     }
     
+    
+    //MARK:- 지역정보 가져오는 쿼리
     func selectKorPlace() -> [KorPlace] {
         let queryStatementString = "SELECT * FROM KOR_PLACE"
         var queryStatement: OpaquePointer? = nil
         var selctData : [KorPlace] = []
         if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
             while sqlite3_step(queryStatement) == SQLITE_ROW {
-
                 let nameDB = String(describing: String(cString: sqlite3_column_text(queryStatement, 0)))
                 let codeDB = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
                 let pxDB = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
                 let pyDB = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
                 selctData.append(KorPlace(name: nameDB, code: codeDB, px: pxDB, py: pyDB))
-                print("Query Result:")
-                print("\(nameDB) | \(nameDB) | \(pxDB)| \(pyDB)")
+                //print("Query Result:")
+                //print("\(nameDB) | \(nameDB) | \(pxDB)| \(pyDB)")
             }
         } else {
             print("SELECT statement could not be prepared")
@@ -177,26 +162,17 @@ class DBHelper
         sqlite3_finalize(queryStatement)
         return selctData
     }
+    
+//MARK:- 커스텀
+    func getAllPlace()->[KorPlace] {
+        return self.selectKorPlace()
+    }
+
+
 }
 
 
 //MARK:- 테이블's
-class Person
-{
-    
-    var name: String = ""
-    var age: Int = 0
-    var id: Int = 0
-    
-    init(id:Int, name:String, age:Int)
-    {
-        self.id = id
-        self.name = name
-        self.age = age
-    }
-    
-}
-
 class KorPlace
 {
     var name: String = ""

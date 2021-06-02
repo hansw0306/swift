@@ -34,17 +34,10 @@ class ViewController: UIViewController {
 //            }
 //        })
         
-        
-        let fileManager = FileManager.default
-        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        print(documentURL)
-        
         //DB테스트
 //        mDBManager = DBManager.init()
-//        mDBManager?.selectPlace(palceStr: "서울특별시")
-        
+//        let korPlace:[KorPlace] =  (mDBManager?.getAllPlace())!
     }
-
 
 }
 

@@ -54,12 +54,23 @@ class TableViewController: UITableViewController , UISearchControllerDelegate, U
     }
     
     private func setData(){
-        dataArray.append(Data(main: "One", detail: .A))
-        dataArray.append(Data(main: "Two", detail: .A))
-        dataArray.append(Data(main: "Three", detail: .A))
-        dataArray.append(Data(main: "Ten", detail: .B))
-        dataArray.append(Data(main: "Eleven", detail: .B))
-        dataArray.append(Data(main: "Twelve", detail: .B))
+//        dataArray.append(Data(main: "One", detail: .A))
+//        dataArray.append(Data(main: "Two", detail: .A))
+//        dataArray.append(Data(main: "Three", detail: .A))
+//        dataArray.append(Data(main: "Ten", detail: .B))
+//        dataArray.append(Data(main: "Eleven", detail: .B))
+//        dataArray.append(Data(main: "Twelve", detail: .B))
+        
+        let mDBManager = DBManager.init()
+        let mKorPlace = mDBManager.getAllPlace()
+        
+        for place in mKorPlace {
+            if place.name != ""{
+            dataArray.append(Data(main: place.name, detail: .A))
+            }
+        }
+        
+        
     }
 
 }
