@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SgWeather.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>9C735E23188299D2DD378F3A23773BA2D3E20B12</string>
+				<key>dateExpires</key>
+				<string>2021/12/17</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>STJ3K84EP5.co.kr.kisang.weather.SgWeather</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>STJ3K84EP5</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>STJ3K84EP5.co.kr.kisang.weather.SgWeather</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>SgWeather.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>0e32e54c-4737-4e23-b50b-9a6d2ba09984</string>
+				<key>name</key>
+				<string>XC: *</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>STJ3K84EP5</string>
+				<key>name</key>
+				<string>thinkM Co., Ltd.</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

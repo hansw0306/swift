@@ -8,7 +8,11 @@
 
 import UIKit
 
-class TableViewController: UITableViewController , UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate{
+protocol SearchTableDelegate {
+    func Place(placeStr:String) -> String?
+}
+
+class TableViewController: UITableViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, SearchTableDelegate{
    
     //create the search controller and result contoller
     var dataArray = [Data]()
@@ -16,6 +20,7 @@ class TableViewController: UITableViewController , UISearchControllerDelegate, U
     
     var searchController = UISearchController()
     var resultVC = UITableViewController()
+    var delegate : SearchTableDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +37,33 @@ class TableViewController: UITableViewController , UISearchControllerDelegate, U
         resultVC.tableView.delegate = self
         resultVC.tableView.dataSource = self
     }
+    
+// MARK: 데이터 값 입력
+    private func setData(){
+        let mDBManager = DBManager.init()
+        let mKorPlace = mDBManager.getAllPlace()
+        
+        for place in mKorPlace {
+            if place.name != ""{
+            dataArray.append(Data(main: place.name, detail: .A))
+            }
+        }
+    }
+// MARK: - delegate Func
+    func Place(placeStr: String) -> String? {
+        return placeStr
+    }
+}
 
+extension TableViewController {
+    // MARK: - 검색이 눌렸을때
     func updateSearchResults(for searchController: UISearchController) {
         fileteredData = dataArray.filter({ (data:Data) -> Bool in
             return data.main.lowercased().contains(searchController.searchBar.text!.lowercased())
         })
         resultVC.tableView.reloadData()
     }
+    
     
     // MARK: - Table view data source
 
@@ -53,25 +78,25 @@ class TableViewController: UITableViewController , UISearchControllerDelegate, U
         return cell
     }
     
-    private func setData(){
-//        dataArray.append(Data(main: "One", detail: .A))
-//        dataArray.append(Data(main: "Two", detail: .A))
-//        dataArray.append(Data(main: "Three", detail: .A))
-//        dataArray.append(Data(main: "Ten", detail: .B))
-//        dataArray.append(Data(main: "Eleven", detail: .B))
-//        dataArray.append(Data(main: "Twelve", detail: .B))
+    // MARK: - 셀이 눌렸을때
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell:UITableViewCell = tableView.cellForRow(at: indexPath)!
         
-        let mDBManager = DBManager.init()
-        let mKorPlace = mDBManager.getAllPlace()
-        
-        for place in mKorPlace {
-            if place.name != ""{
-            dataArray.append(Data(main: place.name, detail: .A))
+        let messageStr = (cell.textLabel?.text)! + "으로\n 위치를 변경하시겠습니까?"
+        let alert = UIAlertController(title: "알림",
+                                      message: messageStr,
+                                      preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
+            self.dismiss(animated: true) {
+                self.delegate?.Place(placeStr: cell.textLabel?.text ?? "")
             }
-        }
-        
+                }
+        let noAction = UIAlertAction(title: "취소", style: .default) { (action) in
+            self.searchController.searchBar.text = cell.textLabel?.text
+                }
+        alert.addAction(okAction)
+        alert.addAction(noAction)
+        present(alert, animated: false, completion: nil)
         
     }
-
 }
-

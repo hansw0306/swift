@@ -37,6 +37,15 @@ class ViewController: UIViewController {
         //DB테스트
 //        mDBManager = DBManager.init()
 //        let korPlace:[KorPlace] =  (mDBManager?.getAllPlace())!
+        
+        //데이터 저장
+//        UserDefaults.standard.set("key", forKey: "CustomKey") // Save
+//        UserDefaults.standard.value(forKey: "CustomKey") // Load
+//        UserDefaults.standard.removeObject(forKey: "")
+        
+        //let value : Dictionary<String, Any>
+        //UserDefaults.standard.set(xxx, forKey: "key")
+        
     }
 
 }
