@@ -2,16 +2,17 @@ import UIKit
 
 class Data{
     var main:String
-    var detail:detailtype
+    var px:String
+    var py:String
     
-    
-    init(main: String, detail: detailtype) {
+    init(main: String, px:String, py:String) {
         self.main = main
-        self.detail = detail
+        self.px = px
+        self.py = py
     }
 }
 
-enum detailtype:String {
-    case A = "A"
-    case B = "B"
-}
+//enum detailtype:String {
+//    case A = "A"
+//    case B = "B"
+//}

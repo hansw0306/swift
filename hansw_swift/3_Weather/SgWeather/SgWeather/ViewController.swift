@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,SearchTableDelegate {
 
     //대표 날씨정보
     struct mainViewText {
@@ -27,26 +27,51 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         //날씨정보 가져오기
-//        mCommunicationObj = Communication.init()
-//        mCommunicationObj?.httpJson(pageInt: "1", completion: { (result, error) in
-//            if let result = result {
-//                print("success: \(result)")
-//            }
-//        })
-        
-        //DB테스트
-//        mDBManager = DBManager.init()
-//        let korPlace:[KorPlace] =  (mDBManager?.getAllPlace())!
-        
-        //데이터 저장
-//        UserDefaults.standard.set("key", forKey: "CustomKey") // Save
-//        UserDefaults.standard.value(forKey: "CustomKey") // Load
-//        UserDefaults.standard.removeObject(forKey: "")
-        
-        //let value : Dictionary<String, Any>
-        //UserDefaults.standard.set(xxx, forKey: "key")
+        mCommunicationObj = Communication.init()
+        mCommunicationObj?.httpJson(pageInt: "1", completion: {(result, error) in
+            if let result = result {
+                print("success: \(result)")
+            }
+        })
         
     }
 
+//MARK:- Action
+    @IBAction func searchAction(_ sender: Any) {
+        let searchViewCon = TableViewController.init()
+        searchViewCon.delegate = self
+        present(searchViewCon, animated: true, completion: nil)
+    }
+    
+    
+//MARK:- SearchTableDelegate(검색부분 델리게이터)
+    func Place(placeStr: String) {
+        
+        print(placeStr)
+    }
 }
 
+//MARK:- extension
+extension ViewController{
+    
+    func saveDefaults(){
+        //데이터 저장
+        UserDefaults.standard.set("key", forKey: "CustomKey") // Save
+        UserDefaults.standard.value(forKey: "CustomKey") // Load
+        UserDefaults.standard.removeObject(forKey: "")
+        
+        let value : Dictionary<String, Any>
+        value = ["sss":"ssss"]
+        UserDefaults.standard.set(value, forKey: "to")
+        
+    }
+    
+    //데이터 전부 지우기
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
+}

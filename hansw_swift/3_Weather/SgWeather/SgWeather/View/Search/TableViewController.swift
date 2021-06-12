@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SearchTableDelegate {
-    func Place(placeStr:String) -> String?
+    func Place(placeStr:String)
 }
 
 class TableViewController: UITableViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, SearchTableDelegate{
@@ -45,13 +45,12 @@ class TableViewController: UITableViewController, UISearchControllerDelegate, UI
         
         for place in mKorPlace {
             if place.name != ""{
-            dataArray.append(Data(main: place.name, detail: .A))
+                dataArray.append(Data(main: place.name, px: place.px, py: place.py))
             }
         }
     }
 // MARK: - delegate Func
-    func Place(placeStr: String) -> String? {
-        return placeStr
+    func Place(placeStr: String) {
     }
 }
 

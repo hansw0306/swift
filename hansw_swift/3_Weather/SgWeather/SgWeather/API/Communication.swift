@@ -20,7 +20,10 @@ class Communication: NSObject {
 extension Communication {
     
     func httpJson(pageInt:String, completion: @escaping ([AnyHashable : Any]?, Error?) -> Void) {
-        let urlStr = self.makeUrlPlace(str: "중기전망조회")
+        
+        let urlStr = self.makeUrlPlace(str: "중기전망조회",nx: "55",ny: "127")
+        
+        
         let url = NSURL(string: urlStr)
         
         //Task
@@ -56,12 +59,18 @@ extension Communication {
     //MARK: -
     
     //MARK: 동네예보 URL
-    func makeUrlPlace(str:String) -> String {
+    func makeUrlPlace(str:String, nx:String, ny:String) -> String {
         let url = "http://apis.data.go.kr/1360000/VilageFcstInfoService"
         let KeyString = infoDic["APIKey_Place"] as! String
         var urlParam = ""
         
-        urlParam = "/getVilageFcst?ServiceKey=\(KeyString)&pageNo=1&numOfRows=10&dataType=JSON&base_date=20210522&base_time=0500&nx=60&ny=127"
+        //금일날짜
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        let todate = formatter.string(from: Date())
+        
+        urlParam = "/getVilageFcst?ServiceKey=\(KeyString)&pageNo=1" +
+        "&numOfRows=10&dataType=JSON&base_date=\(todate)&base_time=0500&nx=\(nx)&ny=\(ny)"
         
         return url+urlParam
     }
