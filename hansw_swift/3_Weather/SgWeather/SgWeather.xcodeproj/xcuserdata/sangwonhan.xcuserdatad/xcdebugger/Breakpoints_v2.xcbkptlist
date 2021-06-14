@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E6629A8F-3CBD-482D-96EC-670E91B14F01"
-            shouldBeEnabled = "No"
+            uuid = "4EE5082D-4000-4F9A-BF73-5C5F96D6EDAB"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SgWeather/API/Communication.swift"
+            filePath = "SgWeather/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "httpJson(pageInt:completion:)"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "Place(placeStr:nx:ny:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

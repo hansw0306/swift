@@ -163,11 +163,37 @@ class DBManager: NSObject {
         return selctData
     }
     
+    //MARK:- 지역정보 가져오는 쿼리
+    func selectKorPlace(selectquery:String) -> [KorPlace] {
+        
+        let queryStatementString = selectquery
+        var queryStatement: OpaquePointer? = nil
+        var selctData : [KorPlace] = []
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                let nameDB = String(describing: String(cString: sqlite3_column_text(queryStatement, 0)))
+                let codeDB = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
+                let pxDB = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
+                let pyDB = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
+                selctData.append(KorPlace(name: nameDB, code: codeDB, px: pxDB, py: pyDB))
+                //print("Query Result:")
+                //print("\(nameDB) | \(nameDB) | \(pxDB)| \(pyDB)")
+            }
+        } else {
+            print("SELECT statement could not be prepared")
+        }
+        sqlite3_finalize(queryStatement)
+        return selctData
+    }
+    
 //MARK:- 커스텀
     func getAllPlace()->[KorPlace] {
         return self.selectKorPlace()
     }
 
+    func getSelectQuery(selectStr:String)->[KorPlace] {
+        return self.selectKorPlace(selectquery: selectStr)
+    }
 
 }
 

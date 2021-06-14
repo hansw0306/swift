@@ -1,22 +1,26 @@
 //
-//  TableViewController.swift
+//  SearchPlaceTableViewController.swift
 //  search_extension
 //
-//  Created by 송동욱 on 26/09/2018.
-//  Copyright © 2018 송동욱. All rights reserved.
+//  Created by 한상원 on 14/06/2021.
+//  Copyright © 2021 한상원. All rights reserved.
 //
+
 
 import UIKit
 
 protocol SearchTableDelegate {
-    func Place(placeStr:String)
+    func Place(placeStr:String, nx:String, ny:String)
 }
 
-class TableViewController: UITableViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, SearchTableDelegate{
+class SearchPlaceTableViewController: UITableViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, SearchTableDelegate{
    
     //create the search controller and result contoller
     var dataArray = [Data]()
     var fileteredData = [Data]()
+    
+    //데이터베이스
+    var mDBManager : DBManager?
     
     var searchController = UISearchController()
     var resultVC = UITableViewController()
@@ -40,9 +44,9 @@ class TableViewController: UITableViewController, UISearchControllerDelegate, UI
     
 // MARK: 데이터 값 입력
     private func setData(){
-        let mDBManager = DBManager.init()
-        let mKorPlace = mDBManager.getAllPlace()
-        
+        self.mDBManager = DBManager.init()
+        let mKorPlace = self.mDBManager!.getAllPlace()
+
         for place in mKorPlace {
             if place.name != ""{
                 dataArray.append(Data(main: place.name, px: place.px, py: place.py))
@@ -50,11 +54,11 @@ class TableViewController: UITableViewController, UISearchControllerDelegate, UI
         }
     }
 // MARK: - delegate Func
-    func Place(placeStr: String) {
+    func Place(placeStr: String, nx: String, ny: String) {
     }
 }
 
-extension TableViewController {
+extension SearchPlaceTableViewController {
     // MARK: - 검색이 눌렸을때
     func updateSearchResults(for searchController: UISearchController) {
         fileteredData = dataArray.filter({ (data:Data) -> Bool in
@@ -87,7 +91,17 @@ extension TableViewController {
                                       preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
             self.dismiss(animated: true) {
-                self.delegate?.Place(placeStr: cell.textLabel?.text ?? "")
+                 
+                //"SELECT * FROM KOR_PLACE"
+                let Str = "SELECT * FROM KOR_PLACE WHERE name='" + (cell.textLabel?.text)! + "'"
+                let selectResult = self.mDBManager?.getSelectQuery(selectStr: Str)
+                
+                selectResult?.first?.px
+                
+                
+                self.delegate?.Place(placeStr:selectResult?.first?.name ?? "",
+                                           nx:selectResult?.first?.px ?? "",
+                                           ny:selectResult?.first?.py ?? "")
             }
                 }
         let noAction = UIAlertAction(title: "취소", style: .default) { (action) in
