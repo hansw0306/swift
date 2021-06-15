@@ -81,7 +81,7 @@ extension Communication {
     
     //MARK: -
     
-    //MARK: 동네예보 URL
+    //MARK: 통신 URL
     func makeUrlPlace(str:String, nx:String, ny:String) -> String {
         let url = "http://apis.data.go.kr/1360000/VilageFcstInfoService"
         let KeyString = infoDic["APIKey_Place"] as! String
@@ -92,13 +92,30 @@ extension Communication {
         formatter.dateFormat = "yyyyMMdd"
         let todate = formatter.string(from: Date())
         
+        //동네예보조회
         urlParam = "/getVilageFcst?ServiceKey=\(KeyString)&pageNo=1" +
-        "&numOfRows=10&dataType=JSON&base_date=\(todate)&base_time=0500&nx=\(nx)&ny=\(ny)"
+        "&numOfRows=14&dataType=JSON&base_date=\(todate)&base_time=1100&nx=\(nx)&ny=\(ny)"
         
+        //0200 : 아침 최저기온이 나옴 // Rows 12로 해야함..
+        //1100 : 낮 최고기온이 나옴  //  Rows 10로 해야함..
+        //API 제공 시간(~이후)
+        //02:05, 05:05, 08:05, 11:05, 14:05, 17:05, 20:05, 23:05
+        //0200, 0500, 0800, 1100, 1400, 1700, 2000, 2300 (1일 8회)
+        
+        if(str == "초단기실황조회")
+        {
+            //초단기실황조회
+            urlParam = "/getUltraSrtNcst?serviceKey=\(KeyString)&pageNo=1" +
+                "&numOfRows=10&dataType=JSON&base_date=\(todate)&base_time=2030&nx=\(nx)&ny=\(ny)"
+        }
+        else if(str == "초단기예보조회")
+        {
+            //초단기예보조회
+            urlParam = "/getUltraSrtFcst?serviceKey=\(KeyString)&pageNo=1" +
+                "&numOfRows=10&dataType=JSON&base_date=\(todate)&base_time=2300&nx=\(nx)&ny=\(ny)"
+        }
         return url+urlParam
     }
-    
-    
     
     
     //MARK: 중기예보 URL
