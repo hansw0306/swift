@@ -44,8 +44,8 @@ class ViewController: UIViewController,SearchTableDelegate {
     func Place(placeStr: String, nx: String, ny: String) {
         
         //guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "초단기실황조회", nx: nx, ny: ny)
-        guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "초단기예보조회", nx: nx, ny: ny)
-        //guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "동네예보", nx: nx, ny: ny)
+        //guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "초단기예보조회", nx: nx, ny: ny)
+        guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "동네예보조회", nx: nx, ny: ny)
         else {
             print("동네예보 URL을 만들기 실패하였습니다.");
             return

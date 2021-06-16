@@ -94,7 +94,7 @@ extension Communication {
         
         //동네예보조회
         urlParam = "/getVilageFcst?ServiceKey=\(KeyString)&pageNo=1" +
-        "&numOfRows=14&dataType=JSON&base_date=\(todate)&base_time=1100&nx=\(nx)&ny=\(ny)"
+        "&numOfRows=12&dataType=JSON&base_date=\(todate)&base_time=2000&nx=\(nx)&ny=\(ny)"
         
         //0200 : 아침 최저기온이 나옴 // Rows 12로 해야함..
         //1100 : 낮 최고기온이 나옴  //  Rows 10로 해야함..
