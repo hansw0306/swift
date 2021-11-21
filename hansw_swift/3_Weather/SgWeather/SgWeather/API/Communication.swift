@@ -11,9 +11,6 @@ class Communication: NSObject {
     
     let session = URLSession.shared
     let infoDic = Bundle.main.infoDictionary!
-    
-
-
 }
 
 
@@ -48,19 +45,23 @@ extension Communication {
     func httpJson(mPlaceUrl:String, completion: @escaping ([String : Any]?, Error?) -> Void) {
         
         let url = NSURL(string: mPlaceUrl)
+        print("서버에 요청한 url :\(String(describing: url))")
+        
         
         //Task
         let task = session.dataTask(with: url! as URL, completionHandler: {
             (data, response, error) -> Void in
             
             if (data == nil){
-                print("결과값이 없음")
+                print("통신결과 : 데이터가 없음")
                 return
             }
             
             if let nsstr = NSString(data:data!, encoding: String.Encoding.utf8.rawValue){
                 let str = String(nsstr)
-                //print("통신후 결과값 Str : \(str)")
+                print("통신후 결과값 Str -----------------------------------")
+                print("\(str)")
+                print("-------------------------------------------------")
                 
                 do {
                     let dic = try JSONSerialization.jsonObject(
@@ -69,7 +70,7 @@ extension Communication {
                         as! NSDictionary
                     
                     //통신하여 가져온 정보를 전달
-                    completion(dic as! [String : Any], nil)
+                    completion(dic as? [String : Any], nil)
                 } catch {
                     print("error occured")
                 }
@@ -83,7 +84,7 @@ extension Communication {
     
     //MARK: 통신 URL
     func makeUrlPlace(str:String, nx:String, ny:String) -> String {
-        let url = "http://apis.data.go.kr/1360000/VilageFcstInfoService"
+        let url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0"
         let KeyString = infoDic["APIKey_Place"] as! String
         var urlParam = ""
         
@@ -94,25 +95,28 @@ extension Communication {
         
         //동네예보조회
         urlParam = "/getVilageFcst?ServiceKey=\(KeyString)&pageNo=1" +
-        "&numOfRows=12&dataType=JSON&base_date=\(todate)&base_time=2000&nx=\(nx)&ny=\(ny)"
-        
-        //0200 : 아침 최저기온이 나옴 // Rows 12로 해야함..
-        //1100 : 낮 최고기온이 나옴  //  Rows 10로 해야함..
-        //API 제공 시간(~이후)
-        //02:05, 05:05, 08:05, 11:05, 14:05, 17:05, 20:05, 23:05
-        //0200, 0500, 0800, 1100, 1400, 1700, 2000, 2300 (1일 8회)
+            "&numOfRows=225&dataType=JSON" +
+            "&base_date=\(todate)" +
+            "&base_time=\(self.getTime())" +
+            "&nx=\(nx)&ny=\(ny)"
         
         if(str == "초단기실황조회")
         {
             //초단기실황조회
             urlParam = "/getUltraSrtNcst?serviceKey=\(KeyString)&pageNo=1" +
-                "&numOfRows=10&dataType=JSON&base_date=\(todate)&base_time=2030&nx=\(nx)&ny=\(ny)"
+                "&numOfRows=10&dataType=JSON" +
+                "&base_date=\(todate)" +
+                "&base_time=\(self.getTime())" +
+                "&nx=\(nx)&ny=\(ny)"
         }
         else if(str == "초단기예보조회")
         {
             //초단기예보조회
             urlParam = "/getUltraSrtFcst?serviceKey=\(KeyString)&pageNo=1" +
-                "&numOfRows=10&dataType=JSON&base_date=\(todate)&base_time=2300&nx=\(nx)&ny=\(ny)"
+                "&numOfRows=10&dataType=JSON" +
+                "&base_date=\(todate)" +
+                "&base_time=\(self.getTime())" +
+                "&nx=\(nx)&ny=\(ny)"
         }
         return url+urlParam
     }
@@ -163,4 +167,109 @@ extension Communication {
         return url+urlParam
     }
     
+    
+    
+    func getTime() ->String {
+/* 설명
+        0200 : 아침 최저기온이 나옴 // Rows 12로 해야함..
+        1100 : 낮 최고기온이 나옴  //  Rows 10로 해야함..
+        API 제공 시간(~이후)
+        02:05, 05:05, 08:05, 11:05, 14:05, 17:05, 20:05, 23:05
+        0200, 0500, 0800, 1100, 1400, 1700, 2000, 2300 (1일 8회)
+*/
+        
+        var searchTime = ""
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute, .second], from: date)
+        
+        print(components.hour!)
+        switch components.hour! {
+        case 00:
+            searchTime = "2300"
+        case 01:
+            searchTime = "2300"
+        case 02:
+            searchTime = "2300"
+            if(5 <= components.minute!)
+            {
+                searchTime = "0200"
+            }
+        case 03:
+            searchTime = "0200"
+        case 04:
+            searchTime = "0200"
+        case 05:
+            searchTime = "0200"
+            if(5 <= components.minute!)
+            {
+                searchTime = "0500"
+            }
+        case 06:
+            searchTime = "0500"
+        case 07:
+            searchTime = "0500"
+        case 08:
+            searchTime = "0500"
+            if(5 <= components.minute!)
+            {
+                searchTime = "0800"
+            }
+        case 09:
+            searchTime = "0800"
+        case 10:
+            searchTime = "0800"
+        case 11:
+            searchTime = "0800"
+            if(5 <= components.minute!)
+            {
+                searchTime = "1100"
+            }
+        case 12:
+            searchTime = "1100"
+        case 13:
+            searchTime = "1100"
+        case 14:
+            searchTime = "1100"
+            if(5 <= components.minute!)
+            {
+                searchTime = "1400"
+            }
+        case 15:
+            searchTime = "1400"
+        case 16:
+            searchTime = "1400"
+        case 17:
+            searchTime = "1400"
+            if(5 <= components.minute!)
+            {
+                searchTime = "1700"
+            }
+        case 18:
+            searchTime = "1700"
+        case 19:
+            searchTime = "1700"
+        case 20:
+            searchTime = "1700"
+            if(5 <= components.minute!)
+            {
+                searchTime = "2000"
+            }
+        case 21:
+            searchTime = "2000"
+        case 22:
+            searchTime = "2000"
+        case 23:
+            searchTime = "2000"
+            if(5 <= components.minute!)
+            {
+                searchTime = "2300"
+            }
+        default:
+            searchTime = "02"
+        }
+        
+        
+        return searchTime
+    }
 }

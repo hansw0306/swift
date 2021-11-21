@@ -1,14 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "hail-128.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "hail-256.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "hail-384.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

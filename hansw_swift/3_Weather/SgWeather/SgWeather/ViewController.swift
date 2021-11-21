@@ -9,6 +9,14 @@ import UIKit
 
 class ViewController: UIViewController,SearchTableDelegate {
 
+    //화면
+    
+    @IBOutlet var mainImageView: UIImageView!
+    @IBOutlet var placeLable: UILabel!
+    @IBOutlet var placeWeatherLable: UILabel!
+    @IBOutlet var placeTemperaturesLable: UILabel!
+    @IBOutlet var humidityLable: UILabel!
+    
     //대표 날씨정보
     struct mainViewText {
         private var placeName : String?
@@ -41,11 +49,43 @@ class ViewController: UIViewController,SearchTableDelegate {
     
     
 //MARK:- SearchTableDelegate(검색장소로 데이터 가져오기)
-    func Place(placeStr: String, nx: String, ny: String) {
+    func Place(placeStr: String, nx: String, ny: String)
+    {
+        //동내예보
+        self.getWeatherForecast(mPlaceStr: placeStr, mNX: nx, mNY: ny)
+        //
+    }
+}
+
+//MARK:- extension
+extension ViewController{
+    
+    func saveDefaults(){
+        //데이터 저장
+        UserDefaults.standard.set("key", forKey: "CustomKey") // Save
+        UserDefaults.standard.value(forKey: "CustomKey") // Load
+        UserDefaults.standard.removeObject(forKey: "")
         
-        //guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "초단기실황조회", nx: nx, ny: ny)
-        //guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "초단기예보조회", nx: nx, ny: ny)
-        guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "동네예보조회", nx: nx, ny: ny)
+        let value : Dictionary<String, Any>
+        value = ["sss":"ssss"]
+        UserDefaults.standard.set(value, forKey: "to")
+        
+    }
+    
+    //데이터 전부 지우기
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
+    
+//MARK: - 데이터 가져오기
+//MARK: 동내예보
+    func getWeatherForecast(mPlaceStr: String, mNX: String, mNY: String)
+    {
+        guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "동네예보조회", nx: mNX, ny: mNY)
         else {
             print("동네예보 URL을 만들기 실패하였습니다.");
             return
@@ -73,16 +113,13 @@ class ViewController: UIViewController,SearchTableDelegate {
                         let weatherData = placeData as? Dictionary<String,Any>
                         let category = weatherData?["category"]
                         let fcstValue = weatherData?["fcstValue"]
-                        let obsrValue = weatherData?["obsrValue"]
+                        let fcstDate = weatherData?["fcstDate"] as! String
+                        let fcstTime = weatherData?["fcstTime"] as! String
                         
-                        if(fcstValue != nil)
-                        {
-                            print("\(placeStr) 동네예보 날씨  category: \(category), fcstValue:\(fcstValue)")
-                        }
-                        else if(obsrValue != nil)
-                        {
-                            print("\(placeStr) 초단기실황조회 날씨  category: \(category), fcstValue:\(obsrValue)")
-                        }
+                        let fcst = fcstDate + " " + fcstTime
+                        
+                        print("\(mPlaceStr) 동네예보 날씨|| 날짜 :\(fcst)  category: \(category), fcstValue:\(fcstValue)")
+                       
                         
                         
                         /*
@@ -129,29 +166,56 @@ class ViewController: UIViewController,SearchTableDelegate {
         })
         
     }
-}
-
-//MARK:- extension
-extension ViewController{
-    
-    func saveDefaults(){
-        //데이터 저장
-        UserDefaults.standard.set("key", forKey: "CustomKey") // Save
-        UserDefaults.standard.value(forKey: "CustomKey") // Load
-        UserDefaults.standard.removeObject(forKey: "")
+//MARK: 초단기실황조회
+    func getWeather(mPlaceStr: String, mNX: String, mNY: String)
+    {
         
-        let value : Dictionary<String, Any>
-        value = ["sss":"ssss"]
-        UserDefaults.standard.set(value, forKey: "to")
-        
-    }
-    
-    //데이터 전부 지우기
-    func resetDefaults() {
-        let defaults = UserDefaults.standard
-        let dictionary = defaults.dictionaryRepresentation()
-        dictionary.keys.forEach { key in
-            defaults.removeObject(forKey: key)
+        //guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "초단기예보조회", nx: nx, ny: ny)
+        guard let placeUrlStr = mCommunicationObj?.makeUrlPlace(str: "초단기실황조회", nx: mNX, ny: mNY)
+        else {
+            print("동네예보 URL을 만들기 실패하였습니다.");
+            return
+            
         }
+        //데이터가져오기
+        mCommunicationObj?.httpJson(mPlaceUrl: placeUrlStr, completion: {(result, error) in
+            if let resultJson = result {
+                //print("success: \(resultJson)")
+                
+                let resultJsonSub = resultJson["response"] as! Dictionary<String, Any>
+                let inJsonHeader = resultJsonSub["header"] as! Dictionary<String, Any>
+                let resultCode = inJsonHeader["resultCode"] as! String
+                
+                if(resultCode == "00")
+                {
+                    
+                    let inJsonBody = resultJsonSub["body"] as! Dictionary<String, Any>
+                    let inBodyitems = inJsonBody["items"] as! Dictionary<String, Any>
+                    let itemArray :NSArray =  inBodyitems["item"] as! NSArray
+                    
+                    print(itemArray.count)
+                    for placeData in itemArray
+                    {
+                        let weatherData = placeData as? Dictionary<String,Any>
+                        let category = weatherData?["category"]
+                        //let fcstValue = weatherData?["fcstValue"]
+                        let obsrValue = weatherData?["obsrValue"]
+                        
+                     
+                        print("\(mPlaceStr) 초단기실황조회 날씨  category: \(category), fcstValue:\(obsrValue)")
+                        
+                        
+                        
+                    }
+                }
+                else
+                {
+                    let resultMsg = inJsonHeader["resultMsg"] as! String
+                    print("error 메시지 : \(resultMsg)")
+                }
+                
+            }
+        })
+        
     }
 }

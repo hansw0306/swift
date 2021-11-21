@@ -109,7 +109,18 @@ extension SearchPlaceTableViewController {
                 }
         alert.addAction(okAction)
         alert.addAction(noAction)
-        present(alert, animated: false, completion: nil)
+        
+        //searchController에 검색하고 있는중 선택하여 위치를 찾아오려고 할때 얼랏이 안나오는 현상이 있어 수정하였다.
+        if searchController.isActive {
+            self.searchController.dismiss(animated: false) {
+                // Do what you want here like perform segue or present
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        else{
+            present(alert, animated: true, completion: nil)
+        }
+        
         
     }
 }
